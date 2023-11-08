@@ -1,0 +1,15 @@
+<div class="panelFill"> 
+    <div style="position: absolute; left: 10px; top: 10px;"><div style="display: inline-block" id="export3dGIFInfo"></div></div>
+    <div style="position: absolute; top: 30px; left: 10px; right: 10px; bottom: 46px" id="export3dGifPreviewHolder">
+      <canvas id="export3dGifPreview" style="border: 1px solid #aaaaaa;"></canvas>
+
+
+      <canvas id="export3dGifRenderCanvas" style="position: absolute; top: 3000px; left: 0" ></canvas>
+    </div>
+    <div style="position: absolute; left: 10px; bottom: 10px">
+      <label class="controlLabel" for="export3dGifPreviewScale">Preview Scale</label>
+      <input id="export3dGifPreviewScale" style="width: 180px" type="range" min="1" max="2500" value="50" size="3">
+      <input id="export3dGifPreviewScaleText" class="number" type="text" style="width: 30px" min="1" max="1500" value="100" size="2">
+      <button type="button" id="export3dGifPreviewScaleReset">R</button>
+    </div>
+</div>

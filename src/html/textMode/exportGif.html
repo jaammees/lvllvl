@@ -1,0 +1,132 @@
+<div class="panelFill" id="exportGifPanel">
+  <div style="position: absolute; top: 0; left: 0; bottom: 0; right: 0px; overflow: auto; padding: 10px">
+
+
+    
+    <div class="formGroup">
+      <label class="controlLabel" for="exportGIFAs">File name:</label> 
+      <input type="text" class="formControl" size="20" value="" id="exportGIFAs"/>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="exportGIFFormat">Format:</label> 
+
+      <label class="rb-container">GIF
+        <input type="radio" name="exportGIFFormat" value="gif" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="rb-container">Video
+        <input type="radio" name="exportGIFFormat" value="video">
+        <span class="checkmark"></span>
+      </label>
+
+<!--
+      <label><input type="radio" name="exportGIFFormat" value="gif" checked="checked">&nbsp;GIF</label>
+      <label><input type="radio" name="exportGIFFormat" value="video">&nbsp;Video</label>
+-->
+      <!--
+      <label><input type="radio" name="exportGIFFormat" value="videoWithSound">&nbsp;Video With Sound</label>
+      -->
+
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="exportGIFShorten"></label> 
+
+      <label class="cb-container">Shorten last frame (for Twitter looped GIFs)
+        <input type="checkbox" name="exportGIFShorten" id="exportGIFShorten" value="gif" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+
+<!--
+      <label><input type="checkbox" name="exportGIFShorten" id="exportGIFShorten" value="gif" checked="checked">&nbsp;Shorten last frame (for Twitter looped GIFs)</label>
+-->      
+    </div>
+
+
+
+    
+
+
+    <div class="formGroup">
+      <label class="controlLabel">&nbsp;</label>
+
+
+      <label class="cb-container">Include Border
+        <input type="checkbox" id="exportGIFIncludeBorder" value="1"/> 
+        <span class="checkmark"></span>
+      </label>
+<!--            
+      <label><input type="checkbox" id="exportGIFIncludeBorder" value="1"/> Include Border</label>
+-->      
+    </div>
+
+
+    <div class="formGroup">
+      <label class="controlLabel">Scale:</label>
+      <div class="radioGroup">
+
+        <label class="rb-container">100%
+          <input type="radio" name="exportGIFScale" id="exportGIFScale1" value="1" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+        &nbsp;&nbsp;
+        <label class="rb-container">200%
+          <input type="radio" name="exportGIFScale" id="exportGIFScale2" value="2"/>
+          <span class="checkmark"></span>
+        </label>
+        &nbsp;&nbsp;
+        <label class="rb-container">300%
+          <input type="radio" name="exportGIFScale" id="exportGIFScale3" value="3"/>
+          <span class="checkmark"></span>
+        </label>
+        &nbsp;&nbsp;
+        <label class="rb-container">400%
+          <input type="radio" name="exportGIFScale" id="exportGIFScale4" value="4"/>
+          <span class="checkmark"></span>
+        </label>                  
+
+
+      <!--
+        <label><input type="radio" name="exportGIFScale" id="exportGIFScale1" value="1" checked="checked"> 100%</label>
+        &nbsp;&nbsp;
+        <label><input type="radio" name="exportGIFScale" id="exportGIFScale2" value="2"> 200%</label>
+        &nbsp;&nbsp;
+        <label><input type="radio" name="exportGIFScale" id="exportGIFScale3" value="3"> 300%</label>
+        &nbsp;&nbsp;
+        <label><input type="radio" name="exportGIFScale" id="exportGIFScale3" value="4"> 400%</label>
+      -->
+      </div>
+    </div>
+
+
+    <div class="formGroup">
+      <label class="controlLabel">Include Layers:</label>
+      <div class="radioGroup">
+
+        <label class="rb-container">Current Layer
+          <input type="radio" name="exportGIFLayer" id="exportGIFLayerCurrent" value="current"/>
+          <span class="checkmark"></span>
+        </label>
+        &nbsp;&nbsp;
+        <label class="rb-container">Visible Layers
+          <input type="radio" name="exportGIFLayer" id="exportGIFLayerVisible" value="visible"  checked="checked" />
+          <span class="checkmark"></span>
+        </label>
+        &nbsp;&nbsp;
+        <label class="rb-container">All Layers
+          <input type="radio" name="exportGIFLayer" id="exportGIFLayerAll" value="all" />
+          <span class="checkmark"></span>
+        </label>
+
+<!--
+        <label><input type="radio" name="exportGIFLayer" id="exportGIFLayerCurrent" value="current"/> Current Layer</label><br/>
+        <label><input type="radio" name="exportGIFLayer" id="exportGIFLayerVisible" value="visible"  checked="checked" /> Visible Layers</label><br/>
+        <label><input type="radio" name="exportGIFLayer" id="exportGIFLayerAll" value="all" /> All Layers</label>
+-->        
+      </div>
+    </div>
+  </div>
+
+</div>

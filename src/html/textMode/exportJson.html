@@ -1,0 +1,111 @@
+<div class="panelFill dialogContent" id="exportJsonPanel">
+  <div class="formGroup">
+    <label class="controlLabel" for="exportJsonAs">File name:</label> 
+    <input type="text" class="formControl" size="20" value="untitled" id="exportJsonAs"/>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportJsonType">Type:</label> 
+    <select id="exportJsonType">
+      <option value="native">Native</option>
+      <option value="tiled">Tiled 1.2</option>
+    </select>
+  </div>
+  
+
+
+  <div class="formGroup exportJsonNativeSettings">
+    <label class="controlLabel">Include:</label>
+    <div class="checkboxGroup">
+      <div>
+        <label class="cb-container">Map Data
+          <input type="checkbox" id="exportJSONMapData" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label class="cb-container">Tile Set Data
+          <input type="checkbox" id="exportJSONTilesetData" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label class="cb-container">Colour Palette Data
+          <input type="checkbox" id="exportJSONColorPaletteData" checked="checked"> 
+          <span class="checkmark"></span>
+        </label>    
+      </div>
+    </div>
+  </div>
+
+
+  <div class="formGroup exportJsonNativeSettings">
+    <label class="controlLabel" for="exportJsonFromFrame">Export Frames:</label>
+    <div style="display: inline-block">
+      <input type="text" size="2" class="number" min="1"  id="exportJsonFromFrame">
+      &nbsp;
+      <label for="exportJsonToFrame">To</label>
+      &nbsp;
+      <input type="text" size="2" class="number" min="1" id="exportJsonToFrame">
+    </div>
+  </div>
+
+<!--
+
+  <div class="formGroup">
+    <label class="controlLabel">Include Layers:</label>
+    <div class="radioGroup">
+      <label><input type="radio" name="exportJsonLayer" id="exportJsonLayerCurrent" value="current" checked="checked"/> Current Layer (X-Y Grid) Only</label><br/>
+      <label><input type="radio" name="exportJsonLayer" id="exportJsonLayerAll" value="all" /> All Layers</label>
+    </div>
+  </div>
+-->
+
+  <div class="formGroup exportJsonTiledSettings">
+    <label class="controlLabel">Include:</label>
+    <div class="radioGroup">
+
+      <div>
+        <label class="rb-container">All Tiles
+          <input type="radio" name="exportJsonTiles" id="exportJsonTilesAll" value="all" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>    
+      </div>
+
+      <div>
+        <label class="rb-container">Only Used Tiles
+          <input type="radio" name="exportJsonTiles" id="exportJsonTilesUsed" value="used" />
+          <span class="checkmark"></span>
+        </label>    
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="formGroup">
+    <label class="controlLabel">Direction:</label>
+    <div class="radioGroup">
+
+      <div>
+        <label class="rb-container">Top to Bottom
+          <input type="radio" name="exportJsonDirection" id="exportJsonDirectionTopToBottom" value="toptobottom" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>    
+      </div>
+
+      <div>
+        <label class="rb-container">Bottom to Top
+          <input type="radio" name="exportJsonDirection" id="exportJsonDirectionBottomToTop" value="bottomtotop" />
+          <span class="checkmark"></span>
+        </label>    
+      </div>
+
+    </div>
+
+  </div>
+</div>

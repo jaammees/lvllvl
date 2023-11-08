@@ -1,0 +1,229 @@
+<div class="panelFill" style="background-color: #222222;">
+  <div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="sidEffect">aaEffect:</label>
+      <select class="formControl" name="sidEffect" id="sidEffect">
+        <option value="0">No Effect</option>
+        <option value="17">Legato</option>
+        <option value="1">Portamento Up</option>
+        <option value="2">Portamento Down</option>
+        <option value="3">Portamento To Note</option>
+        <option value="4">Set Vibrato</option>
+        <option value="5">Set Attack/Decay</option>
+        <option value="6">Set Sustain/Release</option>
+
+        <!--
+        <option value="7">Set Waveform</option>
+        -->
+
+        <option value="10">Start Filter</option>
+        <option value="16">Stop Filter</option>
+        <option value="11">Set Filter Resonance/Channels</option>
+        <option value="12">Set Filter Cutoff</option>
+        <option value="13">Set Master Volume</option> 
+        <option value="14">Set Funk Tempo</option> 
+        <option value="15">Set Tempo</option> 
+      </select>
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamPortamentoSpeed">
+      <label class="controlLabel" for="sidEffectPortamentoSpeed">Portamento Speed:</label>
+      <input size="4" class="formControl number" min="0" max="65535" value="0" id="sidEffectPortamentoSpeed"/> (0-65535)
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamPortamentoTo">
+      <label class="controlLabel" for="sidEffectPortamentoTo">Portamento To:</label>
+
+      <span id="sidEffectPortamentoToControl" style="display: inline-block">
+        <select id="sidEffectPortamentoTo" class="formControl">
+        </select>            
+      </span>
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamSetVibratoSpeed">
+      <label class="controlLabel" for="sidEffectVibratoSpeed">Vibrato Speed:</label>
+      <input size="4" class="formControl number" min="0" max="255" value="0" id="sidEffectVibratoSpeed"/> (0-255)
+    </div>
+    <div class="sidEffectParam formGroup" id="sidEffectParamSetVibratoDepth">
+      <label class="controlLabel" for="sidEffectVibratoDepth" >Vibrato Depth:</label>
+      <input size="4" class="formControl number" min="0" max="255" value="0" id="sidEffectVibratoDepth"/> (0-255)
+    </div>
+
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamAttack">
+      <label class="controlLabel" for="sidEffectAttack">Attack:</label>
+      <select class="formControl" id="sidEffectAttack">
+        <option value="0">2ms</option>
+        <option value="1">8ms</option>
+        <option value="2">16ms</option>
+        <option value="3">24ms</option>
+        <option value="4">38ms</option>
+        <option value="5">56ms</option>
+        <option value="6">68ms</option>
+        <option value="7">80ms</option>
+        <option value="8">100 ms</option>
+        <option value="9">250 ms</option>
+        <option value="10">500 ms</option>
+        <option value="11">800 ms</option>
+        <option value="12">1 s</option>
+        <option value="13">3 s</option>
+        <option value="14">5s</option>
+        <option value="15">8s</option>              
+      </select>            
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamDecay">
+      <label class="controlLabel" for="sidEffectDelay">Decay:</label>
+      <select class="formControl" id="sidEffectDecay">
+        <option value="0">6ms</option>
+        <option value="1">24ms</option>
+        <option value="2">48ms</option>
+        <option value="3">72ms</option>
+        <option value="4">114ms</option>
+        <option value="5">168ms</option>
+        <option value="6">204ms</option>
+        <option value="7">240ms</option>
+        <option value="8">300 ms</option>
+        <option value="9">750 ms</option>
+        <option value="10">1.5s</option>
+        <option value="11">2.4s</option>
+        <option value="12">3s</option>
+        <option value="13">9s</option>
+        <option value="14">15s</option>
+        <option value="15">24s</option>            
+      </select>            
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamSustain">
+      <label class="controlLabel" for="sidEffectSustain">Sustain:</label>
+      <select class="formControl" id="sidEffectSustain">
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>              
+      </select>            
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamRelease">
+      <label class="controlLabel" for="sidEffectRelease">Release:</label>
+      <select class="formControl" id="sidEffectRelease">
+        <option value="0">6ms</option>
+        <option value="1">24ms</option>
+        <option value="2">48ms</option>
+        <option value="3">72ms</option>
+        <option value="4">114ms</option>
+        <option value="5">168ms</option>
+        <option value="6">204ms</option>
+        <option value="7">240ms</option>
+        <option value="8">300 ms</option>
+        <option value="9">750 ms</option>
+        <option value="10">1.5s</option>
+        <option value="11">2.4s</option>
+        <option value="12">3s</option>
+        <option value="13">9s</option>
+        <option value="14">15s</option>
+        <option value="15">24s</option>              
+      </select>            
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamFilter">
+      <label class="controlLabel" for="sidEffectFilter">Filter:</label>
+      <span id="sidEffectFilterControl">
+        <select id="sidEffectFilter" class="formControl">          
+        </select>
+      </span>
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamFilterResonance">
+      <label class="controlLabel" for="sidEffectFilterResonance">Filter Resonance:</label>
+      <input size="4" class="formControl number" min="0" max="15" value="15" id="sidEffectFilterResonance"/> (0-15)
+    </div>
+
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamFilterChannels">
+      <label class="controlLabel">Filter Channels:</label>
+      <div class="checkboxGroup">
+        <label><input type="checkbox" id="sidEffectFilterChannel_1" value="1"/>Channel 1</label>
+        <label><input type="checkbox" id="sidEffectFilterChannel_2" value="2"/>Channel 2</label>
+        <label><input type="checkbox" id="sidEffectFilterChannel_3" value="3"/>Channel 3</label>
+      </div>
+    </div>
+
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamFilterCutoff">
+      <label class="controlLabel">Filter Cutoff:</label>
+      <input size="4" class="formControl number" min="0" max="255" value="0" id="sidEffectFilterCutoff"/> (0-255)
+    </div>
+
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamTempo">
+      <label class="controlLabel" for="sidEffectTempo">Tempo:</label>
+      <select class="formControl" id="sidEffectTempo">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamTempo1">
+      <label class="controlLabel" for="sidEffectTempo1">Tempo 1:</label>
+      <select class="formControl" id="sidEffectTempo1">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+
+    <div class="sidEffectParam formGroup" id="sidEffectParamTempo2">
+      <label class="controlLabel" for="sidEffectTempo2">Tempo 2:</label>
+      <select class="formControl" id="sidEffectTempo2">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+  </div>
+</div>

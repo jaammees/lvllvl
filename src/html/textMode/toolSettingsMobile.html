@@ -1,0 +1,127 @@
+<div class="activeBackground panelFill">
+
+  <div style="padding: 10px 4px;" id="drawToolSettingsMobile" class="toolSettingsMobile">
+    <div style="display: flex">
+
+
+      <label class="cb-container">Tile
+        <input type="checkbox" id="drawChangesCharacterMobile" name="drawChangesMobile" checked="checked" value="tile"/> 
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="cb-container" >FG Colour
+        <input type="checkbox" id="drawChangesColorMobile" name="drawChangesMobile" checked="checked" value="color"/> 
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="cb-container" >BG Colour
+        <input type="checkbox" id="drawChangesBGColorMobile" name="drawChangesMobile" checked="checked" value="bgcolor"/> 
+        <span class="checkmark"></span>
+      </label>
+
+
+      <label class="cb-container" id="drawFillMobileContainer" >Fill
+        <input type="checkbox" id="drawShapeFillMobile" name="drawChangesMobile" value="fill"/> 
+        <span class="checkmark"></span>
+      </label>
+
+
+      <label class="cb-container">Mirror H
+        <input type="checkbox" value="mirrorh" id="drawMirrorHMobile" name="drawMirrorMobile" class="checkbox"/>
+        <span class="checkmark"></span>
+      </label>
+
+
+      <label class="cb-container">Mirror V
+        <input type="checkbox" value="mirrorv" id="drawMirrorVMobile" name="drawMirrorMobile"  class="checkbox"/>
+        <span class="checkmark"></span>
+      </label>
+<!--
+      <label for="drawChangesCharacterMobile" class="checkboxLabel">
+
+        <input type="checkbox" value="color" id="drawChangesCharacterMobile" name="drawChangesMobile" checked="checked" class="checkbox"/>
+      Tile</label>
+
+      <label for="drawChangesColorMobile" class="checkboxLabel">
+      <input type="checkbox" value="color" id="drawChangesColorMobile" name="drawChangesMobile" checked="checked" class="checkbox"/>
+      FG Colour</label>
+
+      <label for="drawChangesBGColorMobile" class="checkboxLabel">
+      <input type="checkbox" value="bgColor" id="drawChangesBGColorMobile" name="drawChangesMobile" checked="checked" class="checkbox"/>
+      BG Colour</label>
+-->
+    </div>
+  </div>
+
+  <div style="padding: 0px;" id="pixelToolSettingsMobile" class="toolSettingsMobile">
+    <div id="pixelToolSettingsMobile-c64multicolor" style="display: flex; padding: 4px"></div>
+
+    <div id="pixelToolSettingsMobile-nes" style="display: none">
+
+      <div id="pixelToolSettingsMobile-nescolors">
+        <div data-index="0" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="pixelToolSubPaletteColor colorSubPaletteColor0Display colorSubPaletteColor0" id="pixelToolSettingsSubPaletteColor-0"></div>
+        &nbsp;&nbsp;      
+  
+        <div data-index="1" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="pixelToolSubPaletteColor colorSubPalette1Display colorSubPaletteColor1" id="pixelToolSettingsSubPaletteColor-1"></div>
+        &nbsp;&nbsp;
+  
+        <div data-index="2" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="pixelToolSubPaletteColor colorSubPalette2Display colorSubPaletteColor2" id="pixelToolSettingsSubPaletteColor-2"></div>
+        &nbsp;&nbsp;      
+  
+        <div data-index="3" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="pixelToolSubPaletteColor colorSubPalette3Display colorSubPaletteColor3" id="pixelToolSettingsSubPaletteColor-3"></div>
+      </div>
+
+    </div>
+
+
+    <div id="pixelToolSettingsMobile-monochrome" style="display: flex; padding: 4px">
+      <div class="mobileRadio mobileRadioSelected" id="pixelMode-draw" data-value="draw">
+        <img src="icons/svg/glyphicons-basic-31-pencil.svg" height="18" style="margin-right: 4px"> Draw
+      </div>
+      <div class="mobileRadio" id="pixelMode-erase" data-value="erase">
+        <img src="icons/svg/glyphicons-basic-250-eraser.svg" height="18" style="margin-right: 4px">Erase
+      </div>
+
+
+    </div>
+
+
+    <div id="pixelToolSettingsMobile-multicolor" style="display: none">
+      <label><div class="pixelToolSettingColor currentCellColorDisplay" id="pixelToolMulticolorMobile"></div></label>
+      &nbsp;
+    </div>
+  </div>
+
+
+  <div style="padding: 0px; display: inline-block" id="selectToolSettingsMobile" class="toolSettingsMobile">
+    <div class="ui-button" id="selectMobileDrawUsingSelection" style="font-size: 12px">To Pen</div>
+
+    <div class="ui-button" id="selectMobileDeselect" style="font-size: 12px"><img src="icons/selectcancel@2x.png"></div>
+    <div class="ui-button" id="selectMobileClear" style="font-size: 12px"><img src="icons/svg/glyphicons-basic-250-eraser.svg"></div>
+
+    <div class="ui-button"  id="selectMobileFlipHButton"><img src="icons/svg/glyphicons-basic-747-reflect-y.svg"></div>
+    <div class="ui-button"  id="selectMobileFlipVButton"><img src="icons/svg/glyphicons-basic-748-reflect-x.svg"></div>
+
+    <div class="ui-button"  id="selectMobileMoveButton"><img src="icons/move@2x.png"></div>
+  </div>  
+
+  <div style="padding: 9; display: inline-block" id="pixelshapeToolSettingsMobile" class="toolSettingsMobile">
+    <label class="cb-container" id="pixelDrawFillMobileContainer" >Fill
+      <input type="checkbox" id="pixelDrawShapeFillMobile" name="pixelDrawChangesMobile" value="fill"/> 
+      <span class="checkmark"></span>
+    </label>
+  </div>
+
+
+  <div style="padding: 0px; display: inline-block" id="pixelselectToolSettingsMobile" class="toolSettingsMobile">
+      <div class="ui-button" id="pixelselectMobileDeselect" style="font-size: 12px"><img src="icons/selectcancel@2x.png"></div>
+      <div class="ui-button" id="pixelselectMobileClear" style="font-size: 12px"><img src="icons/svg/glyphicons-basic-250-eraser.svg"></div>  
+      <div class="ui-button" id="pixelselectMobileCut" style="font-size: 12px"><img src="icons/svg/glyphicons-basic-612-scissors.svg"></div>  
+      <div class="ui-button" id="pixelselectMobileCopy" style="font-size: 12px"><img src="icons/svg/glyphicons-basic-614-copy.svg"></div>  
+      <div class="ui-button" id="pixelselectMobilePaste" style="font-size: 12px"><img src="icons/svg/glyphicons-basic-613-paste.svg"></div>  
+
+      <div class="ui-button" id="pixelselectMobileFlipH" style="font-size: 12px"><img src="icons/svg/glyphicons-basic-747-reflect-y.svg"/></div>
+
+      <div class="ui-button" id="pixelselectMobileFlipV" style="font-size: 12px"><img src="icons/svg/glyphicons-basic-748-reflect-x.svg"/></div>
+  </div>
+</div>

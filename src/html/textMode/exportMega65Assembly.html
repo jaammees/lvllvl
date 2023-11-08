@@ -1,0 +1,177 @@
+<div class="panelFill dialogContent" id="exportMega65AssemblyPanel" style="overflow: hidden;">
+  <div style="position: absolute; top: 10px; left: 10px; right: 10px; height: 30px;">  
+    <div class="formGroup">
+      <label class="controlLabel" for="exportMega65AssemblyAs">File name:</label> 
+      <input type="text" class="formControl" size="20" value="" id="exportMega65AssemblyAs"/>
+      <div id="exportMega65AssemblyDownload" class="ui-button ui-button-primary"><img src="icons/svg/glyphicons-basic-199-save.svg"/> Download</div>      
+    </div>
+  </div>
+
+
+  <div style="position: absolute; top: 50px; left: 10px; right: 10px; bottom: 100px">
+    <div id="exportMega65AssemblySource" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0"></div>
+  </div>
+
+
+
+  <div style="position: absolute; bottom: 10px; height: 80px; left: 10px; right: 10px">
+
+    <div>
+      <div class="formGroup" style="display: inline-block">
+        <!--
+        <label class="controlLabel" for="exportMega65AssemblyFromFrame">Format:</label>
+        -->
+
+        <label class="rb-container">ACME
+          <input type="radio" class="formControl" size="20" value="acme" checked="checked" name="exportMega65AssemblyFormat" id="exportMega65AssemblyFormatAcme"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="rb-container">Kick Ass
+          <input type="radio" class="formControl" size="20" value="kickass" name="exportMega65AssemblyFormat" id="exportMega65AssemblyFormatKickAss"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="rb-container">CA65
+          <input type="radio" class="formControl" size="20" value="ca65" name="exportMega65AssemblyFormat" id="exportMega65AssemblyFormatCA65"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="rb-container">TASS
+          <input type="radio" class="formControl" size="20" value="tass" name="exportMega65AssemblyFormat" id="exportMega65AssemblyFormatTASS"/>
+          <span class="checkmark"></span>
+        </label>
+
+      </div>
+
+
+      <div class="formGroup"  style="display: inline-block">
+        <label class="controlLabel" for="exportMega65AssemblyNumberFormat">Number Format:</label>
+        <div style="display: inline-block">
+          <label class="rb-container">Hex
+            <input type="radio" class="formControl" size="20" value="hex" checked="checked" name="exportMega65NumberFormat" id="exportMega65AssemblyNumberFormatHex"/>
+            <span class="checkmark"></span>
+          </label>
+  
+          <label class="rb-container">Dec
+            <input type="radio" class="formControl" size="20" value="dec" name="exportMega65NumberFormat" id="exportMega65AssemblyNumberFormatDec"/>
+            <span class="checkmark"></span>
+          </label>
+  
+        </div>
+      </div>
+
+
+
+      <div class="formGroup"  style="display: inline-block">
+        <label class="controlLabel" for="exportMega65AssemblyFromFrame">Frames:</label>
+        <div style="display: inline-block">
+          <input type="number" size="2" class="number" min="1"  id="exportMega65AssemblyFromFrame">
+          &nbsp;
+          <label for="exportMega65AssemblyToFrame">To</label>
+          &nbsp;
+          <input type="number" size="2" class="number" min="1" id="exportMega65AssemblyToFrame">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="formGroup">
+      <!--
+      <label class="controlLabel">Include:</label>
+      -->
+
+      <div class="checkboxGroup">
+
+        <label class="cb-container">Character Set Data
+          <input type="checkbox" id="exportMega65AssemblyCharactersetData" class="exportMega65AssemblyInclude" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <!-- if colour per character  -->
+        <div id="exportMega65AssemblyColorDataHolder" style="display: inline-block">
+          <label class="cb-container">Character Attribute Data
+            <input type="checkbox" id="exportMega65AssemblyColorData"  class="exportMega65AssemblyInclude" checked="checked"/>
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+
+        <!-- if block mode -->
+        <div id="exportMega65AssemblyBlockDataHolder" style="display: inline-block">
+          <label class="cb-container">MetaTile Data
+            <input type="checkbox" id="exportMega65AssemblyBlockData" class="exportMega65AssemblyInclude" checked="checked"/>
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+
+
+        <!-- if colour per block  -->
+        <div id="exportMega65AssemblyBlockColorDataHolder" style="display: inline-block">
+          <label class="cb-container">Block Colour Data
+            <input type="checkbox" id="exportMega65AssemblyBlockColorData"  class="exportMega65AssemblyInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+
+        </div>
+
+
+        <!-- should say Block Data if block mode -->
+        <div id="exportMega65AssemblyMapDataHolder" style="display: inline-block">        
+
+          <label class="cb-container">Map Character Data
+            <input type="checkbox" id="exportMega65AssemblyMapData" class="exportMega65AssemblyInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+
+        </div>
+
+
+        <!-- should say Block Data if block mode -->
+        <div id="exportMega65AssemblyBlockMapDataHolder" style="display: inline-block">
+          <label class="cb-container">Map Block Data
+            <input type="checkbox" id="exportMega65AssemblyBlockMapData" class="exportMega65AssemblyInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+
+
+        <!-- if colour per cell -->
+        <div id="exportMega65AssemblyMapColorDataHolder" style="display: inline-block">
+          <label class="cb-container">Map Colour Data
+            <input type="checkbox" id="exportMega65AssemblyMapColorData" class="exportMega65AssemblyInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="formGroup">
+      <label class="controlLabel">Layers:</label>
+      <div class="radioGroup">
+
+        <label class="rb-container">Current Layer
+          <input type="radio" name="exportMega65AssemblyLayer" id="exportMega65AssemblyLayerCurrent" value="current" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+  <!--
+        <label class="rb-container">All Layers
+          <input type="radio" name="exportMega65AssemblyLayer" id="exportMega65AssemblyLayerAll" value="all" />
+          <span class="checkmark"></span>
+        </label>
+  -->      
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,230 @@
+<div class="panelFill" id="importImageMobilePanel">
+  <div class="content">
+
+    <div style="position: absolute; top: 0; left: 0; right: 0; height: 280px; background-color: #111111; border-bottom: 1px solid #555555; padding: 6px" id="importImageSourceContainer">
+      <div style="margin: 8px 0 14px 0">
+        <form id="importImageMobileForm">
+          <label class="controlLabel" for="importImageMobileSourceFile">Import:</label>
+          <div class="ui-button" id="importImageMobileChooseFile">Choose Image / Video</div>
+
+          <input class="formControl"  id="importImageMobileSourceFile" style="position: absolute; top: -50px; left: -100px" type="file" accept="image/*,video/*"/>
+        </form>
+      </div>
+
+      <div style="text-align: center; margin-bottom: 10px">
+        <canvas width="320" height="200" id="importImageMobileCanvas" style="border:1px solid white; background: transparent"></canvas>
+      </div>
+
+      <div style="padding: 0px 0 0px 0"  class="importImageMobileVideoSetting">
+        <canvas id="importImageVideoRangeMobile" style="width: 100%; height: 18px;" height="18" style="cursor: default"></canvas>
+      </div>
+
+
+    </div>
+
+
+
+    <div style="position: absolute; top: 292px; left: 0; right: 0; bottom: 0; overflow: auto; padding: 6px; display: none" id="importImageControlsContainer">
+      <div class="formRow">
+        <label class="controlLabel">Scale %</label>
+        <input type="text" style="width: 40px"  id="importImageMobileScaleValue" value="0" class="number" min="1" max="500" size="2"/>
+        <div class="rangeHolder">
+          <input type="range" class="range" min="1" max="500" value="0" id="importImageMobileScale"/>   
+        </div>
+
+        <div class="ui-button rangeButton" id="importImageMobileScaleToFit">Fit</div>                          
+      </div>
+
+      <div class="formRow">
+        <label class="controlLabel">Rotation</label>
+        <input type="text" style="width: 40px"  id="importImageMobileRotationValue" value="0" class="number" min="1" max="500" size="2"/>
+        <div class="rangeHolder">
+          <input type="range" class="range" min="0" max="360"  value="0" id="importImageMobileRotation"/>   
+        </div>
+
+        <div class="ui-button rangeButton" id="importImageMobileRotation90">+90</div>                          
+      </div>
+
+
+      <div class="formRow importImageMobileVideoSetting">
+        <label class="controlLabel">Direction</label>
+        <select id="importImageMobileDirection">
+          <option value="forwards">Forwards</option>
+          <option value="backwards">Backwards</option>
+          <option value="pingpong">Ping Pong</option>
+        </select>
+      </div>
+
+
+      <div class="formRow importImageMobileVideoSetting">
+        <label class="controlLabel">Start Time</label>
+        <input type="text" style="width: 40px"  id="importImageMobileStartTimeValue" value="0" class="number" min="0" max="100" size="2"/>
+        <div class="rangeHolder">
+          <input type="range" class="range" min="0" max="100" value="0" id="importImageMobileStartTime"/>           
+        </div>
+        <div class="ui-button rangeButton" id="importImageMobileStartTimeReset">Reset</div>
+      </div>
+
+      <div class="formRow importImageMobileVideoSetting">
+        <label class="controlLabel">End Time</label>
+        <input type="text" style="width: 40px"  id="importImageMobileEndTimeValue" value="0" class="number" min="0" max="100" size="2"/>
+        <div class="rangeHolder">
+          <input type="range" class="range" min="0" max="100" value="0" id="importImageMobileEndTime"/>           
+        </div>
+        <div class="ui-button rangeButton" id="importImageMobileEndTimeReset">Reset</div>
+      </div>
+
+
+      <div class="formRow importImageMobileVideoSetting">
+        <label class="controlLabel">Frames</label>
+        <input type="text" style="width: 40px"  id="importImageMobileFramesValue" value="24" class="number" min="1" max="40" size="2"/>
+        <div class="rangeHolder">
+          <input type="range" class="range" min="1" max="80" value="24" id="importImageMobileFrames"/>           
+        </div>
+        <div class="ui-button rangeButton" id="importImageMobileFramesReset">Reset</div>
+      </div>
+
+
+      <div class="formRow importImageMobileVideoSetting">
+        <label class="controlLabel">Speed</label>
+        <input type="text" style="width: 40px"  id="importImageMobileSpeedValue" value="9" class="number" min="1" max="40" size="2"/>
+        <div class="rangeHolder">
+          <input type="range" class="range" min="1" max="12" value="9" id="importImageMobileSpeed"/>           
+        </div>
+        <div class="ui-button rangeButton" id="importImageMobileSpeedReset">Reset</div>
+      </div>
+
+
+
+
+
+
+      <div class="formRow">
+        <label class="controlLabel">Brightness</label>
+        <input type="text" style="width: 40px"  id="importImageMobileBrightnessValue" value="0" class="number" min="-100" max="100" size="2"/>
+        <div class="rangeHolder">
+          <input type="range" class="range" min="-100" max="100" value="0" id="importImageMobileBrightness"/>           
+        </div>
+        <div class="ui-button rangeButton" id="importImageMobileBrightnessReset">Reset</div>
+                    
+      </div>
+
+      <div class="formRow">
+        <label class="controlLabel">Contrast</label>
+        <input type="text" style="width: 40px" class="number" min="-100" max="100" value="0" size="2" id="importImageMobileContrastValue"/>                        
+        <div class="rangeHolder">
+          <input type="range" class="" min="-100" max="100" value="0"  id="importImageMobileContrast"/>
+        </div>
+        <div class="ui-button rangeButton" id="importImageMobileContrastReset">Reset</div>
+      </div>
+
+      <div class="formRow">
+        <label class="controlLabel">Saturation</label>
+        <input style="width: 40px" type="text" class="number" min="-100" max="100" value="0" size="2" id="importImageMobileSaturationValue"/>
+        <div class="rangeHolder">
+          <input type="range"  min="-100" max="100" value="0"  id="importImageMobileSaturation"/>     
+        </div>
+        <div class="ui-button rangeButton" id="importImageMobileSaturationReset">Reset</div>                 
+      </div>
+
+
+      <div class="formRow" id="">
+        <label class="controlLabel" for=""></label>
+        <div class="checkboxGroup">
+          <label class="cb-container">Invert Colours 
+            <input type="checkbox" id="importImageMobileInvertColors"/>
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+      </div>
+
+
+
+      <div class="formRow">
+        <label class="controlLabel" for="importImageColorReductionMobile">Colour Reduction</label>
+
+        <select name="importImageColorReductionMobile" id="importImageColorReductionMobile">
+          <!-- <option value="none">None</option> -->
+          <option value="closest"  selected="selected">Closest</option>
+          <option value="dither">Dither</option>
+          <!-- <option value="edge">Edge Detect</option> -->
+        </select>
+      </div>
+
+      <div class="formRow" id="importImageDitherGroupMobile"  id="importImageDitherMobile">
+        <label class="controlLabel" for="importImageDither">Dither Method</label>
+        <select name="importImageDither" id="importImageDitherMobile">
+          <option value="FloydSteinberg">Floyd Steinberg</option>
+          <option value="Atkinson">Atkinson</option>
+          <option value="Sierra">Sierra</option>
+          <option value="TwoSierra">Two Sierra</option>
+          <option value="Stucki">Stucki</option>
+          <option value="Jarvis">Jarvis</option>
+          <option value="Burkes">Burkes</option>
+        </select>
+      </div>  
+
+      <div class="formRow" id="importImageColorsMobile">
+        <label class="controlLabel" for="importImageMobileUseColors">Colours</label>
+        <select id="importImageMobileUseColors">
+          <option value="all" selected="selected">All Colours</option>
+          <option value="choose">Custom Set</option>
+        </select>
+      </div>
+
+      <div class="formRow" id="importImageMobileChooseColorsContainer" style="display: none">
+        <label class="controlLabel" for="importImageMobileUseColors">&nbsp;</label>
+        <div class="ui-button" style="display: none" id="importImageMobileChooseColors">Choose Colours...</div>
+      </div>
+
+
+      <div class="formRow">
+        <label class="controlLabel" for="importImageMobileBackgroundColorType">BG Colour</label>
+        <select name="importImageMobileBackgroundColorType" id="importImageMobileBackgroundColorType">
+          <option value="perCell" selected="selected">Background Colour Per Cell</option>
+          <option value="frame">Use Frame Background Colour</option>
+        </select>
+      </div>
+
+
+
+      <div class="formRow" id="importImageCharsMobile">
+        <label class="controlLabel" for="importImageMobileUseChars">Tiles</label>
+        <select id="importImageMobileUseChars">
+          <option value="all" selected="selected">All Tiles</option>
+          <option value="choose">Custom Set</option>
+        </select>
+      </div>
+
+
+      <div class="formRow" id="importImageMobileChooseCharsContainer" style="display: none">
+        <label class="controlLabel" for="importImageMobileChooseChars">&nbsp;</label>
+        <div class="ui-button" style="display: none" id="importImageMobileChooseChars">Choose Tiles...</div>
+      </div>
+
+
+
+      <div class="formRow" id="">
+        <label class="controlLabel" for="importImageMobileUseColors">Effects</label>
+        <div class="checkboxGroup">
+          <label class="cb-container">Mirror H 
+            <input type="checkbox" id="importImageMobileMirrorH"/>
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="cb-container">Mirror V
+            <input type="checkbox" id="importImageMobileMirrorV"/>
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+</div>

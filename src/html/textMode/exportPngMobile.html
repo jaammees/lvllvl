@@ -1,0 +1,70 @@
+<div class="panelFill"> 
+    <div style="display: inline-block" id="exportPNGMobileInfo"></div>
+
+    <div id="exportPNGMobileCanvasHolder" style="position: absolute; top: 0; left: 0; right: 0; height: 260px; background-color: #111111; border-bottom: 1px solid #555555; padding: 6px">
+      <div style="text-align: center; padding-top: 20px">
+        <canvas id="exportPngMobilePreview" style="border: 1px solid #aaaaaa"></canvas>
+      </div>
+
+<!--
+      <div class="ui-button ui-button-other" id="pngExportCopyToClipboard" style="margin-top: 10px">Copy To Clipboard</div>        
+-->      
+    </div>
+
+    <div id="exportPNGMobileControlsHolder" style="position: absolute; top: 272px; left: 0; right: 0; bottom: 0; overflow: auto; padding: 6px">
+
+      <div class="formRow">
+        <label class="controlLabel" for="pngExportMobilePreviewScale">Preview Scale</label>
+        <input id="pngExportMobilePreviewScaleText" class="number" type="text" style="width: 40px" min="1" max="5000" value="100" size="2">
+        <div class="rangeHolder">
+          <input id="pngExportMobilePreviewScale" style="width: 100%" type="range" min="20" max="500" value="100" size="3">
+        </div>
+        <div class="ui-button rangeButton" id="pngExportPreviewMobileScaleReset">Reset</div>        
+
+      </div>
+
+
+      <div class="formRow">
+        <label class="controlLabel" for="exportPNGMobileAs">File name</label> 
+        <input type="text" class="formControl" size="20" value="" id="exportPNGMobileAs"/>
+      </div>
+
+      <div class="formRow">
+        <label class="controlLabel" for="exportPNGMobileScale">Scale</label> 
+        <select  class="formControl" id="exportPNGMobileScale">
+          <option value="1">100%</option>
+          <option value="2">200%</option>
+          <option value="3">300%</option>
+          <option value="4">400%</option>
+          <option value="5">500%</option>
+        </select>
+      </div>
+
+      <div class="formRow" style="display: block; padding: 10px 0">
+        <div class="formGroup">
+          <label class="controlLabel">&nbsp;</label>
+          <label class="cb-container">Include Border
+            <input type="checkbox" id="exportPNGMobileIncludeBorder" value="1"/> 
+            <span class="checkmark"/>
+          </label>
+        </div>
+
+        <div class="formGroup">
+          <label class="controlLabel">&nbsp;</label>
+          <label class="cb-container">Add Transparent Pixel
+            <input type="checkbox" id="exportPNGMobileTransparentPixel" value="1"/> 
+            <span class="checkmark"/>
+          </label>
+        </div>
+      </div>
+
+
+      <div>
+        <h3>Effects</h3>
+      </div>
+      <div id="exportImageMobileEffects">
+      </div>
+    </div>
+
+  </div>
+</div>

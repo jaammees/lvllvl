@@ -1,0 +1,90 @@
+<div class="activeBackground panelFill" id="drawToolsMobileSide" class="nodrag">
+
+
+  <div id="toolsMobileCurrentTileHolder" style="text-align: center; position: absolute; top: 0px; left: 0px; right: 0; height: 80px">
+    <canvas id="toolsMobileCurrentTile" class="has-mobile-context-menu"></canvas>
+    <div style="margin-top: 1px" id="toolsMobileCurrentTileInfo">0</div>
+  </div>
+
+
+
+  <div id="toolIconsScrollTop" style="z-index: 100; position: absolute; top: 81px; left: 0; right: 0; height: 14px; background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 255)); display: none"></div>
+  <div id="toolIconsScrollBottom" style="z-index: 100; position: absolute; bottom: 194px; left: 0; right: 0; height: 10px; background-image: linear-gradient(to top, rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)); display: none"></div>
+
+
+  <div id="toolIconHolderMobile" style="padding: 0px 8px 0 8px; position: absolute; text-align: center; top: 82px; left: 0px; right: 0; bottom: 194px; border-bottom: 1px solid #111111; overflow-y: auto; overflow-x: hidden">
+
+    <div id="toolIconsMobile" style="padding: 3px 0 3px 0">
+      <div class="drawToolMobileSide drawToolMobileSideSelected" id="drawToolMobileSide_pen" data-type="pen"><img src="icons/svg/glyphicons-basic-31-pencil.svg"/></div>
+      <div class="drawToolMobileSide" id="drawToolMobileSide_erase" data-type="erase"><img src="icons/svg/glyphicons-basic-250-eraser.svg"/></div>
+      <div class="drawToolMobileSide drawToolMobileSide2d" id="drawToolMobileSide_fill" data-type="fill"><img src="icons/svg/glyphicons-basic-245-fill.svg"/></div>
+      <div class="drawToolMobileSide" id="drawToolMobileSide_eyedropper" data-type="eyedropper"><img  src="icons/svg/glyphicons-basic-91-eyedropper.svg"/></div>
+
+      <div class="drawToolMobileSide drawToolMobileSide2d" id="drawToolMobileSide_select"  data-type="select"><img src="icons/select@2x.png"/></div>      
+      <div class="drawToolMobileSide drawToolMobileSide2d" id="drawToolMobileSide_move"  data-type="move"><img src="icons/move@2x.png"/></div>     
+
+      <div class="drawToolMobileSide" id="drawToolMobileSide_hand" data-type="hand"><img src="icons/svg/glyphicons-basic-457-hand-open.svg"/></div>      
+      <div class="drawToolMobileSide drawToolMobileSide3d" id="drawToolMobileSide_rotate" data-type="rotate"><img src="icons/svg/glyphicons-basic-494-rotate-horizontal.svg"/></div>
+
+      <div class="drawToolMobileSide" id="drawToolMobileSide_line" data-type="line"><img src="icons/svg/slash.svg"/></div>
+      <div class="drawToolMobileSide" id="drawToolMobileSide_rect" data-type="rect"><img src="icons/svg/square.svg"/></div>     
+      <div class="drawToolMobileSide" id="drawToolMobileSide_oval" data-type="oval"><img src="icons/svg/circle.svg"/></div>     
+
+
+      <div class="drawToolMobileSide drawToolMobileSide2d" id="drawToolMobileSide_block" data-type="block"><img src="icons/block@2x.png"/></div>      
+
+      <div class="drawToolMobileSide drawToolMobileSide2d" id="drawToolMobileSide_pixel" data-type="pixel"><img src="icons/pixel.png"/></div>     
+
+
+    </div>
+
+
+  </div>
+
+
+  <div id="drawToolMobileColors" style="position: absolute; left: 0px; right: 0; bottom: 8px; height: 180px; text-align: center">
+
+    <div id="layersMobileSection" class="drawToolMobileSide2d">
+      <div style="margin-bottom: 2px">Layers</div>
+      <img id="layersButtonMobile" style="filter: invert(60%)" src="icons/material/baseline-layers-24px.svg" height="40"/>
+    </div>
+
+
+    <div id="drawToolMobileSubpalette">
+      
+      <div style="position: relative; height: 50px">
+        <div style="position: absolute; top: 2px; left: 7px; width: 34px; height: 34px; z-index: 6; background-color: white" id="nesPalettePickerMobile" class="nesPalettePickerMobile">
+          <div class="colorSubPaletteColor0" style="position: absolute; top: 0px; left: 0px; width: 50%; height: 50%; "></div>
+          <div class="colorSubPaletteColor1" style="position: absolute; top: 0px; right: 0px; width: 50%; height: 50%; "></div>
+          <div class="colorSubPaletteColor2" style="position: absolute; bottom: 0px; left: 0px; width: 50%; height: 50%;"></div>
+          <div class="colorSubPaletteColor3" style="position: absolute; bottom: 0px; right: 0px; width: 50%; height: 50%; "></div>
+        </div>
+      </div>  
+
+    </div>
+
+
+    <div id="drawToolMobileCellColor">
+      <div style="margin-bottom: 2px">Cell</div>
+      <div id="drawToolsMobile-cellColor" style="position: relative; height: 50px; margin-bottom: 6px">
+        <div style="position: absolute; top: 2px; left: 7px; width: 34px; height: 34px; z-index: 6" id="cellForegroundColorMobile" class="foregroundColorMobile"></div>
+        <div style="display: block; position: absolute; top: 16px; left: 29px; width: 34px; height: 34px; text-align: center; line-height: 34px; background-color: #000000; z-index: 5;" id="cellBackgroundColorMobile" class="cellBackgroundColorMobile"></div>
+      </div>
+    </div>
+
+
+    <div id="drawToolMobileFrameColor" class="drawToolMobileSide2d">
+      <div style="margin-bottom: 2px">Frame</div>
+      <div id="drawToolsMobile-frameColors" style="padding: 0; position: relative; height: 56px">
+        <div style="display: block; position: absolute; top: 2px; left: 7px; width: 56px; height: 46px; background-color: #000000; z-index: 5" id="borderColorMobile" class="borderColorMobile"></div>
+        <div style="display: block; position: absolute; top: 12px; left: 17px; width: 36px; height: 26px; background-color: #000000; z-index: 10" id="backgroundColorMobile" class="backgroundColorMobile"></div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+</div>

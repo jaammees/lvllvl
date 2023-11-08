@@ -1,0 +1,155 @@
+<div class="panelFill dialogContent">
+  <!--
+  <div>
+    <canvas id="exportC64Preview" width="320" height="200" style="border: 1px solid #222222"></canvas>
+  </div>
+-->
+  <div class="formGroup">
+    <label class="controlLabel" for="exportPRGAs">File name:</label> 
+    <input class="formControl" type="text" size="20" value="" id="exportPRGAs"/>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportPRGAs">Type:</label> 
+    <div class="radioGroup">
+      <select name="exportPRGType" id="exportPRGType">
+        <option value="prg">PRG</option>
+        <option value="d64">D64</option>
+      </select>
+
+      <!--
+      <label><input type="radio" name="exportPRGType" value="prg" checked="checked"/>PRG</label>
+      <br/>
+      <label><input type="radio" name="exportPRGType" value="d64"/>D64</label>
+
+    -->
+    </div>
+
+  </div>
+
+  <div id="exportPRGD64Options" style="display: none">
+    <div class="formGroup">
+      <label class="controlLabel" for="exportPRGDiskName">Disk Name:</label> 
+      <input class="formControl" type="text" size="20" value="Untitled" id="exportPRGDiskName"/>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="exportPRGName">PRG Name:</label> 
+      <input class="formControl" type="text" size="20" value="Untitled" id="exportPRGName"/>
+    </div>
+  </div>
+
+
+
+  <div class="formGroup">
+    <label class="controlLabel">Screen Mode:</label>
+
+    <div class="checkboxGroup" style="padding-top: 6px">
+      <label class="rb-container" style="color: #eeeeee; font-size: 12px">Standard Character Mode
+        <input type="radio" name="exportPRGColorMode" id="exportPRGColorModeStandard" value="standard" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+
+<!--
+      <label style="color: #eeeeee"><input type="radio" name="exportPRGColorMode" id="exportPRGColorModeStandard" value="standard" checked="checked"> Standard Character Mode</label>
+-->
+
+      <div style="margin-left: 24px; color: #aaaaaa">256 characters, foreground colour per cell, background colour per frame</div>
+      <br/>
+
+<!--      <label style="color: #eeeeee"><input type="radio" name="exportPRGColorMode" id="exportPRGColorModeMulticolor" value="multicolor"> Multicolour Character Mode</label>  -->
+
+      <label class="rb-container" style="color: #eeeeee;  font-size: 12px">Multicolour Character Mode
+        <input type="radio" name="exportPRGColorMode" id="exportPRGColorModeMulticolor" value="multicolor">
+        <span class="checkmark"></span>
+      </label>
+
+      <div style="margin-left: 24px; color: #aaaaaa">256 characters, 3 colours per cell, background colour per frame</div>
+      <br/>
+
+
+<!--      <label style="color: #eeeeee"><input type="radio" name="exportPRGColorMode" id="exportPRGColorModeExtended" value="extended"> Extended Background Colour Mode</label>  -->
+
+
+      <label class="rb-container" style="color: #eeeeee; font-size: 12px">Extended Background Colour Mode
+        <input type="radio" name="exportPRGColorMode" id="exportPRGColorModeExtended" value="extended"/> 
+        <span class="checkmark"></span>
+      </label>
+
+      <div style="margin-left: 24px; color: #aaaaaa">64 characters, foreground colour per cell, background colour per cell, <br/>up to 4 different cell background colours</div>
+      <!--
+      <div style="margin-left: 28px; margin-top: 4px">Each Character may have one of four different background colours.<br/>However there can only be 64 different characters.</div>
+      -->
+      <br/>
+
+
+      <!--<label style="color: #eeeeee"><input type="radio" name="exportPRGColorMode" id="exportPRGColorModeMonochrome" value="monochrome"> Monochrome</label>  -->
+      <label class="rb-container" style="color: #eeeeee; font-size: 12px">Monochrome
+        <input type="radio" name="exportPRGColorMode" id="exportPRGColorModeMonochrome" value="monochrome"/>
+        <span class="checkmark"></span>
+      </label>
+
+      <div style="margin-left: 24px; color: #aaaaaa">256 characters, one foreground colour, one background colour per frame</div>
+    </div>
+
+    <div class="formGroup" id="exportPRGMonochromeSection" style="display: none">
+      <label class="controlLabel"></label>
+      <div class="checkboxGroup">
+        Monochrome Colour: <div id="exportPRGMonochromeColor" style="display: inline-block; width: 16px; height: 16px; border: 1px solid white"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  <div class="formGroup" id="exporPRGScrollRow">
+    <label class="controlLabel" for="exportPRGScroll">Scroll:</label>
+    <label><input type="checkbox" name="exportPRGScrollV" id="exportPRGScrollV"value="1"/>Scroll Vertically</label>
+  </div>
+-->
+  <div class="formGroup">
+    <label class="controlLabel" for="exportPRGFromFrame">Export Frames:</label>
+
+    <div style="display: inline-block">
+      <input size="2" class="number" min="1" id="exportPRGFromFrame">
+      &nbsp;
+      <label for="exportPRGToFrame">To</label>
+      &nbsp;
+      <input size="2" class="number" min="1" id="exportPRGToFrame">
+      &nbsp;
+
+      <select name="exportPRGLoopType" id="exportPRGLoopType">
+        <option value="loop">Loop</option>
+        <option value="pingpong">Ping Pong</option>
+      </select>
+    </div>
+
+  </div>          
+
+  <div class="formGroup">
+    <label class="controlLabel">Music Options:</label>
+    <div class="radioGroup">
+
+        <!--<option value="yes">Include Music</option>-->
+
+
+      <select name="exportPRGMusic" id="exportPRGMusic">
+      </select>
+<!--
+      <label><input type="radio" name="exportPRGMusic" id="musicYes" value="yes">Include Music</label><br/>
+      <label><input type="radio" name="exportPRGMusic" id="musicNo" value="no" checked="checked">No Music</label><br/>
+      <label><input type="radio" name="exportPRGMusic" id="musicSid" value="sid">Use SID File</label><br/>
+-->
+      <div style="margin-top: 8px; display: none" id="exportPRGSidFileSection">
+        <label for="exportPRGSIDFile">SID File</label>
+        <input type="file" id="exportPRGSIDFile">
+
+        <div>SIDs may or may not work</div>
+        <div>SIDs with a load address around $1000 will mostly work..</div>
+
+        <div id="exportPRGSIDFileInfo">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

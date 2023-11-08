@@ -1,0 +1,133 @@
+<div class="activeBackground panelFill" id="toolsPanel" style="border-right: 1px solid #555555">
+  <div class="title" style="background-color: #111111; height: 18px;">
+    <div style="position: absolute; font-size: 10px; top: 2px; left: 6px; right: 30px; overflow: hidden; white-space: nowrap">
+      Tools
+    </div>
+  </div>
+
+
+  <div id="toolIconHolder" style="padding: 8px">
+    <div>
+      <div class="drawTool drawToolSelected" id="drawTool_pen"><img src="icons/svg/glyphicons-basic-31-pencil.svg"/></div>
+      <div class="drawTool" id="drawTool_erase"><img src="icons/svg/glyphicons-basic-250-eraser.svg"/></div>
+      <div class="drawTool" id="drawTool_fill"><img src="icons/svg/glyphicons-basic-245-fill.svg"/></div>
+      <div class="drawTool" id="drawTool_eyedropper"><img  src="icons/svg/glyphicons-basic-91-eyedropper.svg"/></div>
+    </div>
+    <div>
+      <div class="drawTool" id="drawTool_line"><img width="20" src="icons/svg/slash.svg"/></div>
+      <div class="drawTool" id="drawTool_rect"><img width="20" src="icons/svg/square.svg"/></div>
+      <div class="drawTool" id="drawTool_oval"><img width="20" src="icons/svg/circle.svg"/></div>
+
+      <div class="drawTool" id="drawTool_select"><img width="20" src="icons/glyphicons-100-vector-path-select@2x.png"/></div>      
+
+      <div class="drawTool" id="drawTool_charpixel"><img width="20" src="icons/charpixel.png"/></div>            
+
+
+      <div class="drawTool" id="drawTool_type"><img width="20" src="icons/glyphicons-104-text@2x.png"/></div>            
+
+      <div class="drawTool" id="drawTool_pixel"><img width="20" src="icons/pixel.png"/></div>      
+
+      <div class="drawTool" id="drawTool_block"><img width="20" src="icons/glyphicons-156-show-big-thumbnails@2x.png"/></div>            
+      <div class="drawTool" id="drawTool_zoom"><img width="20" src="icons/glyphicons-28-search@2x.png"/></div>      
+
+      <div class="drawTool" id="drawTool_hand"><img src="icons/svg/glyphicons-basic-457-hand-open.svg"/></div>      
+
+      <div class="drawTool" id="drawTool_move"><img src="icons/svg/arrows-alt.svg"/></div>      
+
+    </div>
+
+    <div id="currentTool" style="font-size: 8px; margin-top: 2px">draw</div>
+
+  </div>
+
+
+  <div id="drawTools-cellColor" style="position: relative; padding: 0px 8px 0px 8px; height: 68px">
+
+    <h3 id="drawTools-cellColorHeading" style="font-size: 10px; padding-bottom: 2px">Cell</h3>
+    <div style="" id="cellForegroundColor" class="foregroundColor colorSetting"></div>
+
+
+    <div style="display: block; position: absolute; top: 34px; left: 22px; width: 28px; height: 28px; background-color: #000000; z-index: 5;" id="cellBackgroundColor" class="cellBackgroundColor colorSetting"></div>
+
+  </div>
+
+  <div id="drawTools-c64multicolor" style="padding: 0px 8px 0px 8px; display: none">
+    <h3 style="font-size: 10px; padding-bottom: 2px">Multi</h3>
+
+    <div>
+      <div style="display: inline-block; width: 24px; height: 24px; background-color: #000000;" id="c64Multi1Color" class="c64Multi1Color  colorSetting"></div>
+
+      <div style="display: inline-block; width: 24px; height: 24px; background-color: #000000;" id="c64Multi2Color" class="c64Multi2Color colorSetting"></div>
+
+    </div>
+
+
+  </div>
+
+  <div style="position: relative;  display: none; padding: 0px 8px 0px 8px; height: 260px;" id="drawTools-nesColors">
+    <h3 style="font-size: 10px; padding-bottom: 2px">Palette</h3>
+
+      <!--
+
+    <div style="position: relative; display: block; width: 50px; height: 62px; background-color: #000000; border: 1px solid #aaaaaa; z-index: 5" id="nesPalette" class="nesPalette">
+
+      <div style="position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; background-color: #ffee66"></div>
+      <div style="position: absolute; top: 2px; left: 26px; width: 22px; height: 22px; background-color: #66ff66"></div>
+
+      <div style="position: absolute; top: 26px; left: 2px; width: 22px; height: 22px; background-color: #ffee66"></div>
+      <div style="position: absolute; top: 26px; left: 26px; width: 22px; height: 22px; background-color: #66ff66"></div>
+      <div style="font-size: 8px; position: absolute; top: 50px; left: 2px">Palette 0</div>
+
+-->
+
+    <div style="position: relative;  width: 54px; height: 16px; background-color: #000000; border: 1px solid #aaaaaa; z-index: 5" id="nesPalette" class="nesPalette">
+
+      <div class="nesSelectedPaletteName" style="font-size: 8px; position: absolute; top: 2px; left: 14px">Palette 0</div>
+
+
+    </div>    
+
+    <div style="margin-top: 4px">
+      <div style="font-size: 8px">Colour 0</div>
+      <div style="display: block; margin-top: 2px; width: 24px; height: 24px; background-color: #000000; border: 1px solid #aaaaaa" id="nesColor0" class="nesColor nesColor0" data-paletteIndex="0"></div>
+    </div>
+
+    <div style="margin-top: 4px">
+      <div style="font-size: 8px">Colour 1</div>
+      <div style="display: block; margin-top: 2px; width: 24px; height: 24px; background-color: #000000; border: 1px solid #aaaaaa" id="nesColor1" class="nesColor nesColor1" data-paletteIndex="1"></div>
+    </div>
+
+    <div style="margin-top: 4px">
+      <div style="font-size: 8px">Colour 2</div>
+      <div style="display: block; margin-top: 2px; width: 24px; height: 24px; background-color: #000000; border: 1px solid #aaaaaa" id="nesColor2" class="nesColor nesColor2" data-paletteIndex="2"></div>
+    </div>
+
+    <div style="margin-top: 4px">
+      <div style="font-size: 8px">Colour 3</div>
+      <div style="display: block; margin-top: 2px; width: 24px; height: 24px; background-color: #000000; border: 1px solid #aaaaaa" id="nesColor3" class="nesColor nesColor3" data-paletteIndex="3"></div>
+    </div>
+
+  </div>
+
+  <div id="drawTools-frameColors" style="padding: 0px 8px 0px 8px; position: relative; height: 66px">
+    <h3 style="font-size: 10px; padding-bottom: 2px">Frame</h3>
+
+
+    <div style="display: block; position: absolute; top: 20px; left: 8px; width: 56px; height: 46px; background-color: #000000; z-index: 5" id="borderColor" class="borderColor  colorSetting"></div>
+
+    <div style="display: block; position: absolute; top: 30px; left: 18px; width: 36px; height: 26px; background-color: #000000; z-index: 10" id="backgroundColor" class="backgroundColor  colorSetting"></div>
+
+  </div>
+
+
+
+
+
+<!--
+  <div style="margin-top: 4px">
+    <label>Frame Border Colour</label>
+    <div style="display: inline-block; width: 12px; height: 12px; background-color: #000000; border: 1px solid #dddddd" id="borderColor" class="borderColor"></div>
+
+  </div>
+-->  
+</div>

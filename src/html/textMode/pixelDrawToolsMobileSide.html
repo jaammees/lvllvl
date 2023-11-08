@@ -1,0 +1,60 @@
+<div class="activeBackground panelFill" id="pixelDrawToolsMobileSide">
+
+  <div id="animationPreviewHolderMobile" style="position: absolute; top: 4px; left: 4px; width: 64px; height: 64px">
+    <canvas id="animationPreviewCanvasMobile" style=""></canvas>
+  </div>
+
+
+  <div id="toolIconsScrollTop" style="z-index: 100; position: absolute; top: 81px; left: 0; right: 0; height: 14px; background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 255)); display: none"></div>
+  <div id="toolIconsScrollBottom" style="z-index: 100; position: absolute; bottom: 144px; left: 0; right: 0; height: 10px; background-image: linear-gradient(to top, rgba(0, 0, 0, 255), rgba(0, 0, 0, 0)); display: none"></div>
+
+
+  <div id="toolIconHolderMobile" style="padding: 0px 8px 0 8px; position: absolute; text-align: center; top: 82px; left: 0px; right: 0; bottom: 144px; border-bottom: 1px solid #111111; overflow-y: auto; overflow-x: hidden">
+
+    <div id="pixelToolIconsMobile" style="padding: 3px 0 3px 0">
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_pen" data-type="pen"><img src="icons/svg/glyphicons-basic-31-pencil.svg"/></div>
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_erase" data-type="erase"><img src="icons/svg/glyphicons-basic-250-eraser.svg"/></div>
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_fill" data-type="fill"><img src="icons/svg/glyphicons-basic-245-fill.svg"/></div>
+
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_select"  data-type="select"><img src="icons/select@2x.png"/></div>      
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_move"  data-type="move"><img src="icons/move@2x.png"/></div>      
+
+
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_hand" data-type="hand"><img src="icons/svg/glyphicons-basic-457-hand-open.svg"/></div>      
+
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_line" data-type="line"><img src="icons/svg/slash.svg"/></div>
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_rect" data-type="rect"><img src="icons/svg/square.svg"/></div>     
+      <div class="pixelDrawToolMobileSide" id="pixelDrawToolMobileSide_oval" data-type="oval"><img src="icons/svg/circle.svg"/></div>     
+    </div>
+  </div>
+
+
+  <div style="position: absolute; left: 0px; right: 0; bottom: 8px; height: 130px; text-align: center">
+
+    <div style="margin-bottom: 2px">Layers</div>
+    <img id="pixelLayersButtonMobile" style="filter: invert(60%)" src="icons/material/baseline-layers-24px.svg" height="40"/>
+
+
+    <div style="margin-bottom: 2px">Cell</div>
+
+    <div id="pixelDrawToolsMobile-cellColor" style="position: relative; height: 50px; margin-bottom: 6px">
+      <div style="position: absolute; top: 2px; left: 7px; width: 34px; height: 34px; z-index: 6" id="cellForegroundColorMobile" class="foregroundColorMobile"></div>
+
+      <!--
+      <div style="display: block; position: absolute; top: 16px; left: 29px; width: 34px; height: 34px; text-align: center; line-height: 34px; vertical-align: middle; background-color: #000000; z-index: 5;" id="cellBackgroundColorMobile" class="cellBackgroundColorMobile"></div>
+      -->
+    </div>
+
+    <!--
+    <div style="margin-bottom: 2px">Frame</div>
+    <div id="pixelDrawToolsMobile-frameColors" style="padding: 0; position: relative; height: 56px">
+      <div style="display: block; position: absolute; top: 2px; left: 7px; width: 56px; height: 46px; background-color: #000000; z-index: 5" id="borderColorMobile" class="borderColorMobile"></div>
+
+      <div style="display: block; position: absolute; top: 12px; left: 17px; width: 36px; height: 26px; background-color: #000000; z-index: 10" id="backgroundColorMobile" class="backgroundColorMobile"></div>
+
+    </div>
+
+  -->
+  </div>
+
+</div>

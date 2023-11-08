@@ -1,0 +1,55 @@
+<div class="panelFill dialogContent" id="saveColorPalettePanel">
+  <div class="formGroup">
+    <label class="controlLabel" for="saveColorPaletteAs">File name:</label> 
+    <input type="text" class="formControl" size="20" value="Untitled" id="saveColorPaletteAs"/>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel">Format:</label>
+
+    <select name="saveColorPaletteFormat" id="saveColorPaletteFormat">
+      <option value="json">JSON (Native)</option>
+      <option value="png" selected="selected">PNG</option>
+      <option value="aco">ACO (Adobe Color)</option>
+      <option value="ase">ASE (Adobe Swatch Exchange)</option>
+      <option value="gpl">GPL (GIMP)</option>
+      <option value="txt">TXT (Paint.net)</option>
+      <option value="hex">Hex</option>
+    </select>
+  </div>
+
+  <div class="formGroup" id="saveColorPaletteSortOrderRow">
+    <label class="controlLabel" for="saveColorPaletteSortOrder">Sort Order</label>
+    <select name="saveColorPaletteSortOrder" id="saveColorPaletteSortOrder">
+      <option value="default">Default Layout</option>
+      <option value="source">Colour Index</option>
+      <option value="hls">Hue</option>
+      <option value="saturation">Saturation</option>
+      <option value="brightness">Brightness</option>
+    </select>
+
+  </div>
+
+  <div>
+    <div class="formGroup" id="saveColorPaletteColorsAcrossRow" style="display: inline-block; margin-right: 10px">
+      <label class="controlLabel" for="saveColorPaletteColorsAcross">Colours Across</label>
+      <input type="number" class="number" min="1" max="256" value="8" size="3" id="saveColorPaletteColorsAcross"/>
+    </div>
+
+    <div class="formGroup" id="saveColorPaletteCellWidthRow" style="display: inline-block; margin-right: 10px">
+      <label class="controlLabel" for="saveColorPaletteCellWidth">Cell Width</label>
+      <input type="number" class="number" min="1" max="64" value="8" size="3" id="saveColorPaletteCellWidth"/>
+    </div>
+    <div class="formGroup" id="saveColorPaletteCellHeightRow" style="display: inline-block; margin-right: 10px">
+      <label class="controlLabel" for="saveColorPaletteCellHeight">Cell Height</label>
+      <input type="number" class="number" min="1" max="64" value="8" size="3" id="saveColorPaletteCellHeight"/>
+    </div>
+  </div>
+
+  <div>
+    <label class="controlLabel">Palette:</label>
+    <div style="display: inline-block">
+      <canvas id="saveColorPaletteCanvas"></canvas>    
+    </div>
+  </div>
+</div>

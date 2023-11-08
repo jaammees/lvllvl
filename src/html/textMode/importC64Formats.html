@@ -1,0 +1,211 @@
+<div class="panelFill" id="importC64FormatsPanel">
+  <div style="position: absolute; top: 0; left: 0; bottom: 0; right: 0px; overflow: auto; padding: 8px">
+
+    <h2 style="margin: 0 0 6px 0">Import C64 Formats</h2>
+    <div class="formGroup">
+      <form id="importC64FormatsForm">
+        <label class="controlLabel" for="importC64FormatsSourceFile">File To Import:</label>
+        <div class="ui-button ui-button-nextaction" id="importC64FormatsChooseFile">Choose...</div>
+
+        <input class="formControl"  id="importC64FormatsSourceFile" type="file" accept=".c,.seq,.prg,.d64,.crt,.vsf,.ctm" style="position: absolute; top: -50px; left: -100px" />
+        <div class="ui-button" id="importC64PRGReset">Reset</div>
+      </form>
+    </div>
+
+    <div style="margin: 6px 0 6px 0; color: #999999">
+        Import Formats: .C, .SEQ, C64 Executable (.PRG), .D64, .CRT, VICE Snapshot (.VSF), CharPad (.CTM)
+    </div>
+
+    <div style="border-top: 1px solid #555555; margin: 4px 0 10px 0"></div>
+  
+
+    <table>
+      <tr>
+        <td style="vertical-align: top">
+          <div>
+            <canvas id="importC64FormatsPreview" width="320" height="200" style="border: 1px solid #222222"></canvas>
+
+            <div>DRIVE:
+              <div id="importC64FormatsDriveLight" style="display: inline-block; width: 30px; height: 16px; background-color: rgb(255, 0, 0);"></div>
+              <div style="display: inline" id="importC64FormatsAttachedDisk"></div>
+              <div id="importC64FormatsDrivePosition"></div>
+            </div>
+
+              
+          </div>
+
+
+
+          <div id="importC64FormatsFrames" style="display: none">
+            <span id="importC64FormatsFrameInfo">Frame x of x</span>
+            <button id="importC64FormatsFramesPrev">&lt;</button>
+            <button id="importC64FormatsFramesNext">&gt;</button>
+          </div>
+
+
+          <div id="importC64PRGControls" style="margin-top: 6px">
+            
+            <!--
+            <div class="ui-button" id="importC64PRGPaste">Paste Text...</div>
+            
+            <div class="ui-button" id="importC64PRGCMDKey">Commodore key</div>
+            -->
+
+            <div style="margin-top: 4px">
+              Run/Stop = ESC Key,
+              Commodore Key = ctrl key
+            </div>
+          </div>
+        </td>
+
+        <td style="padding-left: 10px; vertical-align: top">
+
+          <div id="importC64Settings" style="display: none" class="importC64Settings">
+            <!--
+            <label class="cb-container">Enable Joystick
+              <input type="checkbox" id="importC64EnableJoystick">
+              <span class="checkmark"></span>
+            </label>                
+            -->
+            <h3>Joystick</h3>
+            <div>
+              <label class="rb-container">None
+                <input type="radio" id="importC64JoystickPortNone" name="importC64JoystickPort" value="0">
+                <span class="checkmark"></span>
+              </label>                
+              <label class="rb-container">Port 1
+                <input type="radio" id="importC64JoystickPort1" name="importC64JoystickPort" value="1">
+                <span class="checkmark"></span>
+              </label>                
+              <label class="rb-container">Port 2
+                <input type="radio" id="importC64JoystickPort2" checked="checked" name="importC64JoystickPort" value="2">
+                <span class="checkmark"></span>
+              </label>                
+            </div>
+
+            <div>
+              
+              <div>
+                cursor keys = joystick directions
+              </div>
+              <div>
+                z = fire
+              </div>
+            </div>
+
+          </div>
+
+          <div id="importSEQSettings" style="display: none" class="importC64Settings">
+            seq settings
+          </div>
+
+
+
+          <div id="importPetsciiCSettings" style="display: none" class="importC64Settings">
+          </div>
+
+          <div id="importC64CharPadSettings" style="display: none" class="importC64Settings">
+            <div id="importC64CharPadInfo">
+            </div>
+
+
+            <div class="checkboxGroup">
+              <div>
+                <label class="cb-container">Import Characters
+                  <input type="checkbox" checked="checked" id="importC64CharPadCharacters">
+                  <span class="checkmark"></span>
+                </label>                
+              </div>
+              <div>
+                <label class="cb-container">Import MetaTiles (CharPad Tiles)
+                  <input type="checkbox" checked="checked" id="importC64CharPadBlocks">
+                  <span class="checkmark"></span>
+                </label>                
+              </div>
+              <div>
+                <label class="cb-container">Import Map
+                  <input type="checkbox" checked="checked" id="importC64CharPadMap">
+                  <span class="checkmark"></span>
+                </label>                
+              </div>
+              <div>
+                <label class="cb-container">Set Colour Per Mode
+                  <input type="checkbox" checked="checked" id="importC64CharPadScreenColorMode">
+                  <span class="checkmark"></span>
+                </label>                
+
+              </div>
+              <div>
+                <label class="cb-container">Use MetaTile Mode
+                  <input type="checkbox" id="importC64CharPadBlockMode">
+                  <span class="checkmark"></span>
+                </label>                
+              </div>
+            </div>
+
+          </div>
+
+          <div id="importC64FormatsViceSettings" style="display: none"  class="importC64Settings">
+            <div id="importC64ViceInfo">
+            </div>
+
+<!--
+            <div>
+              <label for="importC64FormatsViceVICBank">VIC Bank</label>
+              <select id="importC64FormatsViceVICBank">
+                <option value="0">0 $0000 - $3fff</option>
+                <option value="1">1 $4000 - $7fff</option>
+                <option value="2">2 $8000 - $bfff</option>
+                <option value="3">3 $c000 - $ffff</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="importC64FormatsViceScreenMemory">Character Memory</label>
+              <select id="importC64FormatsViceScreenMemory">
+                <option value="0">0 $0000 - $07ff</option>
+                <option value="1">1 $0800 - $0fff</option>
+                <option value="2">2 $1000 - $17ff</option>
+                <option value="3">3 $1800 - $1fff</option>
+                <option value="3">4 $2000 - $27ff</option>
+                <option value="3">5 $2800 - $2fff</option>
+                <option value="3">6 $3000 - $37ff</option>
+                <option value="3">7 $3800 - $3fff</option>
+              </select>
+            </div>
+
+
+            <div>
+              <label for="importC64FormatsViceScreenMemory">Screen Memory</label>
+              <select id="importC64FormatsViceScreenMemory">
+                <option value="0">0 $0000 - $3fff</option>
+                <option value="1">1 $4000 - $7fff</option>
+                <option value="2">2 $8000 - $bfff</option>
+                <option value="3">3 $c000 - $ffff</option>
+              </select>
+            </div>
+-->
+          </div>
+
+
+        </td>
+      </tr>
+    </table>
+
+
+
+<!--
+    <div class="formGroup">
+      <label><input type="checkbox" checked="checked"> Screen Data</label><br/>
+      <label><input type="checkbox" checked="checked"> Character Data</label><br/>
+
+      <button id="importC64FormatsButton">Import</button>
+    </div>
+
+
+    <button id="c64SaveState">Download State</button>
+    <button id="c64RestoreState">Restore State</button>
+-->
+  </div>
+
+</div>

@@ -1,0 +1,62 @@
+<div class="panelFill dialogContent" id="replaceColorPanel">
+  <div class="formGroup">
+    <label class="controlLabel">Replace:</label>
+
+    <div class="checkboxGroup">
+      <div>
+        <label class="cb-container">Cell FG Colour
+          <input type="checkbox" checked="checked" id="replaceColorFG"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+        
+      <div>
+        <label class="cb-container">Cell BG Colour
+          <input type="checkbox" id="replaceColorBG"/>
+          <span class="checkmark"></span>
+        </label>      
+      </div>
+    </div>
+  </div>
+  <div class="formGroup">
+    <label class="controlLabel">Colour:</label>
+    <div id="replaceColor" style="display: inline-block; width: 16px; height: 16px; border: 1px solid white;"></div>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel">With:</label>
+    <div id="replaceWithColor" style="display: inline-block; width: 16px; height: 16px; border: 1px solid white"></div>
+  </div>
+
+
+  <div class="formGroup">
+    <label class="controlLabel">Frame</label>
+
+    <div class="radioGroup">
+
+      <div>
+        <label class="rb-container">Current Frame
+          <input type="radio" name="replaceColorFrame" value="current" id="replaceColorCurrentFrame" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label class="rb-container">All Frames
+          <input type="radio" name="replaceColorFrame" value="all" id="replaceColorAllFrames">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+<!--
+      <div>
+        <label class="rb-container">Frame Range
+          <input type="radio" name="replaceColorFrame" value="range" id="replaceColorFrameRange">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+-->      
+    </div>
+
+  </div>
+
+</div>

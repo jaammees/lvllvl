@@ -1,0 +1,215 @@
+<div class="panelFill" id="importImagePanel">
+  <div class="content">
+
+    <div id="importImageHolder" style=" position: absolute; padding: 10px 10px 0 10px; top: 0; left: 0; right: 0px; bottom: 0; overflow: auto">
+      <h3><i class="halflings halflings-picture"/>&nbsp;Source</h3>
+      <div>
+        <table>
+          <tr>
+            <td>
+              <div class="formGroup">
+                <form id="importImageForm">
+                  <div class="ui-button ui-button-nextaction" id="importImageChooseFile">Choose Image/Video ...</div>
+                  &nbsp;
+                  <div id="importImageChooseFileName" style="display: inline-block; margin-left: 6px"></div>
+
+                  &nbsp;&nbsp;
+                  <div class="ui-button ui-button-nextaction" id="importImageUseReferenceImage">Use Reference Image</div>
+
+                  <input class="formControl"  id="importImageSourceFile" type="file" accept="image/*,video/*"  style="position: absolute; top: -50px; left: -100px" type="file" />
+                </form>
+
+              </div>
+
+              <table>
+                <tr>
+                  <td valign="top">
+
+                    <canvas width="320" height="200" id="importImageCanvas" style="border:1px solid #444444; background: transparent"></canvas>
+                    <div class="formRow" style="margin-top: 4px">
+                      <!--
+                      <label for="importImageScale" class="controlLabel">Scale (%)</label>
+                      -->
+
+                      <div style="display: inline-block; margin-right: 20px">
+                        Scale
+                        <div class="ui-button" id="importImageScaleDecrease">-</div>
+                        <input size="3" style="width: 40px" type="text" id="importImageScale" class="number"  value="100"/>
+                        <div class="ui-button" id="importImageScaleIncrease">+</div>
+                        <div class="ui-button" id="importImageScaleToFit">Fit</div>
+                      </div>
+
+                      <div style="display: inline-block">
+                        <label for="importImageX">X</label>:&nbsp;
+                        <input size="3" style="width: 35px" type="text" class="number" id="importImageX" value="0"/> 
+
+                        &nbsp;&nbsp;
+
+                        <label for="importImageY">Y</label>:&nbsp;
+                        <input size="3" style="width: 35px" type="text" class="number" id="importImageY" value="0"/> 
+                      </div>
+
+                    </div>
+
+                    <!--
+                    <div class="formRow">
+                      <label class="controlLabel">Position</label>
+
+                      <label for="importImageX">X</label>:&nbsp;
+                      <input size="3" style="width: 35px" type="text" class="number" id="importImageX" value="0"/> 
+
+                      &nbsp;&nbsp;
+
+                      <label for="importImageY">Y</label>:&nbsp;
+                      <input size="3" style="width: 35px" type="text" class="number" id="importImageY" value="0"/> 
+                    </div>
+                  -->
+                  </td>
+
+                  <td valign="top">
+
+                    <div style="padding-left: 8px">
+                      <!--
+                      <div class="formRow">
+                        <label for="importImageScale" class="controlLabel">Scale (%)</label>
+
+                        <div class="ui-button" id="importImageScaleDecrease">-</div>
+                        <input size="3" style="width: 40px" type="text" id="importImageScale" class="number"  value="100"/>
+                        <div class="ui-button" id="importImageScaleIncrease">+</div>
+
+                        &nbsp;
+                        <div class="ui-button" id="importImageScaleToFit">Fit</div>
+
+                      </div>
+                      -->
+
+
+
+                      <div class="formRow">
+                        <label class="controlLabel" style="display: flex"><img src="icons/brightness_low-24px.svg" class="icon-invert" style="width: 12px; margin: 2px 6px 2px 4px"> Brightness</label>
+                        <input style="width: 100px" type="range"  min="-100" max="100" value="0" id="importImageBrightness"/>           
+                                    
+                        <input type="text" style="width: 30px; margin-left: 10px" id="importImageBrightnessValue" value="0" class="number" min="-100" max="100" size="2"/>
+                      </div>
+
+                      <div class="formRow">
+                        <label class="controlLabel" style="display: flex"><img src="icons/glyphicons-92-adjust.svg" class="icon-invert" style="width: 20px; margin-right: 2px"> Contrast</label>
+                        
+                        
+                        <input style="width: 100px" type="range" class="" min="-100" max="100" value="0" size="3" id="importImageContrast"/>
+                        <input type="text" class="number" style="width: 30px; margin-left: 10px" min="-100" max="100" value="0" size="2" id="importImageContrastValue"/>                        
+                      </div>
+                      <div class="formRow">
+                        <label class="controlLabel" style="display: flex"><img src="icons/glyphicons-93-tint.svg" class="icon-invert" style="width: 20px; margin-right: 2px"> Saturation</label>
+                        <input style="width: 100px" type="range"  min="-100" max="100" value="0"  id="importImageSaturation"/>                      
+                        <input style="width: 30px; margin-left: 10px" type="text" class="number" min="-100" max="100" value="0" size="2" id="importImageSaturationValue"/>
+                      </div>
+
+                      <div class="formRow">
+                        <label for="" class="controlLabel">&nbsp;</label>
+
+                        <label class="cb-container">Invert Colours
+                          <input type="checkbox" id="importImageInverColors" value="1"/> 
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+
+
+                      <div class="formRow">
+                        <label for="" class="controlLabel">&nbsp;</label>
+
+                        <label class="cb-container">Image Smoothing
+                          <input type="checkbox" id="importImageSmoothing" value="1"/> 
+                          <span class="checkmark"></span>
+                        </label>
+                      </div>
+
+
+                      <div class="formRow">
+                        <label class="controlLabel">Crosshairs</label>
+
+                        <label>x <input size="4" type="text" class="number" style="width: 35px" min="0" name="imageImportZoomX" id="imageImportZoomX" value="160"/></label>
+                        &nbsp;
+                        <label>y <input size="4" type="text" class="number" style="width: 35px" min="0" name="imageImportZoomY" id="imageImportZoomY" value="100"/></label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+          </tr>
+        </table>
+      </div>
+
+
+      <div id="importImageVideoControls" style="display: none"> 
+
+        <div>
+          <canvas id="importImageVideoRange" width="590" height="18" style="cursor: default"></canvas>
+        </div>
+
+        <div id="importImageVideoInfo" style="display: none"></div>
+
+        <div style="padding-left: 10px; margin: 4px 0 4px 0">
+          <div style="display: inline-block; margin-right: 20px">
+            Import 
+            <label>
+              From:
+              <input type="text" class="number" min="0" value="0" style="width: 50px" id="importImageVideoStartAt"/> ms
+            </label>
+
+            <label>
+              To:
+              <input type="text" class="number" min="0" value="0" style="width: 50px" size="6" id="importImageVideoEndAt"/> ms
+            </label>
+          </div>
+
+          <div style="display: inline-block">
+            <label><input type="radio" name="importImageVideoPlayDirection" value="forwards" checked="checked">Forwards</label>
+            <label><input type="radio" name="importImageVideoPlayDirection" value="backwards">Backwards</label>
+            <label><input type="radio" name="importImageVideoPlayDirection" value="pingpong">Ping Pong</label>
+          </div>
+
+        </div>
+<!--
+        <div style="padding-left: 10px; margin-bottom: 2px">
+          Play:
+        </div>
+-->
+
+
+<!--
+        <label>
+          Frames to import:
+          <input type="text" class="number" min="1" value="20" size="2" id="importImageVideoImportFrames"/>
+        </label>
+        <label>
+          Sample Frame Every:
+          <input type="text" class="number" min="1" value="100" size="2" id="importImageVideoImportSampleTime"/> ms
+        </label>
+-->
+
+<!--
+        <label>
+          Frame Playback Speed:
+          <input type="text" class="number" min="1" value="12" size="2" id="importImageVideoImportPlaybackSpeed"/> ticks/frame
+        </label>
+
+        <div>
+          <label><input type="checkbox" id="importImageVideoInsertFrames">Insert frames</label>
+        </div>
+-->
+
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
+  </div>
+
+</div>

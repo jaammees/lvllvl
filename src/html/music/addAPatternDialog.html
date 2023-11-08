@@ -1,0 +1,53 @@
+<div class="panelFill" style="padding: 4px">
+  <h2>Add a pattern</h2>
+
+  <div style="margin-bottom: 8px">
+    <label class="rb-container" style="margin-right: 4px">Create New Pattern
+      <input type="radio" id="sidAddPatternCreate" name="sidAddPattern" value="create" checked="checked"> 
+      <span class="checkmark"/>
+    </label>
+    <label class="rb-container" style="margin-right: 4px">Choose Existing Pattern
+      <input type="radio" id="sidAddPatternExisting" name="sidAddPattern" value="existing"> 
+      <span class="checkmark"/>
+    </label>
+  </div>
+
+  <!--
+  <div>
+    <label><input type="radio" id="sidAddPatternCreate" name="sidAddPattern" value="create" checked="checked"> Create New Pattern</label>
+    &nbsp;&nbsp;
+    <label><input type="radio" id="sidAddPatternExisting" name="sidAddPattern" value="existing"> Choose Existing Pattern</label>
+  </div>
+-->
+  <div class="formRow"  id="sidAddPatternCreateControl">
+    <label class="controlLabel">Pattern Name:</label>
+    <input type="text" id="sidPatternName" name="sidPatternName"/>
+  </div>
+  <div class="formRow"  id="sidAddPatternLengthControl">
+    <label class="controlLabel">Pattern Length:</label>
+    <select id="sidPatternLength" name="sidPatternLength">
+      <option value="4">128</option>
+    </select>
+  </div>
+  
+
+<!--
+  <div id="sidAddPatternCreateControl">
+    <label>Pattern Name</label>
+    <input id="sidPatternName" name="sidPatternName"/>
+  </div>
+  <div id="sidAddPatternLengthControl">
+    <label>Pattern Length</label>
+    <select id="sidPatternLength" name="sidPatternLength">
+      <option value="4">128</option>
+    </select>
+  </div>
+-->  
+
+  <div class="formRow" id="sidAddPatternExistingControl">
+    <label class="controlLabel" for="sidExistingPatterns">Pattern</label>
+    <select id="sidExistingPatterns">
+    </select>
+  </div>
+
+</div>

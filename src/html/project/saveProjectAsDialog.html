@@ -1,0 +1,59 @@
+<div id="saveProjectAsDialog" class="panelFill dialogContent">
+  <h3>
+    Save As..
+  </h3>
+
+  <div id="saveAsForm">
+    <div class="formGroup">
+      <label class="controlLabel" for="saveProjectAs" style="margin-bottom: 10px">Project Name:</label> 
+      <input class="formControl submitOnEnter" type="text" size="20" value="Untitled" id="saveProjectAs" style="width: 180px"/>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel">Save To</label>
+      <div class="checkboxGroup">
+
+        <label class="rb-container">Google Drive
+          <input type="radio" id="saveMethod_googleDrive"  name="saveMethod" value="googleDrive">
+          <span class="checkmark"></span>
+        </label>      
+        <label class="rb-container">Browser Storage
+          <input type="radio" id="saveMethod_browserStorage"  name="saveMethod" value="browserStorage">
+          <span class="checkmark"></span>
+        </label>      
+      </div>
+    </div>
+  </div>
+
+  <div id="saveAsConnectToGDriveButtonSection" style="display: none">
+    <div class="ui-button" id="saveAsConnectToGDriveButton">
+      <img src="icons/GoogleDriveIcon512.png" style="filter: none" height="20"/>
+      Connect To Google Drive
+    </div>
+  </div>
+
+  <div id="saveAsGDriveProgress" style="display: none">
+    Saving to Google Drive...
+  </div>
+
+
+<!--
+  <div id="saveAsMethod">
+    <div class="formGroup">
+      <label class="controlLabel">Save Method</label>
+      <div class="checkboxGroup">
+        <input type="radio" id="saveMethod_download" name="saveMethod" value="download"><label for="saveMethod_download" class="checkboxLabel">Download</label>
+        <br/>
+        <input type="radio" id="saveMethod_browserStorage" name="saveMethod" value="browserStorage" checked="checked"><label for="saveMethod_browserStorage" class="checkboxLabel">Save to browser storage</label>
+        <br/>
+      </div>
+    </div>
+
+    <div class="formGroup">
+      Projects saved to browser storage will appear on the start page for this browser
+    </div>
+  </div>
+-->
+
+
+</div>

@@ -1,0 +1,75 @@
+<div class="panelFill" id="exportGifFramesPanel">
+  <div style="position: absolute; top: 0; bottom: 0; right: 0; left: 0px; padding: 10px; overflow: auto">
+    <h3><i class="halflings halflings-film"></i>&nbsp;Frames</h3>
+
+    <div id="exportGIFFrames">
+      <div class="formGroup">
+        <label class="controlLabel" for="exportGIFFromFrame">Export Frames:</label>
+        <div style="display: inline-block">
+          <input type="number" size="2" class="number" min="1"  id="exportGIFFromFrame">
+          &nbsp;
+          <label for="exportGIFToFrame">To</label>
+          &nbsp;
+          <input type="number"  size="2" class="number" min="1" id="exportGIFToFrame">
+        </div>
+
+
+        <select name="exportGIFLoopType" id="exportGIFLoopType">
+          <option value="loop">Loop</option>
+          <option value="pingpong">Ping Pong</option>
+        </select>
+
+
+      </div>
+
+      <!--
+      <div class="formGroup">
+        <label class="controlLabel" for="exportGIFLoops">Repeat:</label>
+        <div style="display: inline-block">
+          <input size="2" class="number" min="1"  value="1" id="exportGIFRepeat">
+          Times
+        </div>
+      </div>
+    -->
+      <div class="formGroup">
+        <label class="controlLabel">Speed:</label>
+        <select name="exportGIFSpeed" id="exportGIFSpeed">
+          <option value="1">100%</option>
+          <option value="2">200%</option>
+          <option value="3">300%</option>
+          <option value="4">400%</option>
+          <option value="custom">Custom</option>
+        </select>
+        <!--
+        <div class="radioGroup">
+          <label><input type="radio" name="exportGIFSpeed" id="exportGIFSpeed1" value="1" checked="checked"> 100%</label>
+          &nbsp;&nbsp;
+          <label><input type="radio" name="exportGIFSpeed" id="exportGIFSpeed2" value="2"> 200%</label>
+          &nbsp;&nbsp;
+          <label><input type="radio" name="exportGIFSpeed" id="exportGIFSpeed3" value="3"> 300%</label>
+          &nbsp;&nbsp;
+          <label><input type="radio" name="exportGIFSpeed" id="exportGIFSpeed4" value="4"> 400%</label>
+          &nbsp;&nbsp;
+          <label><input type="radio" name="exportGIFSpeed" id="exportGIFSpeedCustom" value="custom"> Custom</label>
+        </div>
+      -->
+      </div>
+      <div class="formGroup" id="customSpeedSection" style="display: none">
+        <label class="controlLabel">Custom speed:</label>
+        <div style="display: inline-block">
+
+          <input type="number" size="3" class="number" min="5" value="10" id="exportGIFMSPerTick"/>
+          ms per tick
+        </div>
+      </div>        
+<!--
+      <div class="formGroup">
+        <label class="controlLabel" for="">Output Frames:</label>
+        <div style="display: inline-block" id="exportGifOutputFrames">1</div>
+      </div>
+-->
+
+    </div>
+  </div>
+
+</div>

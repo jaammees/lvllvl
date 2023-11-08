@@ -1,0 +1,70 @@
+<div class="panelFill dialogContent" id="exportX16BasicPanel" style="overflow: hidden;">
+  <div style="position: absolute; top: 10px; left: 10px; right: 10px; height: 30px;">  
+    <div class="formGroup">
+      <label class="controlLabel" for="exportX16BasicAs">File name:</label> 
+      <input type="text" class="formControl" size="20" value="" id="exportX16BasicAs"/>
+      <div id="exportX16BasicDownload" class="ui-button ui-button-primary"><img src="icons/svg/glyphicons-basic-199-save.svg"/> Download</div>      
+    </div>
+  </div>
+
+
+  <div style="position: absolute; top: 50px; left: 10px; right: 10px; bottom: 80px">
+    <div id="exportX16BasicSource" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0"></div>
+  </div>
+  
+  <div style="position: absolute; bottom: 10px; height: 60px; left: 10px; right: 10px">
+
+    <div>      
+    </div>
+
+
+    <div class="formGroup">
+      <label class="controlLabel">Include:</label>
+      <div class="checkboxGroup">
+
+        <label class="cb-container">Tile Data
+          <input type="checkbox" id="exportX16BasicTilesetData" class="exportX16BasicInclude" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <!-- should say Block Data if block mode -->
+        <div id="exportX16BasicMapDataHolder" style="display: inline-block">        
+
+          <label class="cb-container">Map Data
+            <input type="checkbox" id="exportX16BasicMapData" class="exportX16BasicInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+
+        </div>
+
+
+        <!-- if colour per cell -->
+        <div id="exportX16BasicMapColorDataHolder" style="display: inline-block">
+          <label class="cb-container">Map Colour Data
+            <input type="checkbox" id="exportX16BasicMapColorData" class="exportX16BasicInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="formGroup">
+      <label class="controlLabel">Layers:</label>
+      <div class="radioGroup">
+
+        <label class="rb-container">Current Layer
+          <input type="radio" name="exportX16BasicLayer" id="exportX16BasicLayerCurrent" value="current" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+
+      </div>
+    </div>
+  </div>
+
+</div>

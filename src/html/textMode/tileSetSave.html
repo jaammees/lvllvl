@@ -1,0 +1,23 @@
+<div class="panelFill dialogContent" id="saveTileSetPanel">
+  <div class="formGroup">
+    <label class="controlLabel" for="saveTileSetAs">File name:</label> 
+    <input type="text" class="formControl" size="20" value="Untitled" id="saveTileSetAs"/>
+  </div>
+
+
+  <div class="formGroup">
+    <label class="controlLabel">Format:</label>
+
+    <select name="saveTileSetFormat" id="saveTileSetFormat">
+      <option value="json">JSON (Native)</option>
+      <option value="png">PNG</option>
+      <option value="bin">Binary</option>
+    </select>
+  </div>
+
+  <div class="formGroup" id="saveTilesSetTilesAcrossSection" style="display: none">
+    <label class="controlLabel">Tiles Across:</label>
+    <input type="text" class="formControl number" min="1" value="16" id="saveTileSetTilesAcross" size="2"/>
+  </div>
+
+</div>

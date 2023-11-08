@@ -1,0 +1,44 @@
+<div id="projectShareDialog" class="panelFill dialogContent">
+  <div id="projectShareLogin" style="display: none">
+    <h2>NOT USED??Sign In/Register</h2>
+    <p>Projects are shared using GitHub public repositories.</p>
+    To share a project, you will need to login and/or register to GitHub.
+    <div class="ui-button" id="loginRegisterGitHub">GitHub Login/Register</div>
+  </div>
+
+  <div id="projectShareRepositoryDetails" style="display: none">
+    <h2>Repository Details</h2>
+
+    <div class="formGroup" id="projectShareRepositoryOptions" style="display: none">      
+      <div>
+        <label class="rb-container">Create A New Repository
+          <input type="radio" name="shareGithubRepositoryAction" checked="checked" id="shareGithubRepositoryAction_create" value="create"> 
+          <span class="checkmark"></span>
+        </label>
+        <br/>
+        <label class="rb-container">Use Existing Repository
+          <input type="radio" name="shareGithubRepositoryAction" id="shareGithubRepositoryAction_save" value="save"> 
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="formGroup" id="projectShareNewRepository" style="display: none">
+      <p>
+        Create a new public GitHub repository.
+      </p>
+
+    </div>
+  
+    <div class="formGroup">
+      <label class="controlLabel" for="shareRepositoryOwner" style="margin-bottom: 10px">Owner:</label> 
+      <input class="formControl" type="text" size="20" value="Untitled" id="shareRepositoryOwner"/>
+    </div>
+    <div class="formGroup">
+      <label class="controlLabel" for="shareRepositoryName" style="margin-bottom: 10px">Repository Name:</label> 
+      <input class="formControl" type="text" size="20" value="Untitled" id="shareRepositoryName"/>
+    </div>
+
+  </div>
+
+</div>

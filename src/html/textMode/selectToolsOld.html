@@ -1,0 +1,99 @@
+<div id="selectTools" class="panelFill activeBackground">
+  <div style="margin: 4px">
+
+    <table>
+      <tr>
+        <td style="padding: 0 10px 0 0; vertical-align: top">
+          <div style="margin-bottom: 4px">
+             <div style="margin-bottom: 2px">Select From:</div>
+             <label>x: <input class="formControl number" min="0" max="40" type="text" size="2" id="selectX1" value="0"></label>
+             <label>y: <input class="formControl number" min="0" max="25" type="text" size="2" id="selectY1" value="0"></label>
+
+             <span class="selectZControl">
+              <label>z: <input class="formControl number" min="0" max="25" type="text" size="2" id="selectZ1" value="0"></label>
+             </span>
+          </div>
+          <div  style="margin-bottom: 4px">
+             <div style="margin-bottom: 2px">Select To:</div>
+             <label>x: <input class="formControl number" type="text" min="0" max="40" size="2" id="selectX2" value="0"></label>
+             <label>y: <input class="formControl number" type="text" min="0" max="25" size="2" id="selectY2" value="0"></label>
+             <span class="selectZControl">
+               <label>z: <input class="formControl number" type="text" min="0" max="25" size="2" id="selectZ2" value="0"></label>
+             </span>
+          </div>
+        </td>
+
+        <td style="padding: 0 10px 0 0">
+
+          <!--
+          <button id="cutButton">Cut</button>
+          <button id="copyButton">Copy</button>
+          <button id="pasteButton">Paste</button>
+          <button id="clearButton">Clear</button>
+          <br/><br/>
+          <button id="pasteHFlipButton">Paste H Flip</button>
+          <button id="pasteVFlipButton">Paste V Flip</button>
+          <br/><br/>
+
+          -->
+          
+          <div style="margin: 4px 0 4px 0">
+            <button id="selectFillButton">Fill</button>
+            <button id="selectInvertButton">Invert</button>
+            <button id="selectFlipHButton">Flip H (F)</button>
+            <button id="selectFlipVButton">Flip V (G)</button>
+          </div>
+
+          <div style="margin: 4px 0 4px 0">
+            Move: 
+            <button id="selectNudgeLeft">&lt;</button>
+            <button id="selectNudgeRight">&gt;</button>
+            <button id="selectNudgeUp">/\</button>
+            <button id="selectNudgeDown">\/</button>
+          </div>
+
+
+          <div style="margin: 4px 0 4px 0">
+            Rotate: 
+            <button id="selectRotateLeft">&lt;</button>
+            <button id="selectRotateRight">&gt;</button>
+            <button id="selectRotateUp">/\</button>
+            <button id="selectRotateDown">\/</button>
+          </div>
+
+
+          <br/><br/>
+          <button id="selectReplaceColorsButton">Replace Colour</button>
+          <button id="selectReplaceCharactersButton">Replace Character</button>
+          <br/><br/>
+          <button id="selectDrawUsingSelection">Draw Using Selection (D)</button>
+
+        </td>
+
+        <td style="padding: 0 10px 0 0; vertical-align: top">
+
+          <span class="selectZControl">
+            <label for="pasteRotation">Paste Angle</label>
+            <select class="formControl" id="pasteRotation">
+              <option value="0">0</option>
+              <option value="90">90</option>
+              <option value="180">180</option>
+              <option value="270">270</option>
+            </select>
+            <br/><br/>
+          </span>
+
+<!--
+          <input type="checkbox" value="1" id="pasteWhitespace" class="checkbox"  checked="checked"><label for="pasteWhitespace" class="checkboxLabel">Paste Whitespace</label>
+          <br/><br/>
+          <input type="checkbox" value="1" id="pasteOnWhitespace" class="checkbox"><label for="pasteOnWhitespace" class="checkboxLabel">Paste Only On Whitespace</label>
+-->
+
+          <label>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+<div id="blockEditor" class="panelFill dialogContent" style="color: white">
+  <div style="position: absolute; top: 10px; bottom: 40px; left: 10px; right: 10px; overflow: auto" id="blockEditorBlockHolder">
+    <canvas  id="blockEditorBlock" style="position: absolute; top: 0; left:0; bottom: 0; right: 0"></canvas>
+  </div>
+
+  <div id="blockEditorParams" style="position: absolute; bottom: 10px; height: 20px; left: 10px; right: 0">
+    <div id="blockDimensionsStatic">
+      <label>Width: <span id="blockEditorStaticWidth"></span></label>
+      &nbsp;
+      <label>Height: <span id="blockEditorStaticHeight"></span></label>
+    </div>
+
+    <div id="blockDimensionsEditable" style="">
+      <!-- Block Dimensions:  -->
+      <label>Width: <input class="number" min="1" max="20" id="blockEditorWidth" value="2" size="2"></label>
+      &nbsp;
+      <label>Height: <input class="number" min="1" max="20" id="blockEditorHeight" value="2" size="2"></label>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,233 @@
+<div class="panelFill" id="editColorPaletteDialog">
+
+<style>
+
+#editColorPaletteDialog h2 {
+  margin: 2px 0 10px 0;
+  border-bottom: 1px solid #444444;
+  padding-bottom: 6px;
+}
+.editColorPaletteTable {
+  margin: 2px;
+}
+
+.editColorPaletteTable td {
+  padding: 6px 10px 10px 10px;
+}
+
+.editColorPaletteColorInfo {
+  font-size: 10px;
+  line-height: 13px;
+}
+
+.editColorPalettePanel {
+  margin-bottom: 10px;
+}
+</style>
+  <table class="editColorPaletteTable">
+    <tr>
+
+      <td valign="top" style="padding-right: 20px">
+
+        <div class="editColorPalettePanel">
+          <h2>Tools</h2>
+          <div class="colorPaletteTool colorPaletteToolSelected" id="colorPaletteTool_pen"><img width="20" src="icons/glyphicons-31-pencil@2x.png"/></div>
+          <div class="colorPaletteTool" id="colorPaletteTool_erase"><img width="20" src="icons/glyphicons-551-erase@2x.png"/></div>
+          <div class="colorPaletteTool" id="colorPaletteTool_eyedropper"><img width="20" src="icons/glyphicons-91-eyedropper@2x.png"/></div>  
+          <div class="colorPaletteTool" id="colorPaletteTool_select"><img width="20" src="icons/glyphicons-100-vector-path-select@2x.png"/></div>          
+          <div class="colorPaletteTool" id="colorPaletteTool_move"><img width="20" src="icons/glyphicons-187-move@2x.png"/></div>      
+
+          <div id="currentColorPaletteTool" style="display:inline-block">&nbsp;</div>  
+        </div>
+
+
+        <div class="editColorPalettePanel">
+          <h2>Current Palette</h2>
+          <canvas id="editColorPaletteCanvas" style=""></canvas>
+
+
+          <div>
+            <label class="cb-container">Show Grid
+              <input type="checkbox" id="colorPaletteEditShowGrid" checked="checked">
+              <span class="checkmark"/>
+            </label>
+
+            <label>Width: <input type="text"  class="number" min="1" max="30" value="16" style="width: 30px" size="2"/></label>
+            <label>Height: <input type="text" class="number" min="1" max="30" value="16"  style="width: 30px" size="2"/></label>
+          </div>
+
+          <div>
+            <div class="ui-button" id="editColorPaletteClear">Clear Palette</div>
+          </div>
+        </div>
+      </td>
+
+
+      <td valign="top">
+        <div class="editColorPalettePanel">        
+          <h2>Current Colour</h2>
+          <div style="position: relative; width: 240px; height: 130px">
+            <div style="position: absolute; left: 0; top: 0; width: 128px; height: 65px" id="colorPaletteImageMouseSelectedColor"></div>
+            <div style="position: absolute; left: 138px; top: 0; width: 110px; height: 65px;" class="editColorPaletteColorInfo" id="colorPaletteImageMouseSelectedColorInfo"/>
+
+            <div style="position: absolute; left: 0; top: 65px; width: 128px; height: 65px" id="colorPaletteImageMouseHoverColor"/>
+            <div style="position: absolute; left: 138px; top: 65px; width: 110px; height: 65px"  class="editColorPaletteColorInfo"  id="colorPaletteImageMouseHoverColorInfo"/>
+          </div>
+        </div>
+
+
+        <div class="editColorPalettePanel">
+          <div style="margin-bottom: 4px">
+            <h2>Choose Colours</h2>
+            <label class="rb-container" style="margin-right: 4px">HSV / RGB
+              <input type="radio" name="editColorPaletteMethod" value="rgb" checked="checked"> 
+              <span class="checkmark"/>
+            </label>
+            <label class="rb-container" style="margin-right: 4px">From Image
+              <input type="radio" name="editColorPaletteMethod" value="image"> 
+              <span class="checkmark"/>
+            </label>
+
+            <label class="rb-container" style="margin-right: 4px">Colour Wheel
+              <input type="radio" name="editColorPaletteMethod" value="colorwheel"> 
+              <span class="checkmark"/>
+            </label>
+          </div>
+
+          <div id="colorPaletteEditGraphHolder" class="colorPaletteSelectionMethod" style="display: none">
+            <div>
+              <label for="colorPaletteEditGraphParam">Param</label>
+              <select id="colorPaletteEditGraphParam">
+                <optgroup label="RGB">
+                  <option value="red" selected="selected">Red</option>
+                  <option value="green">Green</option>
+                  <option value="blue">Blue</option>
+                </optgroup>
+                <optgroup label="HSV">
+                  <option value="hue">Hue</option>
+                  <option value="saturation">Saturation</option>
+                  <option value="value">Value</option>
+                </optgroup>
+              </select>
+            </div>
+            <div>
+              <canvas id="colorPaletteEditGraph" style="background-color: black;"></canvas>
+            </div>
+          </div>
+
+          <div id="colorPaletteSelectionMethod_rgb" class="colorPaletteSelectionMethod" >
+
+            <h3>RGB</h3>
+            <div>
+              <div class="colorComponentSelector">
+                <label for="editColorPaletteR">R:</label>
+                <canvas width="200" height="28" id="editColorPaletteRCanvas" class="colorPaletteSlider" data-component="r"></canvas>
+
+                <input type="text" class="number colorPaletteNumber" size="4" id="editColorPaletteR" data-component="r" min="0" max="255" value="0">
+              </div>
+
+
+              <div class="colorComponentSelector">
+                <label for="editColorPaletteG">G:</label>              
+                <canvas width="200" height="28" id="editColorPaletteGCanvas" class="colorPaletteSlider" data-component="g"></canvas>
+                <input type="text" class="number colorPaletteNumber" size="4" id="editColorPaletteG"  data-component="g" min="0" max="255" value="0">
+              </div>
+
+              <div class="colorComponentSelector">
+                <label for="editColorPaletteB">B:</label>
+                <canvas width="200" height="28" id="editColorPaletteBCanvas" class="colorPaletteSlider" data-component="b"></canvas>            
+                <input type="text" class="number colorPaletteNumber" size="4" id="editColorPaletteB" data-component="b" min="0" max="255" value="0">            
+              </div>
+            </div>
+
+
+
+            <h3>HSV</h3>
+            <div>
+              <div class="colorComponentSelector">
+                <label for="editColorPaletteH">H:</label>              
+                <canvas width="200" height="28" id="editColorPaletteHCanvas" class="colorPaletteSlider" data-component="h"></canvas>
+                <input type="text" class="number colorPaletteNumber" size="4" id="editColorPaletteH" data-component="h" min="0" max="360" value="0">
+              </div>
+
+
+              <div class="colorComponentSelector">
+                <label for="editColorPaletteS">S:</label>              
+                <canvas width="200" height="28" id="editColorPaletteSCanvas" class="colorPaletteSlider" data-component="s"></canvas>
+                <input type="text" class="number colorPaletteNumber" size="4" id="editColorPaletteS"  data-component="s" min="0" max="100" value="0">
+              </div>
+
+              <div class="colorComponentSelector">
+                <label for="editColorPaletteB">V:</label>              
+                <canvas width="200" height="28" id="editColorPaletteVCanvas" class="colorPaletteSlider" data-component="v"></canvas>
+                <input type="text" class="number colorPaletteNumber" size="4" id="editColorPaletteV" data-component="v" min="0" max="100" value="0">            
+              </div>
+            </div>
+
+
+            <div>
+              <label for="editColorPaletteHex">#</label> <input type="text" maxlength="6" id="editColorPaletteHex" size="6"/>
+            </div>
+
+          </div>
+
+          <div id="colorPaletteSelectionMethod_image" class="colorPaletteSelectionMethod" style="display: none">
+
+            <div>
+              <div style="padding-bottom: 2px">
+                <div class="ui-button" id="colourPaletteImageChooseFile">Choose Image...</div>
+                <div id="colourPaletteImageChooseFileName" style="display: inline-block; margin-left: 6px"></div>
+                <input class="formControl" style="position: absolute; top: -50px; left: -100px" id="colourPaletteImage" type="file" accept="image/*"/>
+              </div>
+              <canvas id="colorPaletteFromImageImage" style="background-color: #111111"></canvas>
+            </div>
+
+            <div>
+              <label>Scale</label>
+              <div class="ui-button" id="colorPaletteImageScaleDecrease">-</div>
+              <input type="text" size="3" style="width: 40px" type="text" id="colorPaletteImageScale" min="1" class="number"  value="100"/>
+              <div class="ui-button" id="colorPaletteImageScaleIncrease">+</div>
+              <div class="ui-button" id="colorPaletteImageFit">Fit</div>
+            </div>
+
+            <div class="formGroup">
+              <label class="controlLabel" for="">Colour Count</label>
+              <select id="colorPaletteFromImageColorCount">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="8">8</option>
+                <option value="16" selected="selected">16</option>
+                <option value="32">32</option>
+                <option value="64">64</option>
+                <option value="128">128</option>
+              </select>
+
+              <button id="colorPaletteFromImageAdd">Add These Colours &gt;</button>
+            </div>
+
+
+
+            <canvas id="colorPaletteFromImagePalette" style="background-color: #111111"></canvas>
+          </div>
+
+
+
+          <div id="colorPaletteSelectionMethod_colorwheel" class="colorPaletteSelectionMethod" style="display: none">
+            
+            <table>
+              <tr>
+                <td>
+                  <canvas id="colorPaletteEditColorWheel"></canvas>
+                </td>
+                <td>
+                  <canvas id="colorPaletteEditColorWheelValue" height="200" width="24"></canvas>
+                </td>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

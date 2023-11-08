@@ -1,0 +1,213 @@
+<div id="startPage" class="panelFill" style="background-color: #191919">
+
+    <div id="projectMenuBacking" style="display: none; top: 0; left: 0; bottom: 0; right: 0; background-color: black; opacity: 0.2; position: fixed; z-index: 1000"></div>
+    <div id="projectMenu" style="display: none; position: absolute; width: auto; height: auto; z-index: 2000" class="ui-menu">
+      <div class="ui-menu-item"><div class="ui-menu-item-label projectMenuItem" data-action="open">Open</div></div>
+      <div class="ui-menu-item"><div class="ui-menu-item-label projectMenuItem" data-action="delete">Delete</div></div>
+      <div class="ui-menu-item"><div class="ui-menu-item-label projectMenuItem" data-action="rename">Rename...</div></div>
+      <div class="ui-menu-item"><div class="ui-menu-item-label projectMenuItem" data-action="download">Download</div></div>
+    </div>
+
+    <div id="repositoryMenu" style="display: none; position: absolute; width: auto; height: auto; z-index: 2000" class="ui-menu">
+      <div class="ui-menu-item"><div class="ui-menu-item-label repositoryMenuItem" data-action="opennocheck">Open without checking for updates</div></div>
+      <div class="ui-menu-item"><div class="ui-menu-item-label repositoryMenuItem" data-action="viewongithub">View on GitHub...</div></div>
+      <div class="ui-menu-item"><div class="ui-menu-item-label repositoryMenuItem" data-action="remove">Remove</div></div>
+    </div>
+
+    <div id="gdriveMenu" style="display: none; position: absolute; width: auto; height: auto; z-index: 2000" class="ui-menu">
+      <div class="ui-menu-item"><div class="ui-menu-item-label gdriveMenuItem" data-action="viewInGDrive">View in Google Drive...</div></div>
+      <div class="ui-menu-item"><div class="ui-menu-item-label gdriveMenuItem" data-action="download">Download</div></div>
+      <div class="ui-menu-item"><div class="ui-menu-item-label gdriveMenuItem" data-action="delete">Delete</div></div>
+    </div>
+
+  <div id="startPageBanner" style="position: absolute; top: 0px; left: 0px; right: 0px; height: 122px; background-color: #131313; padding: 10px; border-bottom: 1px solid #222222">
+    <h1 style="margin: 0px; font-size: 54px;  font-weight: normal"><img src="images/logo40.png" style="width: 40px; height: 40px; filter: opacity(80%);"/><span style="margin: 0 6px">lvllvl</span><span style="font-size: 12px">alpha</span></h1>
+    <div>
+      Create pictures using character sets
+    </div>
+    <div class="ui-button-holder" style="margin-top: 10px">
+      <div class="ui-button ui-button-primary" id="start2D"><i class="halflings halflings-plus"></i> <span class="ui-text" data-textid="New Project">New Project...</span><div class="rippleJS"></div></div>
+
+      <!--
+      <div class="ui-button" style="margin-left: 6px" id="loadRepository"><i class="halflings halflings-plus"></i> <span class="ui-text" data-textid="Load From GitHub Repository">Load From GitHub Repository</span><div class="rippleJS"></div></div>
+-->
+      <div class="ui-button"  style="margin-left: 6px" id="startOpen"><img src="icons/svg/glyphicons-halflings-106-open.svg"/> <span class="ui-text" data-textid="Open Local File">Open Local File...</span><div class="rippleJS"></div></div>
+    </div>
+
+
+    <div style="position: absolute; right: 0; top: 0; padding: 10px; text-align: right" id="start-login-panel">
+      <div id="login" style="display: none">
+        <div class="ui-button ui-button-info" id="login-button"> 
+        <img src="icons/GitHub-Mark-32px.png">&nbsp;
+        <span class="ui-text" data-textid="Sign In With GitHub">Sign In With GitHub...</span></div>
+      </div>
+
+      <div id="logout" style="display: none">
+        <div id="start-username"></div>
+        <div  class="ui-button" id="logout-button"><span class="ui-text" data-textid="Sign Out"><img src="icons/svg/glyphicons-halflings-186-log-out.svg"/> Sign Out</span></div>
+      </div>          
+    </div>
+
+  </div>
+
+
+
+<style>
+.start-tile {
+  display: inline-block;  
+  width: 130px;
+  height: 130px;
+  margin-right: 10px;
+  margin-bottom: 16px;
+  position: relative;
+  background-color: #131313; /* transparent; */
+  cursor: pointer;
+  transition: all 0.1s;  
+}
+
+.start-tile:hover {
+  background-color: #262626;
+}
+
+
+.start-tile-image {
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  bottom: 26px;
+  left: 6px;
+  right: 6px;  
+  background-color: #0a0a0a;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  transition: all 0.1s;    
+  /*background-size: cover;  Resize the background image to cover the entire container */  
+}
+
+
+.start-tile-label {
+  position: absolute;
+  height: 18px;
+  bottom: 2px;
+  left: 6px;
+  right: 24px;  
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+
+  color: #cdcdcd;
+  transition: all 0.1s;    
+}
+
+.start-tile-more { 
+  position: absolute;
+  right: 1px;
+  bottom: 0px;
+  height: 18px;
+  width: 12px;
+  padding: 3px;
+  cursor: pointer;
+  filter: invert(40%);
+  opacity: 0;
+  display: none;
+  transition: opacity 2.6s;     
+
+}
+
+.start-tile-more img {
+  cursor: pointer;
+}
+
+.start-tile:hover .start-tile-image {
+  /*
+  top: 5px;
+  bottom: 25px;
+  left: 5px; 
+  right: 5px;
+  */
+  background-color: #161616;
+}
+
+.start-tile:hover .start-tile-label {
+  color: #dddddd;
+}
+
+.start-tile:hover .start-tile-more {
+  display: block;
+  opacity: 1;
+  cursor: pointer;  
+}
+
+.start-tile-more:hover {
+  filter: invert(80%);
+}
+
+</style>
+
+  <div id="startPageProjectHolder" style="position: absolute; top: 143px; left: 0px; right: 0px; bottom: 62px; padding: 10px; overflow: auto">
+
+
+<!--    
+    <div id="test">
+
+      <div class="start-tile">
+        <div class="start-tile-image" style="background-image: url('test/test.jpg')"></div>
+        <div class="start-tile-label">My Project</div>
+        <div class="start-tile-more"><img src="icons/material/baseline-more_vert-24px.svg" height="16px"/></div>
+      </div>
+
+      <div class="start-tile">
+        <div class="start-tile-image" style="background-image: url('test/test.jpg')"></div>
+        <div class="start-tile-label">My Project 2</div>
+        <div class="start-tile-more"><img src="icons/material/baseline-more_vert-24px.svg" height="16px"/></div>
+      </div>
+
+      <div class="start-tile">
+        <div class="start-tile-image" style="background-image: url('test/test.jpg')"></div>
+        <div class="start-tile-label">My Project 3</div>
+        <div class="start-tile-more"><img src="icons/material/baseline-more_vert-24px.svg" height="16px"/></div>
+      </div>
+
+    </div>
+-->    
+<!--
+    <div id="browserStorage_templates">
+    </div>
+-->
+    <div id="github_repositories"></div>
+    <div id="browserStorage_persistent" ></div>
+
+    <div id="browserStorage_projects" ></div>
+    <div id="browserStorageOld_projects" ></div>
+  </div>
+
+  <div style="position: absolute; bottom: 0; left: 0px; right: 0px; height: 42px; padding: 10px">
+
+    <div id="startGoogleDriveStatus">
+      <div id="startGoogleDriveConnected" style="display: none">
+
+        <div class="ui-button" id="disconnectFromGDriveButton">
+          <img src="icons/GoogleDriveIcon512.png" style="filter: none" height="20"/>
+          Disconnect Google Drive
+        </div>
+      </div>
+      <div id="startGoogleDriveNotConnected" style="display: none">
+        <div class="ui-button" id="connectToGDriveButton">
+          <img src="icons/GoogleDriveIcon512.png" style="filter: none" height="20"/>
+          Connect To Google Drive
+        </div>
+      </div>
+    </div>
+    <div style="margin: 4px 0">
+      <span style="margin-right: 10px">No Icon: Stored in Browser Storage </span>
+
+      <span style="margin-right: 10px"><img style="filter: invert(60%); width: 14px; height: 14px; " src="icons/GitHub-Mark-64px.png">: Stored in GitHub</span> 
+      <span style="margin-right: 10px"><img style="filter: invert(60%); width: 14px; height: 14px; " src="icons/GoogleDriveIconMonochromatic512.png">: Stored in Google Drive</span>
+    </div>
+
+  </div>
+
+
+</div>

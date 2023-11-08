@@ -1,0 +1,101 @@
+<div id="editFilter" class="panelFill" style="background-color: #444444;">
+
+
+  <div id="editFilterHolder" style="position: absolute; background-color: #333333; top: 0; bottom: 100px; left: 0px; right: 8px; overflow-y: auto">
+
+
+    <h3>Edit filter</h3>
+
+
+
+    <div class="content" style="padding: 8px">
+      <div class="editInstrumentRow">
+        <label class="editInstrumentLabel" for="filterName">Name:</label>
+        <input id="filterName" name="filterName"/>
+      </div>
+    </div>
+
+    <div class="content" style="padding: 8px">
+      <div class="editInstrumentRow">
+        <label class="editInstrumentLabel" for="filterType">Type:</label>
+
+          <label><input type="radio" name="editFilterType" id="editFilterType_basic" value="basic" checked="checked">Basic</label>
+          <label><input type="radio" name="editFilterType" id="editFilterType_advanced" value="advanced">Advanced</label>
+
+
+      </div>
+    </div>
+
+    <div id="editFilterBasic">
+      <div class="content">
+        <div class="editInstrumentRow">
+          <label class="editInstrumentLabel" for="filterBasicType">Filter Type:</label>
+          <label><input type="checkbox" id="filterBasicType_low" name="filterBasicType" checked="checked"> Lowpass</label>
+          <label><input type="checkbox" id="filterBasicType_band" name="filterBasicType"> Bandpass</label>
+          <label><input type="checkbox" id="filterBasicType_high" name="filterBasicType"> Highpass</label>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="editInstrumentRow">
+          <label class="editInstrumentLabel" for="filterBasicCutoff">Cutoff:</label>
+          <input size="4" class="number" id="filterBasicCutoff" name="filterBasicCutoff" value="40"/>
+          (0-255)
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="editInstrumentRow">
+          <label class="editInstrumentLabel" for="filterBasicResonance">Resonance:</label> 
+          <input size="4" class="number" id="filterBasicResonance" name="filterBasicResonance"  value="15"/> (0-15)
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="editInstrumentRow">
+          <label class="editInstrumentLabel" for="filterBasicAffects">Filter Affects:</label>
+          <label><input type="checkbox" id="filterBasicAffects_channel1" name="filterBasicAffects" value="channel1" checked="checked"> Channel 1</label>
+          <label><input type="checkbox" id="filterBasicAffects_channel2" name="filterBasicAffects" value="channel2" checked="checked"> Channel 2</label>
+          <label><input type="checkbox" id="filterBasicAffects_channel3" name="filterBasicAffects" value="channel3" checked="checked"> Channel 3</label>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="editInstrumentRow">
+          <label class="editInstrumentLabel" for="filterBasicModulate">Modulate Cutoff:</label>
+          Direction 
+          <label><input type="radio" name="filterBasicModulateType"  name="filterBasicModulateType_none" value="none">None</label>
+
+          <label><input type="radio" name="filterBasicModulateType"  name="filterBasicModulateType_up" value="up" checked="checked">Up</label>
+          <label><input type="radio" name="filterBasicModulateType"  name="filterBasicModulateType_down" value="down">Down</label>
+          <label><input type="radio" name="filterBasicModulateType"  name="filterBasicModulateType_up" value="updown">Up / Down</label>
+
+          <label>Time: <input size="4" value="1" name="filterBasicModulateTicks" id="filterBasicModulateTicks"> Ticks</label>
+          <label>Amount: <input size="4" value="1" name="filterBasicModulateAmount" id="filterBasicModulateAmount"></label>
+
+          <label><input type="checkbox" id="filterBasicModulateRepeat" name="filterBasicModulateRepeat" checked="checked"> Repeat</label>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div id="editFilterAdvanced">
+      <div id="editFiltertable" class="instrumentTable">
+        Filter table
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons" style="position: absolute; bottom: 80px; left: 10px">
+    <button id="editFilterOK">OK</button>
+    <button id="editFilterApply">Apply</button> 
+    <button id="editFilterCancel">Cancel</button>
+  </div>
+
+
+  <canvas id="editFilterKeyboard" width="1200" height="60" style="background-color: white; position: absolute; bottom: 0px"></canvas>
+
+
+</div>

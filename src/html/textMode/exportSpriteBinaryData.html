@@ -1,0 +1,53 @@
+<div class="panelFill dialogContent" id="exportSpriteBinaryDataPanel">
+  <div class="formGroup">
+    <label class="controlLabel" for="exportSpriteBinaryAs">File name:</label> 
+    <input type="text" class="formControl" size="20" value="" id="exportBinaryAs"/>
+  </div>
+
+
+  <div class="formGroup">
+    <label class="controlLabel">Format</label>
+
+    <div class="radioGroup">
+      <div>
+        <label class="rb-container">C64
+          <input type="radio" class="formControl" size="20" value="c64" name="exportSpriteBinaryFormat" id="exportSpriteBinaryFormatC64"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label class="rb-container">Mega65
+          <input type="radio" class="formControl" size="20" value="mega65" name="exportSpriteBinaryFormat" id="exportSpriteBinaryFormatMega65"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>      
+
+    </div>   
+  </div>
+
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportSpriteBinaryFromFrame">Export Frames:</label>
+    <div style="display: inline-block">
+      <input type="number" size="2" class="number" min="1" checked="checked" id="exportSpriteBinaryFromFrame">
+      &nbsp;
+      <label for="exportSpriteBinaryToFrame">To</label>
+      &nbsp;
+      <input type="number" size="2" class="number" min="1" id="exportSpriteBinaryToFrame">
+    </div>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel">Layers:</label>
+    <div class="radioGroup">
+
+      <label class="rb-container">Current Layer
+        <input type="radio" name="exportSpriteBinaryLayer" id="exportSpriteBinaryLayerCurrent" value="current" checked="checked"/> 
+        <span class="checkmark"></span>
+      </label>
+      &nbsp;
+    </div>
+  </div>
+
+</div>

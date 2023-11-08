@@ -1,0 +1,54 @@
+<div id="newDocRecordMobileDialog" class="panelFill dialogContent">
+  <div class="formGroup">
+    <label class="controlLabel" for="newDocRecordMobileType">Type:</label>
+    <select id="newDocRecordMobileType">
+      <option value="screen">Screen</option>
+      <option value="sprite">Sprite</option>
+      <option value="asm">ASM</option>
+      <option value="3d scene">3d Scene</option>
+    </select>
+
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel" for="newProjectFileNameMobile">Name:</label>
+    <input type="text" class="formControl" id="newProjectFileNameMobile"  spellcheck="false"/>
+  </div>
+
+
+  <div id="newDocRecordMobileGridDimensions">
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordGridWidthMobile">Grid Size:</label>
+      <input type="text" class="formControl number" min="1" value="40" id="newDocRecordGridWidthMobile" size="2"/>
+      <span style="margin: 0 4px 0 4px">x</span>
+      <input type="text" class="formControl number" min="1" value="25" id="newDocRecordGridHeightMobile" size="2" />
+
+      <span id="newDocRecordGridDimensionsDepthMobile">
+        <span style="margin: 0 4px 0 4px">x</span>
+        <input type="text" class="formControl number" min="1" value="25" id="newDocRecordGridDepthMobile" size="2"/>
+      </span>
+    </div>
+    <!--
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordGridHeightMobile">Grid Height:</label>
+    </div>
+-->
+  </div>
+
+  <div id="newDocRecordMobileTileColor">
+    <div class="formGroup">
+        <label class="controlLabel" for="newDocRecordMobileTileSet">Tile Set:</label>
+        <select id="newDocRecordMobileTileSet">
+          <option value="0">New</option>
+        </select>
+
+      </div>
+      <div class="formGroup">
+        <label class="controlLabel" for="newDocRecordMobileColorPalette">Colour Palette:</label>
+        <select id="newDocRecordMobileColorPalette">
+          <option value="0">New</option>
+        </select>
+      </div>    
+  </div>
+
+</div>

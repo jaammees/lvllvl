@@ -1,0 +1,351 @@
+<div class="panelFill">
+  <div class="content">
+    <div style="padding: 4px; text-align: center">
+
+
+      <table>
+        <tr>
+          <td>
+            <div class="formGroup">
+              <label class="controlLabel" for="importVideoSourceFile">File To Import:</label>
+              <input class="formControl" id="importVideoSourceFile" type="file" accept=".mp4">
+
+            </div>
+
+            <table>
+              <tr>
+                <td>
+                  <canvas width="320" height="200" id="importVideoCanvas" style="border:1px solid white; background: transparent"></canvas>
+                </td>
+                <td>
+                  <div style="padding: 4px">
+                    <label for="importVideoScale">Scale</label>
+                    <button type="button" id="importVideoScaleDecrease">-</button>
+                    <input size="3" id="importVideoScale" value="100"/>
+                    <button type="button" id="importVideoScaleIncrease">+</button> %
+
+                    &nbsp;&nbsp;
+                    <button type="button" id="importVideoScaleToFit">Scale To Fit</button>
+
+                  </div>
+
+
+                  <div style="padding: 4px">
+                    <label>Position</label>
+
+                    <label for="importVideoX">X</label>
+                    <input size="3" id="importVideoX" value="0"/> 
+
+                    &nbsp;&nbsp;
+
+                    <label for="importVideoY">Y</label>
+                    <input size="3" id="importVideoY" value="0"/> 
+                  </div>
+
+
+
+                  <div style="padding: 4px">
+                    <label><input type="checkbox" id="importVideoQuantise" value="1" checked="checked">Quantise  Colours </label>
+                  </div>
+                  <div>
+                    <label><input type="radio" name="importVideoDither" checked="checked" value="">No Dither</label> 
+                    <label><input type="radio" name="importVideoDither" checked="checked" value="FloydSteinberg">Floyd Steinberg</label> 
+                    <label><input type="radio" name="importVideoDither" value="Atkinson">Atkinson</label> 
+                    <label><input type="radio" name="importVideoDither" value="Sierra">Sierra</label> 
+                  </div>
+
+                  <div>
+                    <label>Brightness: 
+                      <input type="text" id="importVideoBrightnessValue" value="0" class="number" min="-100" max="100" size="2"/>
+                      <input type="range"  min="-100" max="100" value="0" size="3" id="importVideoBrightness"/> 
+                    </label>
+                    
+                  </div>
+                  <div>
+                    <label>Contrast: 
+                      <input type="text" class="number" min="-100" max="100" value="0" size="2" id="importImageContrastValue"/>
+                      <input type="range" class="" min="-100" max="100" value="0" size="3" id="importImageContrast"/></label> 
+                  </div>
+
+  <!--
+
+                  <div>
+                    <label>Hue: 
+                      <input type="text" class="number" min="0" max="360" value="0" size="2" id="importImageHueValue"/>
+                      <input type="range"  min="0" max="360" value="0"  id="importImageHue"/>
+                    </label>
+                  </div>
+  -->
+
+                  <div>
+                    <label>Saturation: 
+                      <input type="text" class="number" min="-100" max="100" value="0" size="2" id="importImageSaturationValue"/>
+                      <input type="range"  min="-100" max="100" value="0"  id="importImageSaturation"/>
+                    </label>
+                  </div>
+
+
+                  <div style="padding: 4px">
+                    <label><input type="checkbox" id="importImageEdgeDetect" value="1">Edge Detection</label>
+                  </div>
+
+                  <div style="padding: 4px">
+                    <label>Low Threshold: 
+                      <input type="text" id="importImageEdgeDetectLow" value="20" class="number" min="0" max="100" size="2"/>
+                    </label>
+                    <label>High Threshold: 
+                      <input type="text" id="importImageEdgeDetectHigh" value="90" class="number" min="0" max="100" size="2"/>
+                    </label>
+
+                    <label>Blur Radius: 
+                      <input type="text" id="importImageEdgeDetectBlur" value="3" class="number" min="0" max="100" size="2"/>
+                    </label>
+
+                  </div>
+
+
+                </td>
+              </tr>
+            </table>
+        </tr>
+      </table>
+
+
+
+    </div>
+
+
+    <div class="formGroup">
+      <label><input type="checkbox" id="importImageUseShader" checked="checked"> Use Shader to Convert (faster)</label>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel">Use Colours:</label>
+
+      <div class="radioGroup">
+        <div>
+          <label><input type="radio" name="importImageUseColors" value="all" checked="checked">All Colours</label>
+          &nbsp;
+          <label><input type="radio" name="importImageUseColors" value="greyscale">Greyscale</label>
+          &nbsp;
+          <label><input type="radio" name="importImageUseColors" value="choose">Custom Set</label>
+          &nbsp;
+          <label><input type="radio" name="importImageUseColors" value="create">Create Palette From Image</label>
+
+        </div>
+
+        <div style="padding: 4px; display: none" id="importImageChooseColorsRow">
+          <button id="importImageChooseColors" type="button">Choose Colours...</button>
+        </div>
+
+        <div style="padding: 4px; display: none" id="importImageCreatePalette">
+          Create
+          <select id="importImageCreatePaletteColorCount">
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="8">8</option>
+            <option value="16" selected="selected">16</option>
+            <option value="32">32</option>
+            <option value="64">64</option>
+            <option value="128">128</option>
+            <option value="256">256</option>
+          </select>
+          Colours
+          <div>
+            Colour palette will replace current colour palette
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div class="formGroup">
+      <label class="controlLabel">BG Colour:</label>
+      <div class="radioGroup">
+        <div>
+          <label><input type="radio" name="importImageBackgroundColorChoose" value="auto" checked="checked">Choose Automatically</label>
+          <label><input type="radio" name="importImageBackgroundColorChoose" value="manual">Choose Manually</label>
+        </div>
+
+        <div style="padding: 4px;display: none" id="importImageUseBackgroundColor">  
+          Use colour: 
+          &nbsp;
+          <div id="importImageBackgroundColor" class="backgroundColor" style="display: inline-block; width: 16px; height: 16px; border: 1px solid #eee"></div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="formGroup">  
+      <label class="controlLabel"></label>
+      <div class="checkboxGroup">
+        <label><input type="checkbox" value="1" id="petsciiMultipleBackgroundColors"> Multiple background colours</label>
+
+        <div style="margin-left: 12px">
+          <label><input type="checkbox" value="1" id="petsciiMultipleBackgroundColorsLimit" checked="checked">Limit to 4</label>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<!--
+    <div class="formGroup">
+      <label class="controlLabel"></label>
+      <div class="checkboxGroup">
+        <label><input type="checkbox" id="importImageQuantise" value="1" checked="checked">Quantise Image Colours First</label>
+      </div>
+    </div>
+-->
+
+
+    <div class="formGroup">
+      <label class="controlLabel">Use Characters:</label>
+      <div class="radioGroup">
+        <label><input type="radio" name="importImageUseChars" value="all" checked="checked">All Characters</label>
+        &nbsp;
+        <label><input type="radio" name="importImageUseChars" value="choose">Custom Set</label>
+
+        <div style="padding: 4px; display: none" id="importImageChooseCharsRow">
+          <button id="importImageChooseChars" type="button">Choose Characters...</button>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="formGroup">  
+      <label class="controlLabel">Animate: </label>
+      <div class="radioGroup">
+        <label><input type="radio" checked="checked" name="petsciiImportAnimate" value="none" id="petsciiImportAnimateNone">None</label>
+        <label><input type="radio" name="petsciiImportAnimate" value="zoom" id="petsciiImportAnimateZoom">Zoom</label>     
+        <label><input type="radio" name="petsciiImportAnimate" value="rotate" id="petsciiImportAnimateRotate">Rotate</label>        
+
+        <label><input type="radio" name="petsciiImportAnimate" value="pan" id="petsciiImportAnimateRotate">Pan</label>     
+
+
+        <label><input type="radio" name="petsciiImportAnimate" value="mirror" id="petsciiImportAnimateMirror">Mirror</label>   
+
+        <label><input type="radio" name="petsciiImportAnimate" value="imageParams" id="petsciiImportAnimateImageParams">Image Parameters</label>     
+
+        <!--   
+        <label><input type="radio" name="petsciiImportAnimate" value="morph" id="petsciiImportAnimateMorph">Morph</label>        
+        -->
+
+
+        <div id="petsciiAnimateTicksControls">
+
+          <div>
+            <label><input type="checkbox" id="petsciiImportPreviewAnimation"> Preview Animation</label>
+          </div>
+
+          <div>
+            <label for="importImageFrames">
+              Frames
+            </label>
+            <input type="text" class="formControl number" value="12" min="1" size="4" id="importImageFrames"/>
+          </div>
+
+          <div>
+            <label for="petsciiAnimateTicksPerFrame">
+              Ticks per frame
+            </label>
+            <input type="text" size="4" class="number" min="3" id="petsciiAnimateTicksPerFrame" value="12"/>
+          </div>
+        </div>
+
+        <div style="padding: 4px; display: none" id="petsciiImportZoomControls">  
+          <div>
+            Zoom 
+            <input type="text" class="formControl number"  min="1" size="4" name="petsciiImportZoomAmount" id="petsciiImportZoomAmount" value="1000"/> %
+            &nbsp;&nbsp;in&nbsp;&nbsp;
+            <input size="4" name="petsciiImportZoomFrames" class="number" min="1" id="petsciiImportZoomFrames" value="12"/> Frames
+          </div>
+
+          <div>
+            <label><input type="checkbox" id="petsciiImportZoomInfinite" value="1"> Infinite Zoom</label>
+            <label><input type="checkbox" id="petsciiImportZoomRotate" value="1"> Rotate</label>
+          </div>
+
+          <div>
+            <label><input size="4" class="number" min="0" max="180"  value="45" id="petsciiImportZoomRotateAngleSeparation" value="1"> Layer Angle Separation</label>
+          </div>
+
+          <div>
+            Zoom Point:
+            <label>x <input size="4" class="number" min="0" name="petsciiImportZoomX" id="petsciiImportZoomX" value="160"/></label>
+            <label>y <input size="4" class="number" min="0" name="petsciiImportZoomY" id="petsciiImportZoomY" value="100"/></label>
+          </div>
+
+        </div>
+
+        <div style="padding: 4px; display: none" id="petsciiImportRotateControls">
+          &nbsp;&nbsp;
+          Rotate Point:
+          <label>x <input size="4" class="number" min="0" name="petsciiImportRotateX" id="petsciiImportRotateX" value="160"/></label>
+          <label>y <input size="4" class="number" min="0" name="petsciiImportRotateY" id="petsciiImportRotateY" value="100"/></label>
+          <br/>
+
+          <label>Frames: <input size="4" class="number" min="1" name="petsciiImportRotateFrames" id="petsciiImportRotateFrames" value="12"/></label>
+          <br/>
+
+          <label><input type="radio" name="petsciiImportRotateDirection" value="clockwise" checked="checked"/>Clockwise</label>
+          <label><input type="radio" name="petsciiImportRotateDirection" value="anticlockwise"/>Anticlockwise</label>
+        </div>
+
+        <div style="padding: 4px; display: none" id="importImageMirrorControls">  
+          mirror controls...
+        </div>
+
+
+        <div style="padding: 4px; display: none" id="petsciiImportPanControls">
+          <label>Frames: <input size="4" class="number" min="1" name="petsciiImportPanFrames" id="petsciiImportPanFrames" value="12"/></label><br/>
+          <label>Horizontal Pan: <input size="4" class="number" min="0" id="petsciiImportPanX" value="1"/> Pixels / frame</label><br/>
+          <label>Vertical Pan: <input size="4" class="number" min="0" id="petsciiImportPanY" value="0"/> Pixels / frame</label>
+        </div>
+
+        <div style="padding: 4px; display: none" id="petsciiImportImageParamControls">
+          <label>Frames: <input size="4" class="number" min="1" name="petsciiImportImageParamFrames" id="petsciiImportImageParamFrames" value="12"/></label><br/>
+
+          <div>
+            <label><input type="checkbox" checked="checked" id="petsciiImportAnimateBrightness"/> Brightness</label>
+             <label>From <input size="5" class="number" min="-100" max="100" id="petsciiImportBrightnessFrom" value="0"/></label>
+            <label>To <input size="5" class="number" min="-100" max="100" id="petsciiImportBrightnessTo" value="50"/></label>
+          </div>
+
+          <div>
+            <label><input type="checkbox" checked="checked" id="petsciiImportAnimateContrast"/> Contrast</label>
+             <label>From <input size="5" class="number" min="-100" max="100" id="petsciiImportContrastFrom" value="0"/></label>
+            <label>To <input size="5" class="number" min="-100" max="100" id="petsciiImportContrastTo" value="50"/></label>
+          </div>
+
+          <div>
+            <label><input type="checkbox" checked="checked" id="petsciiImportAnimateSaturation"/> Saturation</label>
+             <label>From <input size="5" class="number" min="-100" max="100" id="petsciiImportSaturationFrom" value="0"/></label>
+            <label>To <input size="5" class="number" min="-100" max="100" id="petsciiImportSaturationTo" value="50"/></label>
+          </div>
+
+        </div>
+
+        <div style="padding: 4px; display: none" id="petsciiImportMorphControls">
+
+          <label>Frames: <input size="4" class="number" min="1" name="petsciiImportMorphFrames" id="petsciiImportMorphFrames" value="12"/></label><br/>
+
+          <div>Click on images to define/move matching points</div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,142 @@
+<div class="panelFill" id="export3dGifFramesPanel">
+  <div style="position: absolute; top: 0; bottom: 0; right: 0; left: 0px; padding: 10px; overflow: auto">
+    <h3><i class="halflings halflings-film"></i>&nbsp;Frames</h3>
+
+    <div id="export3dGIFFrames">
+      <div class="formGroup">
+        <label class="controlLabel" for="export3dGIFFromFrame">Export Frames:</label>
+        <div style="display: inline-block">
+          <input type="number" size="2" class="number" min="1"  id="export3dGIFFromFrame">
+          &nbsp;
+          <label for="export3dGIFToFrame">To</label>
+          &nbsp;
+          <input type="number"  size="2" class="number" min="1" id="export3dGIFToFrame">
+        </div>
+
+
+        <select name="export3dGIFLoopType" id="export3dGIFLoopType">
+          <option value="loop">Loop</option>
+          <option value="pingpong">Ping Pong</option>
+        </select>
+
+
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel">Speed:</label>
+        <select name="export3dGIFSpeed" id="export3dGIFSpeed">
+          <option value="1">100%</option>
+          <option value="2">200%</option>
+          <option value="3">300%</option>
+          <option value="4">400%</option>
+          <option value="custom">Custom</option>
+        </select>
+      </div>
+      <div class="formGroup" id="custom3dSpeedSection" style="display: none">
+        <label class="controlLabel">Custom speed:</label>
+        <div style="display: inline-block">
+
+          <input size="3" type="number" class="number" min="5" value="10" id="export3dGIFMSPerTick"/>
+          ms per tick
+        </div>
+      </div>        
+
+    </div>
+
+    <h3><i class="halflings halflings-film"></i>&nbsp;Camera</h3>
+
+    <div id="export3dGIFCamera">
+
+      <div class="formGroup" id="">
+        <label class="controlLabel">Camera Type:</label>
+        <div style="display: inline-block">
+          <label class="rb-container">Position/Rotation
+            <input type="radio" name="export3dGIFCameraType" value="position">
+            <span class="checkmark"></span>
+          </label>          
+        </div>
+
+        <div style="display: inline-block">
+          <label class="rb-container">Orbit
+            <input type="radio" name="export3dGIFCameraType" value="orbit" checked="checked">
+            <span class="checkmark"></span>
+          </label>          
+        </div>
+
+          
+      </div>
+
+        
+      <div class="formGroup export3dCameraPositionControls" id="export3dCameraPositionSection">
+        <label class="controlLabel">Position:</label>
+        <div style="display: inline-block">
+          <label>x: <input type="number" size="4" style="margin-right: 4px" class="number export3dCameraPosition" value="10"  id="export3dCameraX"/></label>
+          <label>y: <input type="number" size="4" style="margin-right: 4px" class="number export3dCameraPosition" value="10"  id="export3dCameraY"/></label>
+          <label>z: <input type="number" size="4" style="margin-right: 4px" class="number export3dCameraPosition" value="10"  id="export3dCameraZ"/></label>
+        </div>
+      </div>
+
+      <div class="formGroup export3dCameraPositionControls" id="export3dCameraRotationSection">
+        <label class="controlLabel">Rotation:</label>
+        <div style="display: inline-block">
+          <label>x: <input type="number" size="4" style="margin-right: 4px"  class="number export3dCameraRotation" value="10"  id="export3dRotationX"/></label>
+          <label>y: <input type="number" size="4" style="margin-right: 4px"  class="number export3dCameraRotation" value="10"  id="export3dRotationY"/></label>
+          <label>z: <input type="number" size="4" style="margin-right: 4px"  class="number export3dCameraRotation" value="10"  id="export3dRotationZ"/></label>
+        </div>
+      </div>        
+    </div>
+
+
+    <div class="formGroup export3dCameraOrbitControls" id="export3dCameraTargetSection">
+      <label class="controlLabel">Target:</label>
+      <div style="display: inline-block">
+        <label>x: <input type="number" size="4" style="margin-right: 4px" class="number export3dCameraTarget" value="40"  id="export3dCameraTargetX"/></label>
+        <label>y: <input type="number" size="4" style="margin-right: 4px" class="number export3dCameraTarget" value="0"  id="export3dCameraTargetY"/></label>
+        <label>z: <input type="number" size="4" style="margin-right: 4px" class="number export3dCameraTarget" value="20"  id="export3dCameraTargetZ"/></label>
+      </div>
+    </div>
+
+    <div class="formGroup export3dCameraOrbitControls" id="">
+      <label class="controlLabel"></label>
+      <div style="display: inline-block">
+        <label class="cb-container">Autorotate
+          <input type="checkbox" name="export3dCameraAutorotate" id="export3dCameraAutorotate" value="yes" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+
+      
+    <div class="formGroup export3dCameraOrbitControls" id="export3dCameraAzimuthSection">
+      <label class="controlLabel">Azimuth Angle:</label>
+      <div style="display: inline-block">
+        <input type="number" size="4" style="margin-right: 4px"  class="number export3dCameraAzimuthAngle" value="90"  id="export3dAzimuthAngle"/>
+      </div>
+    </div>
+
+    <div class="formGroup export3dCameraOrbitControls" id="export3dCameraAltitudeSection">
+      <label class="controlLabel">Altitude Angle:</label>
+      <div style="display: inline-block">
+        <input type="number" size="4" style="margin-right: 4px"  min="-90" max="90" class="number export3dCameraAltitudeAngle" value="10"  id="export3dAltitudeAngle"/>
+      </div>
+    </div>
+
+    <div class="formGroup export3dCameraOrbitControls" id="export3dCameraDistanceSection">
+      <label class="controlLabel">Distance:</label>
+      <div style="display: inline-block">
+        <input type="number" size="4" style="margin-right: 4px"  class="number export3dCameraDistance" value="160"  id="export3dCameraDistance"/>
+      </div>
+    </div>
+      
+
+
+    <div class="formGroup" id="export3dCameraFOVSection">
+      <label class="controlLabel">Field Of View:</label>
+      <div style="display: inline-block">
+        <input type="number" size="4" style="margin-right: 4px"  class="number export3dCameraFOV" value="10"  id="export3dCameraFOV"/>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,127 @@
+<div class="activeBackground panelFill" id="toolsPanel">
+  <div class="title" style="background-color: #111111; height: 18px;">
+    <div style="position: absolute; font-size: 10px; top: 2px; left: 6px; right: 10px; overflow: hidden; white-space: nowrap">
+      Pixel Tools
+    </div>
+  </div>
+
+
+  <div id="toolIconHolder" style="padding: 8px">
+    <div>
+      <div class="pixelDrawTool pixelDrawToolSelected" id="pixelDrawTool_pen"><img width="20" src="icons/pen@2x.png" title="Pen (n)"/></div>
+      <div class="pixelDrawTool" id="pixelDrawTool_erase"><img width="20" src="icons/erase@2x.png" title="Blank (l)"/></div>
+      <div class="pixelDrawTool" id="pixelDrawTool_fill"><img width="20" src="icons/fill@2x.png" title="Fill Bucket (k)"/></div>
+      <div class="pixelDrawTool" id="pixelDrawTool_eyedropper"><img width="20" src="icons/eyedropper@2x.png"/></div>
+      <div class="pixelDrawTool" id="pixelDrawTool_line"><img width="20" src="icons/line@2x.png" title="Line (u)"/></div>
+      <div class="pixelDrawTool" id="pixelDrawTool_rect"><img width="20" src="icons/rect@2x.png" title="Rect (u)"/></div>
+      <div class="pixelDrawTool" id="pixelDrawTool_oval"><img width="20" src="icons/oval@2x.png" title="Oval (u)"/></div>
+      <div class="pixelDrawTool" id="pixelDrawTool_select"><img width="20" src="icons/select@2x.png" title="Marquee (m)"/></div>      
+      <div class="pixelDrawTool" id="pixelDrawTool_zoom"><img width="20" src="icons/zoom@2x.png" title="Zoom (z)"/></div>      
+      <div class="pixelDrawTool" id="pixelDrawTool_hand"><img width="20" src="icons/hand@2x.png" title="Hand (h)"/></div>      
+      <div class="pixelDrawTool" id="pixelDrawTool_move"><img width="20" src="icons/move@2x.png" title="Move (v)"/></div>      
+    </div>
+
+    <div id="currentPixelDrawTool" style="font-size: 8px; margin-top: 2px">draw</div>
+
+  </div>
+
+
+<!--
+
+  <div id="pixelDrawTools-cellColor" style="position: relative; padding: 0px 8px 0px 8px; height: 68px">
+
+
+    <h3 id="pixelDrawTools-cellColorHeading" style="font-size: 10px; padding-bottom: 2px">Cell</h3>
+    <div style="" id="pixelDrawCellForegroundColor" class="foregroundColor colorSetting"></div>
+
+    <div style="display: block; position: absolute; top: 34px; left: 22px; width: 28px; height: 28px; background-color: #000000; z-index: 5;" id="cellBackgroundColor" class="cellBackgroundColor colorSetting"></div>
+
+  </div>
+-->
+
+<style>
+.pixelDrawToolsColor {
+  background-color: transparent; /* #444444; */
+  border: 1px solie #222222;
+  padding: 3px;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.pixelDrawToolsColor:hover {
+  background-color: #333333;
+}
+
+/*
+.pixelDrawToolsColor:hover h3 {
+  color: #999999;
+}
+*/
+.pixelDrawToolsColor h3 {
+  color: #666666;
+  border-bottom: 1px solid #333333;
+}
+
+.pixelDrawToolsColorSelected {
+  background-color: #292929;
+}
+
+.pixelDrawToolsColorSelected h3 {
+  color: #c7c7c7;
+  border-bottom: 1px solid #999999;
+
+}
+
+</style>
+
+  <div id="pixelDrawTools-colors" style="padding: 0px 8px 0px 8px;">
+    <div class="pixelDrawToolsColor" id="pixelDrawToolsColor-background" data-type="background" >
+      <h3 style="font-size: 9px; padding-bottom: 2px">Background</h3>
+      <div>
+        <div style="display: inline-block; width: 24px; height: 24px; background-color: #000000;"  data-type="background" id="pixelC64Transparent" class="backgroundColor  colorSetting"></div>
+      </div>
+    </div>
+
+    <div class="pixelDrawToolsColor pixelDrawToolsColorSelected" id="pixelDrawToolsColor-cell" data-type="cell" >
+      <h3 style="font-size: 9px; padding-bottom: 2px">Individual</h3>
+      <div>
+        <div style="display: inline-block; width: 24px; height: 24px; background-color: #000000;"  data-type="cell" id="pixelC64Individual" class="foregroundColor colorSetting"></div>
+      </div>
+    </div>
+
+    <div id="pixelDrawTools-c64multicolor">
+
+      <div class="pixelDrawToolsColor" id="pixelDrawToolsColor-multi1" data-type="multi1" >
+
+        <h3 style="font-size: 9px; padding-bottom: 2px">Multi 1</h3>
+        <div>
+          <div style="display: inline-block; width: 24px; height: 24px; background-color: #000000;"  data-type="multi1" id="pixelC64Multi1Color" class="c64Multi1Color  colorSetting"></div>
+        </div>
+      </div>
+
+      <div class="pixelDrawToolsColor" id="pixelDrawToolsColor-multi2" data-type="multi2" >
+
+        <h3 style="font-size: 9px; padding-bottom: 2px">Multi 2</h3>
+
+        <div>
+          <div style="display: inline-block; width: 24px; height: 24px; background-color: #000000;"  data-type="multi2" id="pixelC64Multi2Color" class="c64Multi2Color colorSetting"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="pixelDrawTools-nes">
+      nes colours
+    </div>
+
+
+    <div id="pixelDrawTools-indexed">
+    </div>
+
+
+  </div>
+
+
+
+
+</div>

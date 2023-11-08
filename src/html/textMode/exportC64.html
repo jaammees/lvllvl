@@ -1,0 +1,129 @@
+<div class="panelFill dialogContent">
+  <div class="formGroup">
+    <label class="controlLabel" for="exportC64As">File name:</label> 
+    <input class="formControl" type="text" size="20" value="" id="exportC64As"/>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportC64As">Type:</label> 
+    <div class="radioGroup">
+      <select name="exportC64Type" id="exportC64Type">
+        <option value="prg">PRG</option>
+        <option value="d64">D64</option>
+      </select>
+    </div>
+
+  </div>
+
+  <div id="exportC64D64Options" style="display: none">
+    <div class="formGroup">
+      <label class="controlLabel" for="exportC64DiskName">Disk Name:</label> 
+      <input class="formControl" type="text" size="20" value="Untitled" id="exportC64DiskName"/>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="exportC64Name">PRG Name:</label> 
+      <input class="formControl" type="text" size="20" value="Untitled" id="exportC64Name"/>
+    </div>
+  </div>
+
+
+
+  <div class="formGroup">
+    <label class="controlLabel">Screen Mode:</label>
+
+    <div class="checkboxGroup" style="padding-top: 6px">
+      <label class="rb-container" style="color: #eeeeee; font-size: 12px">Standard Character Mode
+        <input type="radio" name="exportC64ColorMode" id="exportC64ColorModeStandard" value="standard" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+
+      <div style="margin-left: 24px; color: #aaaaaa">256 characters, foreground colour per cell, background colour per frame</div>
+      <br/>
+      <label class="rb-container" style="color: #eeeeee;  font-size: 12px">Multicolour Character Mode
+        <input type="radio" name="exportC64ColorMode" id="exportC64ColorModeMulticolor" value="multicolor">
+        <span class="checkmark"></span>
+      </label>
+
+      <div style="margin-left: 24px; color: #aaaaaa">256 characters, 3 colours per cell, background colour per frame</div>
+      <br/>
+
+      <label class="rb-container" style="color: #eeeeee; font-size: 12px">Extended Background Colour Mode
+        <input type="radio" name="exportC64ColorMode" id="exportC64ColorModeExtended" value="extended"/> 
+        <span class="checkmark"></span>
+      </label>
+
+      <div style="margin-left: 24px; color: #aaaaaa">64 characters, foreground colour per cell, background colour per cell, <br/>up to 4 different cell background colours</div>
+      <!--
+      <div style="margin-left: 28px; margin-top: 4px">Each Character may have one of four different background colours.<br/>However there can only be 64 different characters.</div>
+      -->
+      <br/>
+
+      <label class="rb-container" style="color: #eeeeee; font-size: 12px">Monochrome
+        <input type="radio" name="exportC64ColorMode" id="exportC64ColorModeMonochrome" value="monochrome"/>
+        <span class="checkmark"></span>
+      </label>
+
+      <div style="margin-left: 24px; color: #aaaaaa">256 characters, one foreground colour, one background colour per frame</div>
+    </div>
+
+    <div class="formGroup" id="exportC64MonochromeSection" style="display: none">
+      <label class="controlLabel"></label>
+      <div class="checkboxGroup">
+        Monochrome Colour: <div id="exportC64MonochromeColor" style="display: inline-block; width: 16px; height: 16px; border: 1px solid white"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportC64FromFrame">Export Frames:</label>
+
+    <div style="display: inline-block">
+      <input size="2" class="number" min="1" id="exportC64FromFrame">
+      &nbsp;
+      <label for="exportC64ToFrame">To</label>
+      &nbsp;
+      <input size="2" class="number" min="1" id="exportC64ToFrame">
+      &nbsp;
+
+      <select name="exportC64LoopType" id="exportC64LoopType">
+        <option value="loop">Loop</option>
+        <option value="pingpong">Ping Pong</option>
+      </select>
+    </div>
+
+  </div>          
+
+  <div class="formGroup">
+    <label class="controlLabel">Music Options:</label>
+    <div class="radioGroup">
+      <select name="exportC64Music" id="exportC64Music">
+      </select>
+      <div style="margin-top: 8px; display: none" id="exportC64SidFileSection">
+        <label for="exportC64SIDFile">SID File</label>
+        <input type="file" id="exportC64SIDFile" accept=".sid,.bin">
+
+        <div>SIDs may or may not work</div>
+        <div>SIDs with a load address around $1000 will mostly work..</div>
+
+        <div id="exportC64SIDFileInfo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+
+    <div id="exportC64LoadingMessage">
+      <label class="controlLabel">&nbsp;</label>
+      <img src="images/loading.gif">
+      <span style="font-weight: 600">loading assets...</span>
+    </div>
+
+    <button id="exportC64DownloadSource" style="display: none; margin-right: 20px" class="ui-button ui-button-primary"><img src="icons/svg/glyphicons-basic-199-save.svg">Download Source</button>
+
+    <button id="exportC64DownloadPRG" style="display: none" class="ui-button ui-button-primary"><img src="icons/svg/glyphicons-basic-199-save.svg">Download PRG</button>
+
+  </div>
+</div>
+

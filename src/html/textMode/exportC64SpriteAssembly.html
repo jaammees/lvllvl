@@ -1,0 +1,93 @@
+<div class="panelFill dialogContent" id="exportC64SpriteAssemblyPanel">
+  <div style="position: absolute; top: 10px; left: 10px; right: 10px; height: 30px;">
+    <div class="formGroup">
+      <label class="controlLabel" for="exportC64SpriteAssemblyAs">File name:</label> 
+      <input type="text" class="formControl" size="20" value="" id="exportC64SpriteAssemblyAs"/>
+
+      <div id="exportC64SpriteAssemblyDownload" class="ui-button ui-button-primary"><img src="icons/svg/glyphicons-basic-199-save.svg"/> Download</div>
+    </div>
+  </div>
+
+  <div style="position: absolute; top: 50px; left: 10px; right: 10px; bottom: 140px">
+    <div id="exportC64SpriteAssemblySource" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0"></div>
+  </div>
+
+
+  <div style="position: absolute; bottom: 60px; height: 50px; left: 10px; right: 10px">
+
+    <div>
+      <div class="formGroup" style="display: inline-block">
+        <label class="controlLabel">Type</label>
+
+        <label class="rb-container">C64
+          <input type="radio" class="formControl" size="20" value="c64" checked="checked" name="exportC64SpriteAssemblyType" id="exportC64SpriteAssemblyTypeC64"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="rb-container">Mega65 FCM
+          <input type="radio" class="formControl" size="20" value="fcm" name="exportC64SpriteAssemblyType" id="exportC64SpriteAssemblyTypeFCM"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+  <div style="position: absolute; bottom: 10px; height: 50px; left: 10px; right: 10px">
+
+    <div>
+      <div class="formGroup" style="display: inline-block">
+        <label class="controlLabel">Format</label>
+
+        <label class="rb-container">ACME
+          <input type="radio" class="formControl" size="20" value="acme" checked="checked" name="exportC64SpriteAssemblyFormat" id="exportC64SpriteAssemblyFormatAcme"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="rb-container">Kick Ass / CA65
+          <input type="radio" class="formControl" size="20" value="kickass" name="exportC64SpriteAssemblyFormat" id="exportC64SpriteAssemblyFormatKickAss"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div class="formGroup"  style="display: inline-block">
+        <label class="controlLabel" for="exportC64AssemblyNumberFormat">Number Format:</label>
+        <div style="display: inline-block">
+          <label class="rb-container">Hex
+            <input type="radio" class="formControl" size="20" value="hex" name="exportC64SpriteNumberFormat" id="exportC64SpriteAssemblyNumberFormatHex"/>
+            <span class="checkmark"></span>
+          </label>
+  
+          <label class="rb-container">Dec
+            <input type="radio" class="formControl" size="20" value="dec" name="exportC64SpriteNumberFormat" id="exportC64SpriteAssemblyNumberFormatDec"/>
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="rb-container">Bin
+            <input type="radio" class="formControl" size="20" value="bin" checked="checked" name="exportC64SpriteNumberFormat" id="exportC64SpriteAssemblyNumberFormatBin"/>
+            <span class="checkmark"></span>
+          </label>
+          
+        </div>
+      </div>
+
+    </div>
+    <div class="formGroup">
+      <label class="controlLabel" for="exportC64SpriteAssemblyFromFrame">Export Frames:</label>
+      <div style="display: inline-block">
+        <input type="text" size="2" class="number" min="1"  id="exportC64SpriteAssemblyFromFrame">
+        &nbsp;
+        <label for="exportC64SpriteAssemblyToFrame">To</label>
+        &nbsp;
+        <input type="text" size="2" class="number" min="1" id="exportC64SpriteAssemblyToFrame">
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+</div>

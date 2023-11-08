@@ -1,0 +1,43 @@
+<div class="panelFill">
+<!--
+  <div id="chooseTileSetType" style="position: absolute; left: 10px; top: 10px; bottom: 20px; right: 10px">
+    <div class="" style="display: inline-block">Character Sets</div>
+    <div class="" style="display: inline-block">Vector Tiles</div>
+
+  </div>
+-->
+
+  <div id="chooseCharacterSetList" style="position: absolute; left: 10px; top: 10px; bottom: 10px; width: 180px; overflow: auto; ">
+    <div class="characterSetListEntry">c64</div>
+  </div>
+
+  <div style="position: absolute; left: 200px; top: 0px; bottom: 0; right: 0; overflow: auto; display: flex; flex-direction: column; padding: 10px">
+    <div>
+      <h3 id="chooseCharacterSetHeading"></h3>
+    </div>
+
+    <!--
+    <div style="position: absolute; left: 0; right: 0; top: 20px; bottom: 0; overflow: auto" id="chooseCharacterSetPreviewHolder">
+    -->
+    <div style="overflow: auto; flex-grow: 100; background-color: #050505; display: flex; text-align: center; flex-direction: column; align-items: center; vertical-align: middle;" id="chooseCharacterSetPreviewHolder">
+      <canvas id="chooseCharacterSetPreview" width="256" height="256" style="background-color: #222222"></canvas>
+    </div>
+    <div id="chooseCharacterSetOptions" style=" background-color: #272727; padding: 10px 10px 0px 10px"></div>
+
+    <div id="chooseCharacterSetInfo" ></div>
+
+
+  </div>
+
+</div>
+
+<!--
+overflow: auto;
+    flex-grow: 100;
+    display: flex;
+    text-align: center;
+    /* margin: auto; */
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    background-color: #040404;-->

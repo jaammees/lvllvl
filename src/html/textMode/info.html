@@ -1,0 +1,63 @@
+<div class="activeBackground panelFill"  style="color: white;">
+  <div class="title" style="background-color: #111111; height: 18px">
+    <div style="position: absolute; font-size: 10px; top: 2px; left: 6px; right: 30px; overflow: hidden; white-space: nowrap">
+    Info
+    </div>
+    <div style="position: absolute; top: 2px; right: 2px; width: 20px">
+      <div id="infoPanelCloseButton" class="ui-button ui-panel-close-button ui-button-danger" style="padding: 1px 4px"><img src="icons/svg/glyphicons-basic-599-menu-close.svg"></div>
+    </div>    
+
+  </div>
+
+
+
+
+  <table class="infoTable">
+    <tr>
+      <th>Cell:</th>
+      <td>
+        <div style="display: inline-block" id="info-coordinates"></div>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Tile:
+      </th>
+      <td>
+        <canvas style="background-color: #222222; border: 1px solid white" width="16" height="16" id="infoCharacterCanvas"></canvas>
+        <div style="display: inline-block" id="info-character"></div>
+      </td>
+    </tr>
+    <tr id="infoTableBlock" style="display: none">
+        <th>
+          Block:
+        </th>
+        <td>
+          <div style="display: inline-block" id="info-block"></div>
+        </td>
+    </tr>    
+    <tr id="info-fgColor">
+      <th>
+        Cell FG:
+      </th>
+      <td>
+        <div style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" id="infoCellFGColor"></div>  
+
+        <span id="infoCellFGColorIndex"></span>
+        <span id="infoCellFGColorHex"></span>
+      </td>
+    </tr>
+    <tr id="info-bgColor">
+      <th>Cell BG:</th>
+      <td>
+        <div style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" id="infoCellBGColor"></div>    
+      </td>
+    </tr>
+    <tr>
+      <th>Zoom:</th>
+      <td>
+        <div style="display: inline-block" id="info-zoom">Zoom: 100%</div>        
+      </td>
+    </tr>
+  </table>
+</div>

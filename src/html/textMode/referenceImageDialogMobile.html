@@ -1,0 +1,146 @@
+<div class="panelFill dialogContent"  id="mobile_refLayer">
+
+  <div style="position: absolute; top: 0; left: 0; right: 0; height: 280px; background-color: #111111; border-bottom: 1px solid #555555; padding: 6px">
+    <div style="margin: 8px 0 14px 0">
+      <div class="ui-button" id="mobile_refLayerSourceChooseFile">Choose Image</div>
+      &nbsp;&nbsp;
+      <div class="ui-button" id="mobile_refLayerClearImage">Clear Image</div>
+
+      <input class="formControl"  id="mobile_refLayerSourceFile" style="position: absolute; top: -50px; left: -100px" type="file" accept="image/*"/>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 10px">
+      <canvas width="320" height="200" id="mobile_refImageCanvas" style="border:1px solid white; background-color: #393939"></canvas>
+    </div>
+
+  </div>      
+
+  <!--
+  <div style="padding: 4px">
+    <label for="refLayerSourceFile">File To Use (.gif,.png,.jpg)</label>
+    <input id="refLayerSourceFile" type="file" accept=".gif,.png,.jpg,.jpeg">
+  </div>
+  -->
+  <div id="mobile_refImageControlsContainer" style="position: absolute; top: 292px; left: 0; right: 0; bottom: 0; overflow: auto; padding: 6px; display: none">
+
+    <div class="formRow">
+      <label for="mobile_refImageScale" class="controlLabel">Scale (%)</label>
+
+      <input size="3" style="width: 40px" type="text" id="mobile_refImageScale" class="number" value="100"/>
+      <div class="rangeHolder">
+        <input type="range" class="range" min="1" max="500" value="0" id="mobile_refImageScaleRange"/>   
+      </div>
+
+      <div class="ui-button rangeButton" id="mobile_refImageScaleToFit">Fit</div>
+    </div>
+
+    <div class="formRow">
+      <label for="mobile_refImageRotation" class="controlLabel">Rotation</label>
+
+      <input size="3" style="width: 40px" type="text" id="mobile_refImageRotation" class="number" value="0"/>
+      <div class="rangeHolder">
+        <input type="range" class="range" min="0" max="359" value="0" id="mobile_refImageRotationRange"/>   
+      </div>
+
+      <div class="ui-button rangeButton" id="mobile_refImageRotation90">90</div>
+    </div>
+
+
+    <div class="formRow" style="display: none">
+      <label class="controlLabel">Position</label>
+
+      <label for="mobile_refImageX">X</label>:
+      <input size="3" style="width: 35px" type="text" id="mobile_refImageX" class="number" value="0"/> 
+
+      &nbsp;&nbsp;
+
+      <label for="mobile_refImageY">Y</label>:
+      <input size="3" style="width: 35px" type="text" id="mobile_refImageY" class="number" value="0"/> 
+    </div>
+
+    <div class="formRow">
+      <label class="controlLabel">Brightness</label>
+      <input type="text" style="width: 40px" id="mobile_refImageBrightnessValue" value="0" class="number" min="-100" max="100" size="2"/>
+      <div class="rangeHolder">
+        <input type="range"  min="-100" max="100" value="0" size="3" id="mobile_refImageBrightness"/>                       
+      </div>
+      <div class="ui-button rangeButton" id="mobile_refImageBrightnessReset">Reset</div>
+                  
+    </div>
+
+    <div class="formRow">
+      <label class="controlLabel">Contrast</label>
+      <input type="text" class="number" style="width: 40px" min="-100" max="100" value="0" size="2" id="mobile_refImageContrastValue"/>                        
+      <div class="rangeHolder">
+        <input type="range" class="" min="-100" max="100" value="0" size="3" id="mobile_refImageContrast"/>
+      </div>
+      <div class="ui-button rangeButton" id="mobile_refImageContrastReset">Reset</div>
+    </div>
+
+    <div class="formRow">
+      <label class="controlLabel">Saturation</label>
+      <input style="width: 40px" type="text" class="number" min="-100" max="100" value="0" size="2" id="mobile_refImageSaturationValue"/>
+      <div class="rangeHolder">
+        <input type="range"  min="-100" max="100" value="0"  id="mobile_refImageSaturation"/>                      
+      </div>
+      <div class="ui-button rangeButton" id="mobile_refImageSaturationReset">Reset</div>                 
+    </div>
+
+
+
+    <div class="formRow">
+      <label class="controlLabel">Colour Reduction:</label>
+
+      <select id="mobile_refImageColorReduction" name="mobile_refImageColorReduction">
+        <option value="none">None</option>
+        <option value="closest">Closest</option>
+        <option value="dither">Dither</option>
+      </select>
+    </div>
+
+    <div class="formRow" id="mobile_refImageDitherGroup">
+      <label class="controlLabel">Dither Method:</label>
+      <select name="mobile_refImageDither" id="mobile_refImageDither">
+        <option value="FloydSteinberg" selected="selected">Floyd Steinberg</option>
+        <option value="Atkinson">Atkinson</option>
+        <option value="Sierra">Sierra</option>
+        <option value="TwoSierra">Two Sierra</option>
+        <option value="Stucki">Stucki</option>
+        <option value="Jarvis">Jarvis</option>
+        <option value="Burkes">Burkes</option>
+      </select>
+    </div>  
+
+    <div class="formRow" id="mobile_refImageUseColorsRow">
+      <label class="controlLabel">Use Colours:</label>
+      <div class="radioGroup">
+
+        <select id="mobile_refImageUseColors" name="mobile_refImageUseColors">
+          <option value="all">All Colours</option>
+          <option value="greyscale">Greyscale</option>
+          <option value="choose">Custom Set</option>
+        </select>
+
+        <br/>
+
+      </div>
+
+      <div style="padding: 4px 0 2px 8px">
+        <label class="cb-container">Limit Colours Per Cell
+          <input type="checkbox" id="mobile_refImageLimitPerCell">
+          <span class="checkmark"></span>
+        </label>          
+      </div>
+    </div>
+
+    <div class="formRow" style="padding: 4px; display: none" id="mobile_refImageChooseColorsRow">
+      <label class="controlLabel">&nbsp;</label>
+
+      <div class="ui-button" id="mobile_refImageChooseColors" type="button">Choose Colours...</div>
+      <div id="mobile_refImageChooseColorsCount">
+      </div>
+    </div>
+
+
+  </div>
+</div>

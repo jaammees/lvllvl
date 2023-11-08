@@ -1,0 +1,72 @@
+<div class="activeBackground panelFill"  style="color: white;">
+
+  <div class="title" style="background-color: #111111; height: 18px">
+    <div style="position: absolute; font-size: 10px; top: 2px; left: 6px; right: 30px; overflow: hidden; white-space: nowrap">
+    Colour Editor
+    </div>
+
+    <div style="position: absolute; top: 2px; right: 2px; width: 20px">
+      <div id="colorEditorCloseButton" class="ui-button ui-panel-close-button ui-button-danger" style="padding: 1px 4px"><img src="icons/svg/glyphicons-basic-599-menu-close.svg"></div>
+    </div>    
+  </div>
+
+  <div id="colorEditorTabPanel">
+    <div class="colorEditorTab" id="colorEditorTab-rgb" data-colortype="rgb">
+      RGB
+    </div>
+    <div class="colorEditorTab colorEditorTabActive"  id="colorEditorTab-hsv" data-colortype="hsv">
+      HSV
+    </div>
+  </div>
+
+  <div id="colorEditorRGB" class="colorEditorPanel" style="display: none">
+    <div>
+      <div class="colorComponentSelector">
+        <label for="editColorR">R:</label>
+        <canvas width="260" height="34" id="editColorRCanvas" class="colorEditorSlider" data-component="r"></canvas>
+
+        <input type="number" class="number colorEditorNumber" size="4" id="editColorR" data-component="r" min="0" max="255" value="0">
+      </div>
+
+
+      <div class="colorComponentSelector">
+        <label for="editColorG">G</label>              
+        <canvas width="260" height="34" id="editColorGCanvas" class="colorEditorSlider" data-component="g"></canvas>
+        <input type="number" class="number colorEditorNumber" size="4" id="editColorG"  data-component="g" min="0" max="255" value="0">
+      </div>
+
+      <div class="colorComponentSelector">
+        <label for="editColorB">B</label>
+        <canvas width="260" height="34" id="editColorBCanvas" class="colorEditorSlider" data-component="b"></canvas>            
+        <input type="number" class="number colorEditorNumber" size="4" id="editColorB" data-component="b" min="0" max="255" value="0">            
+      </div>
+    </div>    
+  </div>
+
+
+  <div id="colorEditorHSV" class="colorEditorPanel" >
+    <div class="colorComponentSelector">
+      <label for="editColorH">H</label>              
+      <canvas width="260" height="34" id="editColorHCanvas" class="colorEditorSlider" data-component="h"></canvas>
+      <input type="number" class="number colorEditorNumber" size="4" id="editColorH" data-component="h" min="0" max="360" value="0">
+    </div>
+
+
+    <div class="colorComponentSelector">
+      <label for="editColorS">S</label>              
+      <canvas width="260" height="34" id="editColorSCanvas" class="colorEditorSlider" data-component="s"></canvas>
+      <input type="number" class="number colorEditorNumber" size="4" id="editColorS"  data-component="s" min="0" max="100" value="0">
+    </div>
+
+    <div class="colorComponentSelector">
+      <label for="editColorB">V</label>              
+      <canvas width="260" height="34" id="editColorVCanvas" class="colorEditorSlider" data-component="v"></canvas>
+      <input type="number" class="number colorEditorNumber" size="4" id="editColorV" data-component="v" min="0" max="100" value="0">            
+    </div>
+  </div>
+
+
+  #<input type="text" maxlength="6" size="6" id="editColorHex"/>
+
+
+</div>

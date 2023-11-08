@@ -1,0 +1,156 @@
+<div class="panelFill dialogContent"  id="refLayer" >
+  <form id="refLayerForm">
+
+    <div id="layerDialogStandardProperties">
+      <div class="formGroup">
+        <label class="controlLabel" for="layersRefImageName">Name</label>
+        <input type="text" id="layersRefImageName" /> 
+      </div>
+
+      <div class="formGroup" id="layerDialogLayerTypeRow" style="display: none">
+        <label class="controlLabel">Layer Type</label>
+
+        <label class="rb-container">Grid
+          <input type="radio" name="layerDialogLayerType" id="layerDialogLayerType_grid" value="grid" checked="checked">
+          <span class="checkmark"></span>
+        </label>          
+        <!--
+        &nbsp;
+        <label class="rb-container">Reference Image
+          <input type="radio" name="layerDialogLayerType" id="layerDialogLayerType_ref" value="image">
+          <span class="checkmark"></span>
+        </label>          
+      -->
+      </div>
+
+    </div>
+
+
+    <div id="layerDialogGridProperties">
+  
+      <div class="formGroup">
+        <label class="controlLabel">Screen Mode:</label>
+        <select id="layersScreenMode" style="width: 177px">
+          <option value="textmode">Text Mode</option>
+          <option value="c64standard">C64 Standard</option>
+          <option value="c64multicolor">C64 Multicolour</option>
+          <option value="c64ecm">C64 Extended BG Colour Mode</option>
+          <option value="nes" class="unfinished">NES</option>
+          <option value="vector">Vector Mode</option>
+          <option value="indexed">Indexed Colour</option>
+        </select>
+      </div>
+
+      <div class="formRow" id="layerDialogFlipRotateOptions">
+        <label class="controlLabel">&nbsp;</label>
+        <label class="cb-container">Can Flip Tiles
+          <input type="checkbox" name="layerTileFlip" id="layerTileFlip" value="1">
+          <span class="checkmark"></span>
+        </label>
+        <label class="cb-container">Can Rotate Tiles
+          <input type="checkbox" name="layerTileRotate" id="layerTileRotate" value="1">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+
+      <div class="formGroup" id="layerDialogTileSetGroup">
+        <label class="controlLabel">Tile Set</label>
+        <div style="display: inline-block">
+          <div>
+            <label class="rb-container" style="margin-right: 4px">Use Current
+              <input type="radio" name="layerDialogTileSet" id="layerTileSet" checked="checked" value="current">
+              <span class="checkmark"></span>
+            </label>
+            <label class="rb-container">New
+              <input type="radio" name="layerDialogTileSet" id="layerTileSet" value="new">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div id="layerDialogChooseTilesetHolder">
+            <div style="display: flex; align-items: center; padding: 2px 2px 2px 4px; background-color: #222222; min-height: 26px">
+              <div style="display: inline-block; width: 140px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis" id="layerDialogNewTileSet">C64 PETSCII</div>
+              <div class="ui-button" id="layerDialogChooseTileSetButton">Choose...</div>
+            </div>    
+          </div>
+        </div>
+
+      </div>
+
+      <div class="formGroup" id="layerDialogColorPaletteGroup">
+        <label class="controlLabel">Colour Palette</label>
+
+        <div style="display: inline-block">
+          <div>
+            <label class="rb-container" style="margin-right: 4px">Use Current
+              <input type="radio" name="layerDialogColorPalette" id="layerColorPaletteCurrent" checked="checked" value="current">
+              <span class="checkmark"></span>
+            </label>
+            <label class="rb-container">New
+              <input type="radio" name="layerDialogColorPalette" id="layerColorPaletteNew" value="new">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div id="layerDialogChooseColorPaletteHolder">
+            <div style="display: flex; align-items: center; padding: 2px 2px 2px 4px; background-color: #222222; min-height: 26px">
+              <div style="display: inline-block; width: 140px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis" id="layerDialogNewColorPalette">C64</div>
+              <div class="ui-button" id="layerDialogChooseColourPaletteButton">Choose...</div>
+            </div>
+          </div>
+        </div>
+          
+      </div>
+
+
+      <div class="formGroup" id="layerDialogGridPropertiesBackgroundColor">
+        <label class="controlLabel">Background / Border</label>
+        <div id="layerProperties-frameColors" style="padding: 0px 8px 0px 8px; width: 240px; position: relative; height: 50px; display: inline-block">
+          <div style="display: block; position: absolute; top: 0px; left: 8px; width: 56px; height: 46px; background-color: rgb(114, 97, 216); z-index: 5;" id="layerProperties-borderColor" class="borderColor  colorSetting"></div>
+          <div style="display: block; position: absolute; top: 10px; left: 18px; width: 36px; height: 26px; background-color: rgb(55, 36, 156); z-index: 10;" id="layerProperties-backgroundColor" class="backgroundColor  colorSetting"></div>
+
+
+          <div style="display: block; position: absolute; top: 0px; left: 70px">
+            <div>
+              Background: <div style="display: inline-block; vertical-align: middle" id="layerPropertiesDialogBackgroundColorDescription"></div>
+            </div>
+            <div>
+              Border: <div style="display: inline-block; vertical-align: middle" id="layerPropertiesDialogBorderColorDescription"></div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!--
+      <div class="formGroup">
+        <label class="controlLabel">Blend Mode:</label>
+        <select id="layersRefImageMode" style="width: 177px">
+        </select>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel">Opacity:</label>
+        <input type="text" id="layersRefImageOpacity" value="100" class="number" min="0" max="100" size="4"/> %
+      </div>      
+
+    -->
+    </div>
+
+    <div id="layerDialogBackgroundProperties">
+      <div class="formGroup">
+        <label class="controlLabel">Name:</label>
+        Background
+      </div>
+    </div>
+
+
+
+  </form>
+
+</div>
+

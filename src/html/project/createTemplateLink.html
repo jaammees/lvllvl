@@ -1,0 +1,89 @@
+<div id="templateLinkDialog" class="panelFill dialogContent">
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 28px; overflow: auto; padding: 10px">
+    <div style="margin-bottom: 10px; line-height: 14px">
+
+      <div style="display: inline-block">
+        <img src="icons/svg/glyphicons-basic-351-link.svg" width="30" height="30" style="filter: invert(0.7)"/>
+      </div>
+      <div style="display: inline-block">
+        Create a link to a template.<br/>
+        The link will jump straight into the editor with the presets chosen.
+      </div>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="templateLinkTileSetList">Editor:</label>
+      <select id="templateLinkEditorList">
+        <option value="screen">Screen</option>
+        <option value="sprite" class="unfinished">Sprite</option>
+        <option value="color" class="unfinished">Colour Palette</option>
+        <option value="3d" class="unfinished">3d Scene</option>
+        <option value="music" class="unfinished">Music</option>
+        <option value="assembly" class="unfinished">Assembly</option>
+        <option value="c64" class="unfinished">C64 Emulator</option>
+      </select>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="templateLinkTileSetList">Tile Set:</label>
+      <select id="templateLinkTileSetList">
+      </select>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="templateLinkColorPaletteList">Color Palette:</label>
+      <select id="templateLinkColorPaletteList">
+      </select>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel">Screen Mode:</label>
+      <select id="templateLinkScreenMode" style="width: 177px">
+        <option value="textmode">Text Mode</option>
+        <option value="c64multicolor">C64 Multicolour</option>
+        <option value="c64ecm">C64 Extended BG Colour Mode</option>
+        <option value="nes">NES</option>
+        <option value="indexed">Indexed Colour</option>
+      </select>
+    </div>
+
+
+    <div class="formGroup">
+      <label class="controlLabel" for="templateLinkWidth">Grid:</label>
+      <label>Width:
+        <input class="formControl number" id="templateLinkWidth" min="1" max="500" value="40" type="text" size="3"/>
+      </label>
+
+      <label>Height:
+        <input class="formControl number" id="templateLinkHeight" min="1" max="500" value="25" type="text" size="3"/>
+      </label>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for=""></label>
+      <label class="cb-container">Can Flip Tiles
+        <input type="checkbox" id="templateLinkCanFlipTiles">
+        <span class="checkmark"></span>
+      </label>      
+      <label class="cb-container">Can Rotate Tiles
+        <input type="checkbox" id="templateLinkCanRotateTiles">
+        <span class="checkmark"></span>
+      </label>      
+  
+    </div>
+
+        
+      
+  </div>
+
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 26px; overflow: hidden; padding: 10px">
+    <div style="display: flex">
+      <input id="templateLink" type="text" class="formControl" style="width: 280px; background-color: #bbbbbb" value="https://lvllvl.com" readonly/>
+      <div id="templateLinkCopy" class="ui-button ui-button-primary">
+          <img src="icons/svg/glyphicons-basic-614-copy.svg">
+          Copy Link
+      </div>
+    </div>
+  </div>        
+</div>
+  

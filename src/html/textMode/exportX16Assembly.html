@@ -1,0 +1,183 @@
+<div class="panelFill dialogContent" id="exportX16AssemblyPanel" style="overflow: hidden;">
+  <div style="position: absolute; top: 10px; left: 10px; right: 10px; height: 30px;">  
+    <div class="formGroup">
+      <label class="controlLabel" for="exportX16AssemblyAs">File name:</label> 
+      <input type="text" class="formControl" size="20" value="" id="exportX16AssemblyAs"/>
+      <div id="exportX16AssemblyDownload" class="ui-button ui-button-primary"><img src="icons/svg/glyphicons-basic-199-save.svg"/> Download</div>      
+    </div>
+  </div>
+
+
+  <div style="position: absolute; top: 50px; left: 10px; right: 10px; bottom: 100px">
+    <div id="exportX16AssemblySource" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0"></div>
+  </div>
+
+
+
+  <div style="position: absolute; bottom: 10px; height: 80px; left: 10px; right: 10px">
+
+    <div>
+      <div class="formGroup" style="display: inline-block">
+        <!--
+        <label class="controlLabel" for="exportX16AssemblyFromFrame">Format:</label>
+        -->
+
+        <label class="rb-container">ACME
+          <input type="radio" class="formControl" size="20" value="acme" checked="checked" name="exportX16AssemblyFormat" id="exportX16AssemblyFormatAcme"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="rb-container">Kick Ass
+          <input type="radio" class="formControl" size="20" value="kickass" name="exportX16AssemblyFormat" id="exportX16AssemblyFormatKickAss"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="rb-container">CA65
+          <input type="radio" class="formControl" size="20" value="ca65" name="exportX16AssemblyFormat" id="exportX16AssemblyFormatCA65"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="rb-container">TASS
+          <input type="radio" class="formControl" size="20" value="tass" name="exportX16AssemblyFormat" id="exportX16AssemblyFormatTASS"/>
+          <span class="checkmark"></span>
+        </label>
+
+      </div>
+
+
+      <div class="formGroup"  style="display: inline-block">
+        <label class="controlLabel" for="exportX16AssemblyNumberFormat">Number Format:</label>
+        <div style="display: inline-block">
+          <label class="rb-container">Hex
+            <input type="radio" class="formControl" size="20" value="hex" checked="checked" name="exportX16NumberFormat" id="exportX16AssemblyNumberFormatHex"/>
+            <span class="checkmark"></span>
+          </label>
+  
+          <label class="rb-container">Dec
+            <input type="radio" class="formControl" size="20" value="dec" name="exportX16NumberFormat" id="exportX16AssemblyNumberFormatDec"/>
+            <span class="checkmark"></span>
+          </label>
+  
+        </div>
+      </div>
+
+
+
+      <div class="formGroup"  style="display: inline-block">
+        <label class="controlLabel" for="exportX16AssemblyFromFrame">Frames:</label>
+        <div style="display: inline-block">
+          <input type="number" size="2" class="number" min="1"  id="exportX16AssemblyFromFrame">
+          &nbsp;
+          <label for="exportX16AssemblyToFrame">To</label>
+          &nbsp;
+          <input type="number" size="2" class="number" min="1" id="exportX16AssemblyToFrame">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="formGroup">
+      <!--
+      <label class="controlLabel">Include:</label>
+      -->
+
+      <div class="checkboxGroup">
+
+        <label class="cb-container">Colour Palette
+          <input type="checkbox" id="exportX16AssemblyColorPalette" class="exportX16AssemblyInclude" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="cb-container">Tile Data
+          <input type="checkbox" id="exportX16AssemblyCharactersetData" class="exportX16AssemblyInclude" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+
+        <!-- if colour per character  -->
+        <!--
+        <div id="exportX16AssemblyColorDataHolder" style="display: inline-block">
+          <label class="cb-container">Character Attribute Data
+            <input type="checkbox" id="exportX16AssemblyColorData"  class="exportX16AssemblyInclude" checked="checked"/>
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        -->
+
+        <!-- if block mode -->
+        <div id="exportX16AssemblyBlockDataHolder" style="display: inline-block">
+          <label class="cb-container">MetaTile Data
+            <input type="checkbox" id="exportX16AssemblyBlockData" class="exportX16AssemblyInclude" checked="checked"/>
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+
+
+        <!-- if colour per block  -->
+        <div id="exportX16AssemblyBlockColorDataHolder" style="display: inline-block">
+          <label class="cb-container">Block Colour Data
+            <input type="checkbox" id="exportX16AssemblyBlockColorData"  class="exportX16AssemblyInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+
+        </div>
+
+
+        <!-- should say Block Data if block mode -->
+        <div id="exportX16AssemblyMapDataHolder" style="display: inline-block">        
+
+          <label class="cb-container">Map Character Data
+            <input type="checkbox" id="exportX16AssemblyMapData" class="exportX16AssemblyInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+
+        </div>
+
+
+        <!-- should say Block Data if block mode -->
+        <div id="exportX16AssemblyBlockMapDataHolder" style="display: inline-block">
+          <label class="cb-container">Map Block Data
+            <input type="checkbox" id="exportX16AssemblyBlockMapData" class="exportX16AssemblyInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+
+
+        <!-- if colour per cell -->
+        <div id="exportX16AssemblyMapColorDataHolder" style="display: inline-block">
+          <label class="cb-container">Map Colour Data
+            <input type="checkbox" id="exportX16AssemblyMapColorData" class="exportX16AssemblyInclude" checked="checked">
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+    <div class="formGroup">
+      <label class="controlLabel">Layers:</label>
+      <div class="radioGroup">
+
+        <label class="rb-container">Current Layer
+          <input type="radio" name="exportX16AssemblyLayer" id="exportX16AssemblyLayerCurrent" value="current" checked="checked"/>
+          <span class="checkmark"></span>
+        </label>
+  <!--
+        <label class="rb-container">All Layers
+          <input type="radio" name="exportX16AssemblyLayer" id="exportX16AssemblyLayerAll" value="all" />
+          <span class="checkmark"></span>
+        </label>
+  -->      
+
+      </div>
+    </div>
+  </div>
+
+</div>

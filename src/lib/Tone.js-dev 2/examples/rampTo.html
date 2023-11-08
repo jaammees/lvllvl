@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>SIGNAL RAMP</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" type="image/png" sizes="174x174" href="./style/favicon.png">
+
+	<script src="../build/Tone.js"></script>
+	<script src="./scripts/jquery.min.js"></script>
+	<script src="./scripts/draggabilly.js"></script>
+	<script src="https://tonejs.github.io/Logo/build/Logo.js"></script>
+	<script src="./scripts/StartAudioContext.js"></script>
+	<script src="./scripts/Interface.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./style/examples.css">
+
+	<script>
+		// jshint ignore: start
+	</script>
+
+</head>
+<body>
+	<style type="text/css">
+		canvas {
+			margin-top: 3px;
+		}
+	</style>
+
+	<div id="Content" class="FullScreen">
+		<div id="Title">rampTo</div>
+		<div id="Explanation">
+			In Tone.js, many of a class' members are <a href="https://tonejs.github.io/docs/#Signal">Tone.Signals</a>.
+			Working with signals is different than working with numbers or strings:
+			Signals are values which are updated at audio rate,
+			which allows for sample-accurate scheduling and ramping. <code>.rampTo(value, rampTime)</code>
+			smoothly changes the signal from the current value to the target value over the duration of the rampTime.
+			This example uses <code>.rampTo</code> in to smooth out changes in volume and frequency.
+		</div>
+	</div>
+
+	<script>
+
+		var oscillators = [];
+
+		var bassFreq = 32;
+
+		for (var i = 0; i < 8; i++){
+			oscillators.push(new Tone.Oscillator({
+				"frequency" : bassFreq * i,
+				"type" :  "sawtooth10",
+				"volume" : -Infinity,
+				"detune" : Math.random() * 30 - 15,
+			}).start().toMaster());
+		}
+
+		Interface.Slider({
+			name : "harmony",
+			min : 0.5,
+			max : 2,
+			value : 1,
+			drag : function(value){
+				oscillators.forEach(function(osc, i){
+					osc.frequency.rampTo(bassFreq * i * value, 0.4);
+				});
+			},
+		});
+
+
+		Interface.Button({
+			text : "Unmute",
+			activeText : "Mute",
+			type : "toggle",
+			key : 32, //spacebar
+			start : function(){
+				oscillators.forEach(function(osc){
+					osc.volume.rampTo(-20, 1);
+				});
+			},
+			end : function(){
+				oscillators.forEach(function(osc){
+					osc.volume.rampTo(-Infinity, 1);
+				});
+			},
+		});
+
+	</script>
+</body>
+</html>

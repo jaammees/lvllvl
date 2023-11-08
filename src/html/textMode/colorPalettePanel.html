@@ -1,0 +1,105 @@
+<div class="activeBackground panelFill">
+  <div class="title" style="background-color: #111111; height: 18px">
+    <div style="position: absolute; font-size: 10px; top: 2px; left: 6px; right: 30px; overflow: hidden; white-space: nowrap">
+    Colours
+    </div>
+    <div style="position: absolute; top: 2px; right: 2px; width: 20px">
+      <div id="colorPaletteCloseButton" class="ui-button ui-panel-close-button ui-button-danger" style="padding: 1px 4px"><img src="icons/svg/glyphicons-basic-599-menu-close.svg"></div>
+    </div>
+  </div>
+
+  <div id="colorPalettePanelSubPalettes" style="display: none">
+    <div class="colorPalettePanelSubPalette" data-subPalette="0">
+      <div class="colorPalettePanelSubPaletteHolder">
+        <div class="colorPalettePanelSubPaletteLabel">0:</div>
+        <div class="colorPalettePanelSubPaletteColors">
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette0-Color0" data-subPalette="0" data-color="0"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette0-Color1" data-subPalette="0" data-color="1"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette0-Color2" data-subPalette="0" data-color="2"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette0-Color3" data-subPalette="0" data-color="3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="colorPalettePanelSubPalette" data-subPalette="1">
+      <div class="colorPalettePanelSubPaletteHolder">
+        <div class="colorPalettePanelSubPaletteLabel">1:</div>
+        <div class="colorPalettePanelSubPaletteColors">
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette1-Color0" data-subPalette="1" data-color="0"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette1-Color1" data-subPalette="1" data-color="1"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette1-Color2" data-subPalette="1" data-color="2"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette1-Color3" data-subPalette="1" data-color="3"></div>
+        </div>        
+      </div>
+    </div>
+    <div class="colorPalettePanelSubPalette" data-subPalette="2">
+      <div class="colorPalettePanelSubPaletteHolder">
+
+        <div class="colorPalettePanelSubPaletteLabel">2:</div>
+        <div class="colorPalettePanelSubPaletteColors">
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette2-Color0" data-subPalette="2" data-color="0"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette2-Color1" data-subPalette="2" data-color="1"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette2-Color2" data-subPalette="2" data-color="2"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette2-Color3" data-subPalette="2" data-color="3"></div>  
+        </div>        
+      </div>
+    </div>
+    <div class="colorPalettePanelSubPalette" data-subPalette="3">
+      <div class="colorPalettePanelSubPaletteHolder">
+
+        <div class="colorPalettePanelSubPaletteLabel">3:</div>
+        <div class="colorPalettePanelSubPaletteColors">
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette3-Color0" data-subPalette="3" data-color="0"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette3-Color1" data-subPalette="3" data-color="1"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette3-Color2" data-subPalette="3" data-color="2"></div>
+          <div class="colorPalettePanelSubPaletteColor" id="colorPalettePanelSubPalette3-Color3" data-subPalette="3" data-color="3"></div>  
+        </div>        
+      </div>
+    </div>
+  
+  </div>
+  <!--
+  <div style="position: absolute; top: 22px; left: 3px; right: 3px; height: 24px">
+-->    
+  <div id="colorPalettePanelInfoHolder" style="position: absolute; top: 22px; left: 3px; right: 3px; height: 24px">
+
+    <div id="colorPalettePanelInfoColor" style="display: inline-block; width: 20px; height: 20px; background-color: #ff0000"></div>
+    <div id="colorPalettePanelInfoColorDec" style="display: inline-block; width: 28px;">0</div>
+    <div id="colorPalettePanelInfoColorHex" style="display: inline-block; width: 28px;">0x00</div>
+    <div id="colorPalettePanelInfoColorRGB" style="display: inline-block; width: 60px">#000000</div>
+  </div>
+
+  <!--
+  <div id="colorPaletteHolder" style="position: absolute; top: 46px; left: 2px; right: 2px; bottom: 28px; border: 1px solid #000000; overflow-y: auto; overflow-x: hidden">
+    -->
+  <div id="colorPaletteHolder" style="position: absolute; top: 46px; left: 2px; right: 2px; bottom: 28px; border: 1px solid #000000; overflow-y: auto; overflow-x: hidden">
+    <canvas style="background-color: #222222" id="colorPalettePanelCanvas"></canvas>
+  </div>
+
+
+  <div style="position: absolute; display: flex; align-items: center; bottom: 2px; left: 3px; right: 3px; height: 24px">
+<!--     <label class="gridinfo-label">Sort</label>--> 
+    <select id="colorPaletteSortOrder">
+      <option value="default">Default Layout</option>
+      <option value="source">Color Index</option>
+
+      <option value="hls">Hue</option>
+
+<!--      <option value="hue">Hue</option>  -->
+      <option value="saturation">Saturation</option>
+      <option value="brightness">Brightness</option>
+
+
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+
+      <!--
+      <option value="source">Custom</option>
+    -->
+    </select>
+
+    <div class="ui-button" id="chooseColorPaletteButton">Choose Palette...</div>
+    <div class="ui-button" style="margin-left: 8px" id="editColorPaletteButton">Edit Palette...</div>
+    <div class="ui-button" style="margin-left: 8px" id="loadColorPaletteButton">Load Palette...</div>
+  </div>
+</div>

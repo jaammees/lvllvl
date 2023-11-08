@@ -1,0 +1,1348 @@
+h3 {
+  margin-top: 2px;
+  margin-bottom: 8px;
+  color: #eaeaea;
+}
+
+a {
+  color: white;
+  cursor: pointer !important;
+}
+
+.start-heading {
+  border-bottom: 1px solid #222222;
+  padding: 0 0 10px 0;
+  margin-top: 20px;
+}
+.dialogContent {
+  padding: 10px;
+}
+
+
+.activeBackground {
+  background-color: #171717;/* #191919; */
+}
+
+.panelFill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*** forms ***/
+
+.formGroup {
+  margin-bottom: 10px;
+}
+
+.formRow {
+  margin-bottom: 4px;
+  padding-bottom: 6px;
+  /*
+  border-bottom: 1px solid #444444;
+  */
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.formControlLabel {
+  width: 90px;
+  display: flex;
+  align-items: center;
+  margin-right: 4px;
+  font-weight: 300;
+  color: #dddddd;
+}
+
+
+
+table {
+  border-collapse: collapse;
+}
+
+.controlLabel {
+  width: 90px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 4px;
+  font-weight: 300;
+  color: #eeeeee;
+}
+
+.formControl {
+
+}
+
+
+.shaderEffectParamName {
+  margin: 10px 0px 6px 0;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.rangeControl {
+  display: flex;
+}
+
+.form-section{
+  border: 0;
+  padding: 0;
+  margin: 0 0 6px 0;
+
+}
+.checkboxGroup, .radioGroup {  
+  display: inline-block;
+}
+
+.radioGroup .rb-container {
+  margin-bottom: 6px;
+}
+.checkboxGroup .cb-container {
+  margin-bottom: 4px;
+
+}
+
+.checkboxGroup .cb-container.no-margin {
+  margin: 0;
+}
+
+.colorPickerPopupNoColor {
+  border: 1px solid #111111;
+  line-height: 20px;
+  vertical-align: middle;
+  padding: 2px;
+}
+
+.colorPickerPopupNoColor:hover {
+  border: 1px solid #cccccc;
+}
+
+.drawTool, .musicTool, .pixelDrawTool, .drawPopupTool, .drawPixelTool, .currentDrawTool, .pixelTool,  .colorPaletteTool, .blockEditTool {
+  display: inline-block; 
+  width: 20px; 
+  height: 20px; 
+  padding: 3px;
+  margin: 1px;
+
+/*
+  background-color: #222222; 
+  border: 1px solid #999999;
+*/  
+}
+
+
+
+.drawTool:hover,  .pixelDrawTool:hover, .drawPopupTool:hover, .drawPixelTool:hover, .pixelTool:hover, .colorPaletteTool:hover, .blockEditTool:hover {
+  background-color: #444444; 
+}
+
+.musicTool:hover {
+  background-color: #666666;  
+}
+
+.drawToolSelected, .musicToolSelected, .pixelDrawToolSelected, .drawPopupToolSelected, .drawPixelToolSelected, .pixelToolSelected, .colorPaletteToolSelected, .blockEditToolSelected {
+  background-color: #dddddd; 
+/*  border: 1px solid #999999; */
+}
+
+
+.drawToolSelected:hover, .musicToolSelected:hover, .pixelDrawToolSelected:hover, .drawPopupToolSelected:hover, .drawPixelToolSelected:hover, .pixelToolSelected, .colorPaletteToolSelected:hover, .blockEditToolSelected:hover {
+  background-color: #eeeeee; 
+
+/*  border: 1px solid #999999; */
+}
+
+
+.cellBackgroundColor i {
+  font-size: 26px; 
+}
+
+
+#drawToolSettings-cellBackgroundColor i {
+  font-size: 15px;
+}
+
+.popup-tool {
+  padding: 10px;
+  cursor: hand;
+  display: flex;
+  align-content: center;
+}
+.popup-tool:hover {
+  background-color: #222222;
+}
+
+.popup-tool-label {
+  margin-left: 8px;
+}
+
+.popup-tool-shortcut {
+  margin-left: 8px;
+}
+
+
+.mobile-popup-tool {
+  padding: 8px;
+  cursor: hand;
+  display: flex;
+  align-content: center;
+}
+
+
+.mobile-popup-tool-label {
+  font-size: 20px;
+  font-weight: 200;
+  margin-left: 12px;
+}
+
+.mobile-popup-tool img {
+  width: 32px;
+  height: 32px;
+}
+
+
+.drawTool img, .popup-tool img, .mobile-popup-tool img, .musicTool img, .pixelDrawTool img, .drawPopupTool img, .drawPixelTool img, .currentDrawTool img, .pixelTool img, .colorPaletteTool img, .blockEditTool img {
+  filter: invert(65%) !important;
+}
+
+.drawToolSelected img, .musicToolSelected img, .pixelDrawToolSelected img, .drawPopupToolSelected img, .drawPixelToolSelected img, .pixelToolSelected img, .colorPaletteToolSelected img, .blockEditToolSelected img {
+  filter: invert(10%) !important;
+}
+
+
+.musicTool:hover img {
+  filter: invert(75%) !important;
+}
+
+
+.mobileMenuItem {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin: 8px;
+  background-color: #333333;
+  border: 1px solid #eeeeee;
+}
+
+.mobileMenuBarItem {
+  display: inline-block; 
+  width: 46px; 
+  height: 46px; 
+  padding: 2px;
+  margin: 4px;
+  background-color: #222222; 
+  border: 1px solid #999999;
+  text-align: center;
+}
+
+
+.mobileMenuBarItem img {
+  width: 42px;
+  height: 42px;
+  -webkit-filter: invert(80%) !important;
+}
+
+
+
+.drawToolMobile, .pixelDrawToolMobile  {
+  display: inline-block; 
+  width: 46px; 
+  height: 46px; 
+  padding: 2px;
+  background-color: #222222; 
+  border: 1px solid #999999;
+  text-align: center;
+}
+
+.drawToolMobileSelected, .pixelDrawToolMobileSelected {
+  /*
+  background-color: #eeeeee; 
+  border: 1px solid #999999;
+  */
+}
+
+
+.drawToolMobile img, .pixelDrawToolMobile img {
+  width: 42px;
+  height: 42px;
+  -webkit-filter: invert(80%) !important;
+}
+
+.drawToolMobileSelected img, .pixelDrawToolMobileSelected img  {
+  width: 42px;
+  height: 42px;
+  -webkit-filter: invert(0%) !important;
+}
+
+.icon-invert {
+  filter: invert(80%);
+}
+
+#toolIconsMobile {
+  background-color: #111111;
+}
+
+
+
+
+.drawToolMobileSide, .pixelDrawToolMobileSide  {
+  display: inline-block; 
+  width: 36px; 
+  height: 36px; 
+  padding: 2px;
+  /*
+  background-color: #1b1b1b; 
+  border: 1px solid #444444;
+  */
+  text-align: center;
+  margin-bottom: 8px;
+  transition: all 0.2s;    
+}
+
+.drawToolMobileSideSelected, .pixelDrawToolMobileSideSelected {
+  /*
+  background-color: #eeeeee; 
+  border: 1px solid #444444;
+  */
+}
+
+
+.drawToolMobileSide img, .pixelDrawToolMobileSide img {
+  width: 36px;
+  height: 36px;
+  -webkit-filter: invert(80%) !important;
+}
+
+.drawToolMobileSideSelected img, .pixelDrawToolMobileSideSelected img  {
+  width: 36px;
+  height: 36px;
+
+  filter: invert(46%) sepia(78%) saturate(6717%) hue-rotate(187deg) brightness(94%) contrast(101%) !important;
+  /*
+  -webkit-filter: invert(0%) !important;
+  */
+}
+
+
+.pixelTool {
+  margin-right: 8px;
+}
+
+#pixelToolLabel {
+  display: flex; 
+  white-space: nowrap;
+  width: 120px;
+}
+
+.pixelToolSettingColor {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999999;
+}
+
+/* TODO: use class instead of id */
+
+#cellForegroundColorMobile {
+  width: 42px;
+  height: 42px;
+
+}
+
+#pixelDrawCellForegroundColor {
+  width: 28px;
+  height: 28px;  
+}
+#cellForegroundColor, #cellBackgroundColor {
+  width: 28px;
+  height: 28px;
+}
+
+#chooseCharacterSetList, #chooseColorPaletteList {
+  background-color: #222222;
+  padding: 4px;
+}
+
+.characterSetListCategory, .colorPaletteListCategory {
+  font-weight: bold;
+  padding: 4px;
+  color: #ffffff;
+}
+
+.characterSetListEntry, .colorPaletteListEntry, .drummerPatternListEntry {
+  padding: 4px 4px 4px 16px;
+  color: #dddddd;
+}
+
+.characterSetListEntry, .characterSetListCategory {
+  font-size: 12px;
+  margin: 1px 0;
+}
+
+
+#chooseCharacterSetOptions label {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.characterSetListEntry:hover, .colorPaletteListEntry:hover, .drummerPatternListEntry:hover {
+  background-color: #777777;
+}
+
+
+.characterSetListEntrySelected, .colorPaletteListEntrySelected, .drummerPatternListEntrySelected {
+  background-color: #3254ee;
+}
+
+#chooseColorPaletteControls {
+  margin-top: 10px;
+}
+
+#chooseColorPaletteControls .controlLabel {
+  width: 180px;
+}
+
+#chooseColorPaletteControls input  {
+  margin-right: 6px
+}
+
+#importImageProgress {
+  background-color: white;
+  border: 1px solid #111111;
+}
+
+
+#cellForegroundColor {
+  display: block; 
+  position: absolute; 
+  top: 20px; 
+  left: 8px; 
+  width: 28px; 
+  height: 28px; 
+  background-color: #000000; 
+  z-index: 10  
+}
+
+.colorSetting {
+  border: 1px solid #444444;   
+}
+
+.colorSetting:hover {
+ border: 1px solid #dddddd;   
+}
+
+.textModeLayer {
+  color: #eeeeee;
+  background-color: #212121;
+  border-bottom: 1px solid #111111;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.textModeLayerDetails {
+  border-left: 1px solid #111111;
+  border-right: 1px solid #111111;
+  display: flex;
+  position: absolute;
+  height: 60px;
+  align-items: center;
+  left: 18px;
+  right: 0;
+
+}
+
+.layerLabelName {
+  font-weight: bold; 
+  font-size: 12px  
+}
+
+.layerLabelProperties {
+  font-size: 10px;
+  margin-top: 2px;
+  padding-left: 0px;
+}
+.selectedTextModeLayer {
+  background-color: #3377ff;
+
+}
+
+
+
+/** instruments ***/
+
+
+.filter {
+  padding: 4px;
+  color: #eeeeee;
+}
+
+.selectedFilter {
+  background-color: #3377ff;
+}
+
+.instrument {
+/*        margin: 4px; */
+  padding: 4px;
+  color: #eeeeee;
+}
+
+.selectedInstrument {
+  background-color: #3377ff;
+}
+
+.editInstrumentLabel {
+  display: inline-block;
+  width: 100px;
+}
+
+.editInstrumentRow {
+  margin: 6px 0 6px 0;
+}
+
+
+.instrumentButtons {
+  margin: 2px 1px 0px 10px;
+  bottom: 6px;
+  position: absolute;
+}
+
+
+.instrumentButtons button {
+  margin: 1px;
+  font-size: 10px;
+
+}
+
+
+
+.instrumentTab {
+  padding: 8px;
+  background-color: #444444;
+}
+.instrumentActiveTab {
+  background-color: #666666;
+}
+.instrumentTable {
+  background-color: #666666;        
+}
+
+.instrumentTable table {
+  border-collapse: collapse;
+}
+
+.instrumentTable th, .instrumentTable td {
+  padding: 6px;
+  text-align: left;
+}
+
+.instrumentTable td {
+  border-top: 1px solid #444444;
+}
+
+
+/*** scrollbars ***/
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.infoTable {
+
+}
+
+.infoTable th {
+  padding-left: 8px;
+  text-align: right;
+  padding-right: 4px;
+}
+
+.infoTable td, .infoTable th {
+  padding-bottom: 4px
+}
+
+/** assembler **/
+
+.assemblerOutputLine {
+  padding: 2px 0 2px 2px;
+}
+
+
+.startBlock {
+  display: inline-block; 
+  width: 100px; 
+  height: 100px; 
+  background-color: #555555; 
+  margin-right: 2px; 
+  padding: 2px;
+  box-shadow: 2px 2px 2px #111111;
+
+  transition: all 0.1s;
+
+}
+
+.startBlock:hover {
+  transform: scale(1.02); 
+}
+
+
+.startBlock img {
+  cursor: pointer;
+}
+
+
+.frameControlSeparator {
+  margin: 0 6px 0 6px;
+}
+
+
+.imageControlEffect {
+  margin: 2px 0 8px 0;
+  padding: 4px 0px 6px 0px;
+  background-color: #1a1a1a;
+  border-bottom: #333333;
+}
+
+.imageControlEffect .controlLabel {
+  margin-top: 0;
+  padding-left: 4px;
+}
+
+.imageControlEffect_remove {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  height: 20px;
+  width: 9px;
+  /*
+  float: right;
+  width: 10px;
+  height: 14px;
+  line-height: 12px;
+  text-align: center;  
+  */
+}
+
+.imageControlEffect_selector {
+  margin: 6px 0 8px 0px;
+  display: flex;
+}
+
+.imageControlEffect_selector select {
+  flex: 1;
+}
+.imageControlEffect .formRow {
+  border-bottom: 0px;
+  border-top: 1px solid #444444;
+  padding-top: 6px;
+  padding-bottom: 2px;
+  margin: 2px 0;
+}
+
+
+
+#colorEditorTabPanel {
+  border-bottom: 1px solid #222222;
+  margin-top: 4px;
+  margin-bottom: 10px;
+
+}
+
+.colorEditorTab {
+  cursor: pointer;
+  display: inline-block;
+  padding: 4px 8px;
+  color: #666666;
+  background-color: #111111;
+}
+
+
+.colorEditorTab:hover {
+  background-color: #333333;
+}
+
+
+.colorEditorTabActive {
+  background-color: #222222;
+  color: #eeeeee;
+  font-weight: 500;
+}
+
+.colorEditorTabActive:hover {
+  background-color: #222222;
+}
+
+
+
+
+.colorPaletteNumber, .colorEditorNumber {
+  width: 34px;
+}
+
+.colorComponentSelector {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.colorComponentSelector label {
+  width: 12px;
+  margin: 0 6px 4px 6px;
+  color: #888888;
+}
+
+.colorComponentSelector canvas {
+  
+}
+
+.colorComponentSelector input {
+  margin: 0 0 4px 8px;
+}
+
+
+
+
+.tileEditorC64ColorType {
+  display: inline-block; 
+  width: 62px; 
+  height: 20px; 
+  padding: 2px;
+  background-color: #222222; 
+  border: 1px solid #3e3e3e;
+  font-size: 9px;
+  line-height: 12px;
+  vertical-align: center;
+}
+
+
+.tileEditorC64ColorType:hover {
+  background-color: #444444; 
+}
+
+.tileEditorC64ColorTypeSelected {
+  background-color: #eeeeee; 
+  border: 1px solid #999999;
+  color: #222222;
+}
+
+
+.tileEditorC64ColorTypeSelected:hover {
+  background-color: #eeeeee; 
+  border: 1px solid #999999;
+}
+
+.tileEditorC64Color {
+  display: inline-block; 
+  width: 16px; 
+  height: 16px; 
+  background-color: #000000; 
+/*  border: 1px solid #dddddd;  */
+}
+
+#characterEditorControls .ui-button {
+  margin-top: 6px;
+}
+
+
+#currentDrawToolHolder {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 114px;
+}
+
+#currentDrawToolHolder #toolSettingsCurrentTool, #currentDrawToolHolder img {
+  cursor: pointer;
+}
+
+#currentDrawToolHolder:hover {
+  background-color: #222222;
+}
+
+#toolSettingsCurrentTileHolder {
+  display: flex; 
+  align-items: center;
+  align-content: center;
+  padding: 2px;
+  width: 30px;
+}
+
+
+#toolSettingsCurrentTileHolder:hover {
+  background-color: #222222;
+}
+
+
+#toolSettingsCurrentTile {
+  cursor: pointer;
+  width: 24px; 
+  height: 24px; 
+  margin: auto;
+}
+
+#pixelToolSettingsMobile-c64multicolor .tileEditorC64ColorType  {
+  display: flex;
+  align-items: center;
+  margin-right: 6px;
+  font-size: 10px;
+  padding: 4px;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+/* -- mobile styles  -- */
+
+
+
+.colorPickerTypeMobile {
+  /*border: 1px solid #aaaaaa;*/
+  border: 1px solid #3a3a3a;
+  margin: 0 4px;
+  display: inline-block;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  background-color: #262626;
+  flex-grow: 1;
+  flex-basis: 0;
+  font-size: 10px;
+}
+
+.colorPickerTypeMobileSelected {
+  color: #111111;
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.colorPickerMobileColor {
+  /*border: 1px solid #aaaaaa;*/
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+
+
+#tileEditorMobileC64Colors .tileEditorC64ColorType {
+  width: 22%;
+  margin: 2px;
+  height: 28px;
+
+}
+
+#tileEditorMobileC64Colors .tileEditorC64Color {
+  width: 24px;
+  height: 24px;
+}
+
+#tileEditorMobileC64Colors .tileEditorC64ColorLabel {
+  line-height: 30px;
+}
+
+.mobileRadio {
+  display: inline-block;
+  border: 1px solid #3a3a3a;
+  margin: 0 8px 0 0 ;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  background-color: #262626;
+  font-size: 10px;
+  /*
+  border: 1px solid white;
+  color: white;
+  width: 50px;
+  height: 25px;
+  margin-right: 4px;
+  */
+}
+
+.mobileRadio img {
+  filter: invert(70%);
+}
+
+.mobileRadioSelected {
+  color: #0a0a0a;
+  background-color: #e0e0e0;
+  font-weight: bold;  
+}
+
+.mobileRadioSelected img {
+  filter: invert(10%);
+}
+
+
+.c64ImportRow {
+  margin-bottom: 8px;
+}
+.c64ImportHeading {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: #dddddd;
+}
+
+.opcode-holder {
+  padding: 6px;
+  width: 40px;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 22px;
+  /*
+  text-decoration: underline;
+  */
+}
+
+.opcode-link {
+  font-size: 16px;
+  cursor: pointer;
+  color: #bababa;
+}
+
+
+.opcode-link:hover {
+  color: #eeeeee;
+}
+
+.mos6502Related .opcode-link {
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.mos6502OpcodeLink {
+  cursor: pointer;
+  color: #999999;
+  margin: 6px 0 6px 0;
+}
+.mos6502OpcodeLink:hover {
+  color: #e2e2e2;
+  
+}
+
+.mos6502Name {
+  margin-bottom: 6px;
+}
+
+.mos6502Description {
+  margin: 6px 0 10px 0;
+  font-size: 14px;
+  line-height: 20px;
+  color: #cccccc;
+  padding: 4px;
+  background-color: #1a1a1a;
+  /*
+  letter-spacing: 0.4px;
+  */
+}
+
+.mos6502Flags {
+  margin: 0 0 6px 0;
+}
+
+.mos6502FlagInfo {
+  margin: 0 0 16px 0;
+}
+.mos6502FlagList {
+  margin: 2px 0 6px 0;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.assemblerDocsSearch {
+  width: 100%;
+  font-size: 20px;
+  padding: 8px 4px;
+
+}
+#mos6502OpcodeDictionary {
+  background-color: #111111;
+}
+.assemblerDocsInfo h2 {
+  color: #eeeeee;  
+  margin: 2px 0 2px 0;
+  font-size: 24px;
+}
+
+.assemblerDocsInfo h3 {
+  font-size: 19px;
+}
+
+.assemblerDocsInfo {
+  padding: 8px;
+  background-color: #111111;
+  color: #eeeeee;
+  overflow: auto;
+}
+
+.assemblerDocsInfo table {
+  border-collapse: collapse;
+  margin: 6px 0;
+}
+
+.assemblerDocsInfo table th {
+  border: 1px solid #333333;
+  padding: 4px;
+  text-align: left;
+  color: #cccccc;
+  background-color: #1a1a1a;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.assemblerDocsInfo table td {
+/*  border: 1px solid #333333; */
+  padding: 6px;
+  font-size: 12px;
+  background-color: #1a1a1a;
+  color: #bbbbbb;
+}
+
+.assemblerDocsInfo table tr:hover td, .assemblerDocsInfo table tr:hover th {
+  background-color: #333333;
+}
+/*
+#mos6502OpcodeInfo table tr:nth-child(even) td {
+  background-color: #222222 !important;
+}
+*/
+
+.colorSubPalette {
+  position: relative; 
+  height: 40px; 
+  background-color: #111111; 
+  border-bottom: 1px solid #333333;
+}
+.colorSubPalette:hover {
+  background-color: #1e1e1e;
+}
+
+
+#switchColors {
+  opacity: 0.5; 
+  position: absolute; 
+  left: 40px; 
+  top: 20px; 
+  width: 12px; 
+  height: 12px;
+}
+
+#switchColors:hover {
+  opacity: 0.93; 
+}
+
+
+#buildOutputPanel {
+  background-color: #111111;
+  color: #cccccc;
+}
+
+.assemblerOutputLine {
+  background-color: #111111;
+  color: #cccccc;
+}
+
+.assemblerOutputLine:hover {
+  background-color: #222222;
+}
+.assemblerOutputLine.error {
+  /* color: #cc2222; */
+}
+.assemblerOutputLine.selected {
+  background-color: #1a4b8e;
+  color: #cccccc;
+}
+
+.assemblerOutputErrorIcon {
+  /*padding: 1px; */
+  height: 10px;
+  line-height: 10px;
+  display: inline-block;
+  background-color: #c93d22;
+  color: white;
+  margin: 4px 2px 1px 1px;
+  border-radius: 1px;
+
+}
+
+.assemblerOutputErrorIcon img {
+  width: 10px;
+  height: 10px;
+  filter: invert(0.9);
+}
+
+.colorPalettePanelSubPalette {
+  display: inline-block;
+  margin: 8px 10px 0 8px;
+}
+
+.colorPalettePanelSubPaletteHolder {
+  display: flex;
+}
+.colorPalettePanelSubPaletteLabel {
+  display: inline-block;
+  width: 16px;
+  height: 16px
+}
+
+.colorPalettePanelSubPaletteColors {
+  display: flex;
+}
+
+.colorPalettePanelSubPaletteColor {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #444444;
+  background-color: #444444;
+}
+
+.colorPalettePanelSubPaletteColor-selected {
+  border: 1px solid #999999;
+}
+
+.colorPalettePanelSubPaletteColor:hover {
+  border: 1px solid #666666;
+}
+
+#projectGithubDetailsHolder {
+  height: 200px;
+}
+
+#githubModified {
+  overflow: auto;
+}
+
+.githubChangedHeading {
+  background-color: #444444;
+  padding: 4px;
+  color: #aaaaaa;
+}
+
+.githubChangedFile {
+  padding: 4px;
+}
+.githubChangedFile img {
+  margin-right: 8px;
+}
+
+
+
+.colorPalettePanelSubPaletteMobile {
+  display: inline-block;
+  margin: 8px 10px 0 8px;
+}
+
+.colorPalettePanelSubPaletteHolderMobile {
+  display: flex;
+  margin-bottom: 10px;
+}
+.colorPalettePanelSubPaletteLabelMobile {
+  display: inline-block;
+  width: 16px;
+  height: 16px
+}
+
+.colorPalettePanelSubPaletteColorsMobile {
+  display: flex;
+}
+
+.colorPalettePanelSubPaletteColorMobile {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #444444;
+  background-color: #444444;
+}
+
+.colorPalettePanelSubPaletteColorMobile-selected {
+  border: 1px solid #ff9999 !important;
+}
+
+
+
+#scriptingRunControls {
+  padding: 4px;
+}
+
+#scriptingOutputPanel {
+  background-color: #222222;
+  color: #dddddd;
+  overflow: auto;
+}
+
+#scriptingOutputPanel .scriptingOutputLine {
+  padding: 3px 4px;
+}
+
+.debuggerMemoryInfoAddress {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  width: 40px;
+  font-size: 12px;
+}
+
+.debuggerMemoryInfoValue {
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  width: 30px;
+  font-size: 12px;
+}
+
+.addressingModeExample {
+  white-space: nowrap;
+}
+
+.addressingModeNumber {
+  text-align: right;
+}
+
+.addressingModeTable tr:nth-child(even) td {
+  background-color: #222222 !important;
+}
+
+.addressingModeTable tr:hover td {
+  background-color: #333333 !important;
+}
+
+.ace_gutter-cell.ace_breakpoint{ 
+  /*
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 0px 0px 1px 1px #248c46 inset; 
+  */
+}
+
+.ace_gutter-cell.ace_breakpoint::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #cc0000;
+  position: absolute;
+  left: 5px;
+  top: 5px;  
+  z-index: 1000;
+}
+.ace_gutter-cell.ace_pc::after {
+  content: '';
+  display: inline-block;
+  content:"\25BA";
+  font-family: Arial,Helvetica,sans-serif;
+
+  color: #cccccc;
+  position: absolute;
+  left: 5px;
+  top: 0px;  
+  z-index: 1001;
+
+}
+
+
+.c64-play-button {
+
+}
+
+.c64-play-button:hover {
+  color: white;
+  
+}
+
+.c64-overlay {
+  position: absolute; 
+  left: 0; 
+  top: 0;  
+  opacity: 0.2; 
+  background-color: black; 
+  border: 2px solid black;
+}
+
+
+.gridinfo-label {
+  color: #888888;
+  margin-right: 4px;
+}
+
+.gridinfo-value {
+  color: #cccccc;
+  display: inline-block;
+  font-weight: 500;
+}
+
+
+#lineSegmentToolSettings {
+  display: flex;
+  padding: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#lineSegmentToolSettings label {
+  margin-bottom: 0 !important;
+  margin-right: 8px !important;
+}
+
+
+.joystick-info-key {
+  margin: 0 0 0 4px;
+  font-size: 18px;
+}
+
+.joystick-info-key img {
+  filter: invert(1);
+}
+
+.joystick-settings-icon {
+  cursor: pointer;
+  margin-left: 6px;
+  filter: invert(0.3);
+}
+
+.joystick-settings-icon:hover {
+  filter: invert(1);
+}
+
+.drive-info-label {
+  color: #cccccc;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.drive-info-label:hover {
+  color: #ffffff;
+}
+
+
+.chooseCharacterSetOptions .rb-container {
+  margin-bottom: 6px;
+}
+
+.colorPaletteEditorColor {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+
+}
+
+
+
+/*** new forms ****/
+

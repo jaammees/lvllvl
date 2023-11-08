@@ -1,0 +1,208 @@
+<style>
+.start-tile {
+  display: inline-block;  
+  width: 110px;
+  height: 110px;
+  margin-right: 6px;
+  margin-bottom: 10px;
+  position: relative;
+  background-color: #202020; /* transparent; */
+  cursor: pointer;
+  transition: all 0.1s;  
+}
+
+.start-tile:hover {
+  background-color: #262626;
+}
+
+
+.start-tile-image {
+  cursor: pointer;
+  position: absolute;
+  top: 6px;
+  bottom: 26px;
+  left: 6px;
+  right: 6px;  
+
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  /*background-size: cover;  Resize the background image to cover the entire container */  
+}
+
+
+.start-tile-label {
+  position: absolute;
+  height: 18px;
+  bottom: 2px;
+  left: 6px;
+  right: 24px;  
+  font-size: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
+
+  color: #cdcdcd;
+  transition: all 0.1s;    
+}
+
+.start-tile-more { 
+  position: absolute;
+  right: 1px;
+  bottom: 0px;
+  height: 18px;
+  width: 12px;
+  padding: 3px;
+  cursor: pointer;
+  filter: invert(40%);
+  opacity: 0;
+  display: none;
+  transition: opacity 2.6s;     
+
+}
+
+.start-tile-more img {
+  cursor: pointer;
+}
+
+.start-tile:hover .start-tile-image {
+  top: 5px;
+  bottom: 25px;
+  left: 5px; 
+  right: 5px;
+  background-color: #161616;
+}
+
+.start-tile:hover .start-tile-label {
+  color: #dddddd;
+}
+
+.start-tile:hover .start-tile-more {
+  display: block;
+  opacity: 1;
+  cursor: pointer;  
+}
+
+.start-tile-more:hover {
+  filter: invert(80%);
+}
+
+#start-user-info {
+  height: 18px;
+  margin-top: 2px;
+}
+
+#start2D .start-tile-image {
+  background-color: #2266aa;  
+}
+
+
+#start-login-mobile .start-tile-image {
+  background-color: #117744;  
+}
+
+#start-logout-mobile .start-tile-image {
+  background-color: #117744;  
+
+}
+</style>
+
+
+<div id="startPage" class="panelFill" style="background-color: #191919">
+
+  <div id="projectMenuBacking" style="display: none; top: 0; left: 0; bottom: 0; right: 0; background-color: black; opacity: 0.2; position: fixed; z-index: 1000"></div>
+  <div id="projectMenu" style="display: none; position: absolute; width: auto; height: auto; z-index: 2000" class="ui-menu">
+    <div class="ui-menu-item"><div class="ui-menu-item-label projectMenuItem" data-action="delete">Delete</div></div>
+    <div class="ui-menu-item"><div class="ui-menu-item-label projectMenuItem" data-action="rename">Rename...</div></div>
+    <div class="ui-menu-item"><div class="ui-menu-item-label projectMenuItem" data-action="download">Download</div></div>
+
+  </div>
+
+  <div id="repositoryMenu" style="display: none; position: absolute; width: auto; height: auto; z-index: 2000" class="ui-menu">
+    <div class="ui-menu-item"><div class="ui-menu-item-label repositoryMenuItem" data-action="viewongithub">View on GitHub...</div></div>
+    <div class="ui-menu-item"><div class="ui-menu-item-label repositoryMenuItem" data-action="remove">Remove</div></div>
+  </div>
+
+
+    
+  <div style="position: absolute; top: 0px; left: 0px; right: 0px; height: 230px; background-color: #131313; padding: 10px; border-bottom: 1px solid #222222">
+    <h1 style="margin: 0px; font-weight: 200; font-size: 50px"><img src="images/logo40.png" style="width: 40px; height: 40px; filter: opacity(80%); "><span style="margin: 0 6px">lvllvl</span><span style="font-size: 12px">alpha</span></h1>
+    <div style="margin-bottom: 4px">
+      Create pictures using character sets
+    </div>
+
+    <div id="start-user-info">
+      Checking user status...
+    </div>
+
+    <!--
+    <div style="margin-top: 10px; display: flex; justify-content: space-between; max-width: 350px">
+    -->
+    <div style="margin-top: 10px; display: flex">
+      <div class="start-tile" id="start-continue-last" >
+        <div class="start-tile-image" style="background-color: #0f0f0f; ">
+          <div class="rippleJS"></div>
+        </div>
+        <div class="start-tile-label">Continue Last</div>
+      </div>
+
+      <div class="start-tile" id="start2D">
+        <div class="start-tile-image" style="display: flex; justify-content: center; align-items: center; text-align: center">
+          <img style="filter: invert(60%)" src="icons/material/baseline-add_circle_outline-24px.svg" height="60"/>
+          <div class="rippleJS"></div>
+        </div>
+        <div class="start-tile-label">New</div>
+      </div>
+
+      <div class="start-tile" id="start-login-mobile" style="display: none; ">
+        <div class="start-tile-image" style=" display: flex; justify-content: center;align-items: center; text-align: center">
+          <img src="icons/svg/glyphicons-halflings-185-log-in.svg" height="60" style="filter: invert(65%)"/>
+          <div class="rippleJS"></div>
+        </div>
+        <div class="start-tile-label">Sign In</div>
+      </div>
+
+      <div class="start-tile" id="start-logout-mobile" style="display: none;">
+        <div class="start-tile-image" style="display: flex; justify-content: center;align-items: center; text-align: center">
+          <img src="icons/svg/glyphicons-halflings-186-log-out.svg" height="60" style="filter: invert(65%)">
+          <div class="rippleJS"></div>
+        </div>
+        <div class="start-tile-label">Sign Out</div>
+      </div>
+                  
+<!--
+      <div id="startContinueLast" style="display: inline-block; width: 100px; height: 100px; overflow: hidden;  float: left">Continue Last</div>      
+        <div id="start2D" class="startBlock" style="cursor: pointer; margin-right: 4px">New...</div>
+
+        <div id="login" class="startBlock" style="cursor: pointer; margin-right: 4px">Login...</div>
+        <div id="logout" class="startBlock" style="cursor: pointer; margin-right: 4px">Logout</div>
+
+-->
+    </div>
+  </div>
+
+  <div id="startPageProjectHolderMobile" style="position: absolute; top: 252px; left: 0px; right: 0px; bottom: 60px; padding: 10px; overflow: auto">
+    <div id="github_repositories"></div>
+    <div id="browserStorage_projects" ></div>
+  </div>
+
+
+  <div id="startPageProjectFooterMobile" style="position: absolute; bottom: 0px; height: 40px; left: 0px; right: 0px;padding: 10px; overflow: hidden">
+    <div id="startGoogleDriveStatusMobile">
+        <div id="startGoogleDriveConnectedMobile" style="display: none">          
+          <div class="ui-button" id="disconnectFromGDriveButtonMobile">
+              <img src="icons/GoogleDriveIcon512.png" style="filter: none;margin-right: 6px" height="20"/>
+              Disconnect Google Drive</div>
+        </div>
+        <div id="startGoogleDriveNotConnectedMobile" style="display: none">
+          <div class="ui-button" id="connectToGDriveButtonMobile">
+              <img src="icons/GoogleDriveIcon512.png" style="filter: none;margin-right: 6px" height="20"/>
+              Connect To Google Drive</div>
+        </div>
+      </div>    
+  </div>
+
+</div>

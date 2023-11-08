@@ -1,0 +1,281 @@
+<div class="activeBackground panelFill" style="display: flex; align-items: center">
+
+  <div id="tileToolsOpenButtonHolder" style="display: inline-block; width: 20px;">
+    <div id="tileToolsOpenButton" class="ui-button ui-panel-close-button ui-button-danger" style="padding: 1px 4px"><img src="icons/svg/glyphicons-halflings-131-chevron-right.svg"></div>    
+  </div>
+
+  <div id="toolSettingsCurrentTileHolder">
+    <canvas id="toolSettingsCurrentTile"></canvas>
+  </div>
+
+  <div style="display: flex" id="drawToolSettings-tileOrientation">
+    <div class="ui-button ui-button-dark" data-label="Tile Flip X" title="Tile Flip X (F)" id="tileFlipH"><img src="icons/svg/glyphicons-basic-747-reflect-y.svg"></div>
+    <div class="ui-button ui-button-dark" data-label="Tile Flip Y" title="Tile Flip Y (G)" id="tileFlipV"><img src="icons/svg/glyphicons-basic-748-reflect-x.svg"></div>
+    <div class="ui-button ui-button-dark" data-label="Tile Rotate (R)" title="Tile Rotate (R)" id="tileRotate"><img src="icons/svg/glyphicons-basic-493-rotate.svg"></div>
+  </div>
+
+
+  <div id="drawToolSettings-cellColor" style="position: relative; width: 22px; height:30px; margin: 0 8px">    
+    <div id="drawToolSettings-cellForegroundColor" class="foregroundColor colorSetting" style="position: absolute;  z-index: 200; top:3px; left: 0; width: 16px; height: 16px; background-color: rgb(255, 255, 255);"></div>
+    <div id="drawToolSettings-cellBackgroundColor" class="cellBackgroundColor colorSetting" style="display: block; position: absolute; z-index: 800; top: 9px; left: 8px; width: 16px; height: 16px; background-color: rgb(0, 0, 0); z-index: 5; background-image: none;" ><i style="font-size: 18px; margin-left: 1px" class="halflings halflings-remove"></i></div>    
+  </div>
+
+  <div id="drawToolSettings-frameColors" style=" position: relative; width: 50px; height: 30px">
+
+    <div style="display: block; position: absolute; top: 3px; left: 8px; width: 30px; height: 22px; background-color: rgb(112, 109, 235); z-index: 5; background-image: none;" id="borderColor" class="borderColor  colorSetting"></div>
+
+    <div style="display: block; position: absolute; top: 7px; left: 14px; width: 18px; height: 14px; background-color: rgb(46, 44, 155); z-index: 10; background-image: none;" id="backgroundColor" class="backgroundColor  colorSetting"></div>
+
+  </div>  
+
+  <div id="currentDrawToolHolder">
+    <div class="currentDrawTool" id="toolSettingsDrawTool" style="display: inline-block"><img width="20" src="icons/glyphicons-31-pencil@2x.png"></div>
+
+    <div style="display: inline-block; width: 72px; margin-left: 4px; white-space: nowrap" id="toolSettingsCurrentTool">
+      Draw
+    </div>
+  </div>
+
+
+  <div style="padding: 8px; display: flex; line-height: 24px; vertical-align: middle" id="drawToolSettings" class="toolSettings">
+    
+    <div id="smartRect" style="display: inline-block; margin-right: 10px">
+<!--
+      <input type="checkbox" value="color" id="drawChangesSmartRect" name="drawChanges" checked="checked" class="checkbox"/>
+      <label for="drawChangesSmartRect" class="checkboxLabel">Smart Rect</label>&nbsp;&nbsp;&nbsp;
+-->
+      <label class="cb-container">Smart Rect
+        <input type="checkbox" value="color" id="drawChangesSmartRect" name="drawChanges" checked="checked" class="checkbox"/>
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+
+    <div id="shapeFillSetting" style="display: inline-block">
+
+      <label class="cb-container">Filled        
+        <input type="checkbox" value="color" id="shapeFill" name="shapeFill" class="checkbox"/>
+        <span class="checkmark"></span>
+      </label>
+
+<!--      
+      <input type="checkbox" value="color" id="shapeFill" name="shapeFill" class="checkbox"/>
+      <label for="shapeFill" class="checkboxLabel">Filled</label>&nbsp;&nbsp;&nbsp;
+-->      
+    </div>
+
+
+    <div style="display: inline-block" class="drawFillSettings">
+      <label class="cb-container">Contiguous Fill
+        <input type="checkbox" value="color" id="contiguousFill" name="contiguousFill" checked="checked" class="checkbox"/>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+
+    <div style="display: inline-block" class="drawAffects">
+      <div style="display: inline-block; color: #8b8b8b; margin-right: 12px">
+        Affects
+      </div>
+    </div>
+
+    <div style="display: inline-block" class="drawAffects">
+
+      <label class="cb-container">
+        <input type="checkbox" value="color" id="drawChangesCharacter" name="drawChanges" checked="checked" class="checkbox"/>
+        <span class="cb-label">Tile</span>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+    <div style="display: inline-block" class="drawAffects">
+      <label class="cb-container">        
+        <input type="checkbox" value="color" id="drawChangesColor" name="drawChanges" checked="checked" class="checkbox"/>
+        <span class="cb-label">FG Colour</span>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+    <div style="display: inline-block" id="drawTools-cellBgColor" class="drawAffects">
+      <label class="cb-container">        
+        <input type="checkbox" value="bgColor" id="drawChangesBGColor" name="drawChanges" checked="checked" class="checkbox"/>
+        <span class="cb-label">BG Colour</span>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+  </div>
+
+
+  <div style="padding: 8px; display: flex" id="selectToolSettings" class="toolSettings" > 
+    <!--
+    <input type="checkbox" value="1" id="pasteWhitespace" class="checkbox"  checked="checked"><label for="pasteWhitespace" class="checkboxLabel">Paste Blank Tiles</label>
+    <input type="checkbox" value="1" id="pasteOnWhitespace" class="checkbox"><label for="pasteOnWhitespace" class="checkboxLabel">Paste Only On Blank Tiles</label> 
+    -->
+    
+    <label class="cb-container">
+      <input type="checkbox" value="1" id="pasteWhitespace" class="checkbox"  checked="checked"/>
+      <span class="cb-label">Paste Blank Tiles</span>
+      <span class="checkmark"></span>
+    </label>
+    <label class="cb-container">
+      <input type="checkbox" value="1" id="pasteOnWhitespace" class="checkbox"/>
+      <span class="cb-label">Paste Only On Blank Tiles</span>
+      <span class="checkmark"></span>
+    </label>
+
+  </div>
+
+
+  <div style="padding: 8px; display: inline-block" id="charPixelToolSettings" class="toolSettings" > 
+      <label class="rb-container" style="margin-right: 4px">Draw
+        <input type="radio" name="charPixelToolMode" value="draw" checked="checked"> 
+        <span class="checkmark"/>
+      </label>
+      <label class="rb-container" style="margin-right: 4px">Erase
+        <input type="radio" name="charPixelToolMode" value="erase"> 
+        <span class="checkmark"/>
+      </label>
+
+  </div>
+
+  <div id="lineSegmentToolSettings" class="toolSettings" > 
+    <label class="rb-container" id="lineSegmentToolMode_horizontal">
+      <input type="radio" name="lineSegmentToolMode" value="horizontal" checked="checked"> 
+      <span class="rb-label">Horizontal (F)</span>
+      <span class="checkmark"/>
+    </label>
+    <label class="rb-container" id="lineSegmentToolMode_vertical">
+      <input type="radio" name="lineSegmentToolMode" value="vertical"> 
+      <span class="rb-label">Vertical (G)</span>
+      <span class="checkmark"/>
+    </label>
+    <label class="rb-container" id="lineSegmentToolMode_fromleft">
+      <input type="radio" name="lineSegmentToolMode" value="fromleft"> 
+      <span class="rb-label">From Left</span>
+      <span class="checkmark"/>
+    </label>
+    <label class="rb-container" id="lineSegmentToolMode_fromright">
+      <input type="radio" name="lineSegmentToolMode" value="fromright"> 
+      <span class="rb-label">From Right</span>
+      <span class="checkmark"/>
+    </label>
+    <label class="rb-container" id="lineSegmentToolMode_fromtop">
+      <input type="radio" name="lineSegmentToolMode" value="fromtop"> 
+      <span class="rb-label">From Top</span>
+      <span class="checkmark"/>
+    </label>
+    <label class="rb-container" id="lineSegmentToolMode_frombottom">
+      <input type="radio" name="lineSegmentToolMode" value="frombottom"> 
+      <span class="rb-label">From Bottom</span>
+      <span class="checkmark"/>
+    </label>
+
+    <label class="cb-container" style="margin-right: 4px">
+      <input type="checkbox" name="lineSegmentToolInvert" id="lineSegmentToolInvert" value="1"> 
+      <span class="cb-label">Invert</span>
+      <span class="checkmark"/>
+    </label>
+
+  </div>
+
+  <div style="padding: 8px; display: flex; line-height: 24px; vertical-align: middle;">
+    <div style="display: inline-block" id="drawTools-mirrorH">
+      <label class="cb-container">
+        <input type="checkbox" value="mirrorh" id="drawMirrorH" name="drawMirror" class="checkbox"/>
+        <span class="cb-label">Mirror H</span>
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+
+    <div style="display: inline-block" id="drawTools-mirrorV">
+      <label class="cb-container">
+        <input type="checkbox" value="mirrorv" id="drawMirrorV" name="drawMirror"  class="checkbox"/>
+        <span class="cb-label">Mirror V</span>
+        <span class="checkmark"></span>
+      </label>
+    </div>    
+  </div>
+
+
+  <div style="padding: 0px; display: flex" id="pixelToolSettings" class="toolSettings">
+
+    <!--
+    <div style="position: absolute; top: 0; left: 90px; overflow: hidden; white-space: nowrap; display: flex; align-items: center ">
+-->
+    <div style=" overflow: hidden; white-space: nowrap; display: flex; align-items: center ">
+
+      <div id="pixelToolSettings_pixelTool" style="display: inline-block">
+
+        <div class="pixelTool pixelToolSelected" id="pixelTool_draw" data-toolType="draw"><img width="20" src="icons/glyphicons-31-pencil@2x.png"/></div>
+        <div class="pixelTool" id="pixelTool_erase" data-toolType="erase"><img width="20" src="icons/glyphicons-551-erase@2x.png"/></div>
+        <div class="pixelTool" id="pixelTool_eyedropper" data-toolType="eyedropper"><img width="20" src="icons/glyphicons-91-eyedropper@2x.png"/></div>
+        <div class="pixelTool" id="pixelTool_line" data-toolType="line"><img width="20" src="icons/glyphicons-98-vector-path-line@2x.png"/></div>
+        <div class="pixelTool" id="pixelTool_rect" data-toolType="rect"><img width="20" src="icons/glyphicons-100-vector-path-all@2x.png"/></div>
+        <div class="pixelTool" id="pixelTool_oval" data-toolType="oval"><img width="20" src="icons/glyphicons-96-vector-path-circle@2x.png"/></div>
+        <div class="pixelTool" id="pixelTool_fill" data-toolType="fill"><img width="20" src="icons/svg/glyphicons-basic-245-fill.svg"/></div>
+
+        <div style="display: inline-block" id="pixelToolLabel"></div>
+      </div>
+
+      <span style="margin: 0px 6px 0 0 " id="pixelToolSettings-colorLabel">Colour:</span>
+      <div id="pixelToolSettings-c64multicolor" style="display: inline-block"></div>
+      
+      <div id="pixelToolSettings-nes" style="display: inline-block">
+
+        <div id="pixelToolSettings-nescolors">
+          <div data-index="0" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="pixelToolSubPaletteColor colorSubPaletteColor0Display colorSubPaletteColor0" id="pixelToolSettingsSubPaletteColor-0"></div>
+          &nbsp;&nbsp;      
+    
+          <div data-index="1" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="pixelToolSubPaletteColor colorSubPalette1Display colorSubPaletteColor1" id="pixelToolSettingsSubPaletteColor-1"></div>
+          &nbsp;&nbsp;
+    
+          <div data-index="2" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="pixelToolSubPaletteColor colorSubPalette2Display colorSubPaletteColor2" id="pixelToolSettingsSubPaletteColor-2"></div>
+          &nbsp;&nbsp;      
+    
+          <div data-index="3" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="pixelToolSubPaletteColor colorSubPalette3Display colorSubPaletteColor3" id="pixelToolSettingsSubPaletteColor-3"></div>
+        </div>
+
+      </div>
+
+
+      <div id="pixelToolSettings-multicolor" style="display: inline-block">
+        <label><div class="pixelToolSettingColor currentCellColorDisplay" id="pixelToolMulticolor"></div></label>
+        &nbsp;
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div id="pixelDrawSettings" style="padding: 0px; display: none">
+    <!-- 
+    <div class="ui-button" data-label="Shift Left" id="spriteLeft"><img src="icons/svg/glyphicons-basic-859-square-left.svg"/></div>
+    <div class="ui-button" data-label="Shift Right" id="spriteRight"> <img src="icons/svg/glyphicons-basic-860-square-right.svg"/></div>
+    <div class="ui-button" data-label="Shift Up" id="spriteUp"><img src="icons/svg/glyphicons-basic-858-square-up.svg"/></div>
+    <div class="ui-button" data-label="Shift Down" id="spriteDown"><img src="icons/svg/glyphicons-basic-857-square-down.svg"/></div>
+  -->
+    <div class="ui-button" data-label="Flip X" id="spriteFlipH"><img src="icons/svg/glyphicons-basic-747-reflect-y.svg"/></div>
+    <div class="ui-button" data-label="Flip Y" id="spriteFlipV"><img src="icons/svg/glyphicons-basic-748-reflect-x.svg"/></div>
+    <div class="ui-button" data-label="Rotate" id="spriteRotate"><img src="icons/svg/glyphicons-basic-493-rotate.svg"/></div>
+    
+    <div class="ui-button" data-label="Invert" id="spriteInvert"><img src="icons/svg/glyphicons-basic-543-star-half.svg"/></div>
+
+
+    <div id="pixelShapeFillSetting" style="display: inline-block" class="toolSettings">
+
+      <label class="cb-container">Filled        
+        <input type="checkbox" value="color" id="pixelShapeFill" name="pixelShapeFill" class="checkbox"/>
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+
+
+  </div>
+
+
+
+</div>

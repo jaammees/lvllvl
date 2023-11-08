@@ -1,0 +1,95 @@
+<div class="panelFill" id="importC64FormatsPanel">
+  <div style="position: absolute; top: 0; left: 0; bottom: 0; right: 0px; overflow: auto; padding: 8px">
+  
+      <h2 style="margin: 0 0 6px 0">Import C64 Sprite Formats</h2>
+      <div class="formGroup">
+        <form id="importC64SpriteFormatsForm">
+          <!--
+          <label class="controlLabel" for="importC64SpriteFormatsSourceFile">File To Import:</label>
+          -->
+          <div class="ui-button ui-button-nextaction" id="importC64SpriteFormatsChooseFile">Choose File...</div>
+  
+          <input class="formControl"  id="importC64SpriteFormatsSourceFile" type="file" accept=".spr,.spd,.prg,.d64" style="position: absolute; top: -50px; left: -100px" />
+          <div class="ui-button" id="importC64SpritePRGReset">Reset</div>
+
+        </form>
+      </div>
+
+
+      <div>
+        <div style="display: inline-block; width: 390px">
+          <canvas id="importC64SpriteFormatsPreview" style="background-color: black"></canvas>
+          <div id="importC64SpriteD64Controls" class="importC64SpriteSettings">DRIVE:
+            <div id="importC64SpriteFormatsDriveLight" style="display: inline-block; width: 30px; height: 16px; background-color: rgb(255, 0, 0);"></div>
+            <div style="display: inline" id="importC64SpriteFormatsAttachedDisk"></div>
+            <div id="importC64SpriteFormatsDrivePosition"></div>
+          </div>
+
+        </div>
+
+        <div style="display: inline-block; width: 120px; vertical-align: top">
+
+              <div id="importC64SpritePRGControls" style="display: none" class="importC64SpriteSettings">
+
+                <div id="importC64SpriteC64Controls">
+                  <h3>Joystick</h3>
+                  <div>
+                    <label class="rb-container">None
+                      <input type="radio" id="importC64SpriteJoystickNone" name="importC64SpriteJoystickPort" value="0">
+                      <span class="checkmark"></span>
+                    </label>                
+
+                    <label class="rb-container">Port 1
+                      <input type="radio" id="importC64SpriteJoystickPort1" name="importC64SpriteJoystickPort" value="1">
+                      <span class="checkmark"></span>
+                    </label>                
+                    <label class="rb-container">Port 2
+                      <input type="radio" id="importC64SpriteJoystickPort2" checked="checked" name="importC64SpriteJoystickPort" value="2">
+                      <span class="checkmark"></span>
+                    </label>                
+                  </div>
+      
+                  <div>
+                    <div>
+                      cursor keys = directions
+                    </div>
+                    <div>
+                      z = fire
+                    </div>
+                  </div>
+
+
+                  <div style="margin-top: 10px">
+                    <div class="ui-button" id="importC64SpriteViewSprites">View Sprites</div>
+                  </div>
+                </div>
+
+                
+                <div style="display: none" id="importC64SpriteSpriteControls">
+                  <div class="ui-button" id="importC64SpriteBackToC64">&lt; Back To C64</div>
+
+                  <div style="margin-top: 10px">
+                    <label>
+                      Address (hex):
+                      <input id="importC64SpritesFromAddress" value="0000"/>
+                    </label>
+                  </div>
+                </div>
+    
+              </div>    
+
+              <div id="importC64SpriteSPRControls" style="display: none" class="importC64SpriteSettings">
+                  <label class="cb-container">Multicolor
+                      <input type="checkbox" id="importC64SpriteSPRMulticolor" checked="checked" name="importC64SpriteSPRMulticolor" value="1">
+                      <span class="checkmark"></span>
+                    </label>                
+  
+              </div>
+              
+              
+
+          </div>
+      </div>
+  </div>
+</div>
+  

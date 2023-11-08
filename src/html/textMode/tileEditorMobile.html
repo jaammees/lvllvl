@@ -1,0 +1,105 @@
+<div id="tileEditorMobile" class="panelFill" style="color: white">
+
+
+  <div style="position: absolute; bottom: 0px; top: 28px; left: 0; right: 0; overflow-y: auto; overflow-x: hidden">
+    <div style="text-align:center; margin-top: 10px" id="tileEditorMobileCanvasHolder">
+      <canvas id="tileEditorMobileCanvas" width="192" height="192" style="background-color: #000000"></canvas>
+    </div>
+
+
+    <div id="tileEditorMobileFrameControls" style="display: none">
+      Frame <button id="tileEditorMobilePrevFrame">&lt;</button>
+      <input class="number" size="2" min="1" value="1" id="tileEditorMobileFrame">
+      <button id="tileEditorMobileNextFrame">&gt;</button>
+      &nbsp;
+      of
+      &nbsp;
+      <input class="number" size="2" value="1" min="1" max="8" id="tileEditorMobileFrames">
+      <button id="tileEditorMobileInsertFrame">+</button>
+      <button id="tileEditorMobileDeleteFrame">-</button>
+
+    </div>
+
+    <div id="tileEditorMobileMultiColors" style="display: none; margin: 4px">
+      <label style="font-size: 10px">Colour:</label>
+
+      <div style="display: inline-block; width: 18px; height: 18px; background-color: #000000; border: 1px solid #dddddd" class="" id="tileEditorMobileMultiColor"></div>      
+    </div>
+
+    <div id="tileEditorMobileC64Colors" style="display: none; margin: 4px">
+      <div>
+        Colour:
+      </div>
+      <div id="tileEditorMobileC64Colors">
+      </div>
+    </div>
+
+
+    <div id="tileEditorMobileSubPaletteColors" style="display: none">
+      <div style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" data-index="0" class="tileEditorMobileSubPaletteColor  colorSubPaletteColor0Display colorSubPaletteColor0" id="tileEditorMobileSubPaletteColor-0"></div>
+      &nbsp;&nbsp;      
+
+      <div style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" data-index="1" class="tileEditorMobileSubPaletteColor  colorSubPaletteColor1Display colorSubPaletteColor1" id="tileEditorMobileSubPaletteColor-1"></div>
+      &nbsp;&nbsp;
+
+      <div style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" data-index="2" class="tileEditorMobileSubPaletteColor  colorSubPaletteColor2Display colorSubPaletteColor2" id="tileEditorMobileSubPaletteColor-2"></div>
+      &nbsp;&nbsp;      
+
+      <div style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" data-index="3" class="tileEditorMobileSubPaletteColor  colorSubPaletteColor3Display colorSubPaletteColor3" id="tileEditorMobileSubPaletteColor-3"></div>
+    </div>
+
+    <div id="tileEditorMobileControls" style="margin: 8px 0px 0px 10px">
+      <div>
+        Controls:
+        <span id="tileEditorMobileControlLabel"></span>
+      </div>
+      <div>
+        <div>
+          <div class="ui-button" data-label="Shift Left" id="tileEditorMobileLeft"><img src="icons/svg/glyphicons-basic-859-square-left.svg"/></div>
+          <div class="ui-button" data-label="Shift Right" id="tileEditorMobileRight"> <img src="icons/svg/glyphicons-basic-860-square-right.svg"/></div>
+          <div class="ui-button" data-label="Shift Up" id="tileEditorMobileUp"><img src="icons/svg/glyphicons-basic-858-square-up.svg"/></div>
+          <div class="ui-button" data-label="Shift Down" id="tileEditorMobileDown"><img src="icons/svg/glyphicons-basic-857-square-down.svg"/></div>
+          <div class="ui-button" data-label="Flip X" id="tileEditorMobileFlipH"><img src="icons/svg/glyphicons-basic-747-reflect-y.svg"/></div>
+          <div class="ui-button" data-label="Flip Y" id="tileEditorMobileFlipV"><img src="icons/svg/glyphicons-basic-748-reflect-x.svg"/></div>
+          <div class="ui-button" data-label="Rotate" id="tileEditorMobileRotate"><img src="icons/svg/glyphicons-basic-493-rotate.svg"/></div>
+          <div class="ui-button" data-label="Invert" id="tileEditorMobileInvert"><img src="icons/svg/glyphicons-basic-543-star-half.svg"/></div>
+        </div>
+        <div>
+          <div class="ui-button" data-label="Cut" id="tileEditorMobileClear"><img src="icons/svg/glyphicons-basic-612-scissors.svg"/></div>
+          <div class="ui-button" data-label="Copy" id="tileEditorMobileCopy"><img src="icons/svg/glyphicons-basic-614-copy.svg"/></div>
+          <div class="ui-button" data-label="Paste" id="tileEditorMobilePaste"><img src="icons/svg/glyphicons-basic-613-paste.svg"/></div>
+          Clipboard: <canvas width="16" height="16" style="background-color: black" id="tileEditorMobileClipboard"></canvas>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="margin: 8px 0 0 10px">
+      <div>
+        <label for="tileEditorMobileAnimatedType">Animated:</label>
+      </div>
+
+      <div style="margin-top: 8px">
+        <select id="tileEditorMobileAnimatedType">
+          <option value="">No</option>
+          <option value="mixed">Mixed</option>
+          <option value="left">Scroll Left</option>
+          <option value="right">Scroll Right</option>
+          <option value="up">Scroll Up</option>
+          <option value="down">Scroll Down</option>
+          <option value="blink">Blink</option>
+          <option value="frames">Frames</option>
+
+        </select>
+      </div>
+
+      <div style="margin-top: 8px">
+        <label for="tileEditorMobileAnimatedTicksPerFrame">Ticks/Frame:</label>
+        <input size="2" class="number" min="1" max="16" value="6" id="tileEditorMobileAnimatedTicksPerFrame"/>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

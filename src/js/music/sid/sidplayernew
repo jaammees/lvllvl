@@ -1,0 +1,161 @@
+var audioContext = null;
+var scriptNode = null;
+
+var SidPlayer2 = function() {
+  this.music = null;
+
+  this.musicPlayer = null;
+  this.instrumentPlayer = null;
+
+}
+
+
+SidPlayer2.prototype = {
+
+  init: function(music) {
+    this.music = music;
+
+    this.musicPlayer = new SidPatternPlayer();
+    this.musicPlayer.init(music);
+
+    this.instrumentPlayer = new SidPatternPlayer();
+    this.instrumentPlayer.init(music);
+  },
+
+  setupAudioContext: function() {
+    if(audioContext != null) {
+      return;
+    }
+
+    audioContext = null;
+    if ( typeof AudioContext !== 'undefined') { 
+      audioContext = new AudioContext(); 
+    } else { 
+      audioContext = new webkitAudioContext(); 
+    }
+
+    this.musicPlayer.setup(audioContext.sampleRate);
+    this.instrumentPlayer.setup(audioContext.sampleRate);
+
+    scriptNode = null;
+    if (typeof audioContext.createJavaScriptNode === 'function') { 
+      scriptNode = audioContext.createJavaScriptNode(this.bufferLength,0,1); 
+    } else { 
+      scriptNode = audioContext.createScriptProcessor(this.bufferLength,0,1); 
+    }
+
+    var _this = this;
+    scriptNode.onaudioprocess = function(e) { 
+      var outBuffer = e.outputBuffer; 
+      var outData = outBuffer.getChannelData(0); 
+
+      _this.musicPlayer.sid.resetChannelDataPos();
+      _this.instrumentPlayer.sid.resetChannelDataPos();
+
+      if(_this.musicPlayer.playing && !_this.instrumentPlayer.playing) {
+        for (var sample = 0; sample < outBuffer.length; sample++) { 
+          outData[sample] = _this.musicPlayer.nextSample();
+        }                 
+      } else if( (!_this.musicPlayer.playing) && _this.instrumentPlayer.playing) {
+        for (var sample = 0; sample < outBuffer.length; sample++) { 
+          outData[sample] = _this.instrumentPlayer.nextSample();
+        }                 
+      } else if(_this.musicPlayer.playing && _this.instrumentPlayer.playing) {
+        for (var sample = 0; sample < outBuffer.length; sample++) { 
+          outData[sample] = _this.musicPlayer.nextSample() + _this.instrumentPlayer.nextSample();
+        }                 
+      } else {
+        for (var sample = 0; sample < outBuffer.length; sample++) { 
+          outData[sample] = 0;
+        }
+      }
+      /*
+      outData[]
+      if(_this.playing) {
+        for (var sample = 0; sample < outBuffer.length; sample++) { 
+          outData[sample] = _this.nextSample();//Math.sin(sample / 2);// SIDplayer.play(); 
+        }         
+      } else {
+        for (var sample = 0; sample < outBuffer.length; sample++) { 
+          outData[sample] = 0;
+        }         
+      }
+      */
+    }
+
+    if(!UI.isMobile) {
+      this.tuna = new Tuna(audioContext);
+
+      this.convolver = new this.tuna.Convolver({
+          highCut: 22050,                         //20 to 22050
+          lowCut: 20,                             //20 to 22050
+          dryLevel: 0.8,                            //0 to 1+
+          wetLevel: 0.7,                            //0 to 1+
+          level: 1,                               //0 to 1+, adjusts total output of both wet and dry
+          impulse: "impulses/impulse_rev.wav",    //the path to your impulse response
+          bypass: 0
+      });  
+
+      this.chorus = new this.tuna.Chorus({
+          rate: 1.5,         //0.01 to 8+
+          feedback: 0.2,     //0 to 1+
+          delay: 0.0045,     //0 to 1
+          bypass: 1          //the value 1 starts the effect as bypassed, 0 or 1
+      });
+
+
+      this.overdrive = new this.tuna.Overdrive({
+          outputGain: 0.1,         //0 to 1+
+          drive: 0.7,              //0 to 1
+          curveAmount: 1,          //0 to 1
+          algorithmIndex: 0,       //0 to 5, selects one of our drive algorithms
+          bypass: 1
+      });
+
+
+      this.convolver.wetLevel = 0;
+
+      scriptNode.connect(this.overdrive);
+      this.overdrive.connect(this.chorus);
+      this.chorus.connect(this.convolver);
+
+      //jsSID_scriptNode.connect(this.convolver);
+      this.convolver.connect(audioContext.destination);
+    } else {
+      scriptNode.connect(audioContext.destination);    
+    }
+  },
+
+  getPlayheadPosition: function() {
+    return this.musicPlayer.getPlayheadPosition();
+  },
+
+  getInstrumentChannelData: function() {
+    return this.instrumentPlayer.getChannelData();
+  },
+  getChannelData: function() {
+
+    return this.musicPlayer.getChannelData();
+  },
+
+  isPlayingInstrument: function() {
+    return this.instrumentPlayer.isPlaying();
+  },
+  
+  isPlaying: function() {
+    return this.musicPlayer.isPlaying();
+  },
+
+  play: function() {
+    this.musicPlayer.play();
+  },
+
+  playTestInstrument: function(pitch, instrument, ch) {
+    this.setupAudioContext();
+    this.instrumentPlayer.playTestInstrument(pitch, instrument, ch);
+  },
+
+  stopTestInstrument: function() {
+    this.instrumentPlayer.stopTestInstrument();
+  }
+}

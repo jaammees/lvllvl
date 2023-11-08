@@ -1,0 +1,59 @@
+<div id="frames" class="panelFill ui-button-holder" style="padding: 4px; overflow: hidden; white-space: nowrap; background-color: #1c1c1c">
+
+  <!--
+  <button id="play"><span class="glyphicons glyphicons-play"></span>Play</button>
+-->
+  <div class="ui-button" id="play" style="width: 50px"><i class="halflings halflings-play"/>&nbsp;Play<div class="rippleJS"></div></div>
+
+  
+
+  <select id="playMode">
+    <option value="once">Once</option>
+    <option value="loop" selected="selected">Loop</option>
+    <option value="pingpong">Ping Pong</option>
+  </select>
+
+  <span class="frameControlSeparator">|</span>
+
+  <label class="gridinfo-label" for="currentFrame">Frame</label>
+
+  <div class="ui-button" title="Previous Frame" id="prevFrame">&lt;</div>
+
+  <input size="2" type="number" id="currentFrame" value="1" class="number" min="1"/>
+
+  <div style="display: inline-block; width: 24px; margin-left: 2px" id="frameCountInfo"></div>
+
+  <div class="ui-button" title="Next Frame" id="nextFrame">&gt;</div>
+
+  &nbsp;&nbsp;
+
+  <label  class="gridinfo-label" for="frameDuration">Frame Duration:</label>
+  <input size="4"  type="number" class="number integer" id="frameDuration" min="1" max="255" value="12"/> ticks
+  &nbsp;&nbsp;
+
+
+<!--
+  <label for="frameCount">Frame Count:</label>
+  <input size="2"  type="text" id="frameCount" value="1" id="frameCount" class="number" min="1"/>
+-->
+
+<!--  <button id="createFrame">Create Frame</button>-->
+
+  <span class="frameControlSeparator">|</span>
+
+
+  <div class="ui-button" id="insertFrame"><i class="halflings halflings-plus"/>&nbsp;New Frame<div class="rippleJS"></div></div>
+  <div class="ui-button" id="duplicateFrame"><i class="halflings halflings-duplicate"/>&nbsp;Duplicate<div class="rippleJS"></div></div>
+  <div class="ui-button" id="deleteFrame"><i class="halflings halflings-trash"/>&nbsp;Delete<div class="rippleJS"></div></div>
+
+<!--
+  <button id="insertFrame">Create</button>
+  <button id="duplicateFrame">Duplicate</button>
+  <button id="deleteFrame">Delete</button>
+-->
+  
+  <span class="frameControlSeparator">|</span>
+
+  <label class="cb-container">Show Previous Frame <input type="checkbox" id="showGhostFrame" value="1" class="checkbox"/><span class="checkmark"/></label>
+
+</div>

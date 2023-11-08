@@ -1,0 +1,334 @@
+<style>
+
+.calculator-row {
+  display: flex;
+
+}
+
+.calculator-row .calculator-button {
+  /*width: calc(16% - 2px);  50px; */
+  width: 16%;
+  /*flex-grow: 1;*/
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 1px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #444444;
+}
+
+.calculator-row .calculator-button:hover {
+  background-color: #484848;
+}
+
+.calculator-row .calculator-button:active {
+  background-color: #525252;
+}
+
+.calculator-buttons .disabled, .calculator-buttons .disabled:hover  {
+/*  background-color: #444444; */
+  color: #666666;
+  cursor: default;
+  font-weight: 100;
+}
+
+.calculator-row .calculator-button.num {
+  background-color: #222222;
+}
+
+.calculator-row .calculator-button.num:hover {
+  background-color: #282828;
+}
+
+
+.calculator-row .calculator-button.num:active {
+  background-color: #313131;
+}
+
+.calculator-sizes {
+  display: flex;
+}
+.calculator-size {
+  /*display: inline; */
+  flex-grow: 1;
+  /*margin-right: 6px;*/
+}
+
+
+.calculator-expression-holder {
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: right;
+  /*
+  background-color: #636363;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px #444444 inset;
+  */
+}
+
+.calculator-expression {
+  font-size: 14px;
+  height: 16px;
+  margin-bottom: 4px;
+}
+
+.calculator-value {
+  font-size: 30px;
+}
+
+.calculator-mode {
+  background-color: #222222;
+  cursor: pointer;
+  color: eeeeee;
+  padding: 6px;
+  border-left: 4px solid #222222;
+}
+
+.calculator-mode:hover {
+  background-color: #292929;
+}
+
+.calculator-mode-selected {
+  border-left: 4px solid orange;
+}
+
+
+
+.calculator-buttons .btn {
+  cursor: pointer;
+}
+
+
+
+.btn {
+  box-shadow: 0px 5px 10px #222222;
+}
+
+.col-xs-1 {
+  display: inline-block;
+}
+.btn:focus {
+  outline: none;
+}
+
+.button-row div {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  margin: 5px;
+}
+
+.button-row .btn {
+  width: 50px;
+  height: 50px;
+  background-color: #636363;
+}
+
+.button-row .btn:hover {
+  background-color: #858585;
+  color: white !important;
+}
+
+
+
+.button-orange {
+  background-color: #FF8400 !important;
+}
+
+.button-orange:hover {
+  background-color: #FFA647 !important;
+}
+
+.button-blue {
+  background-color: #0099FF !important;
+}
+
+.button-blue:hover {
+  background-color: #33ADFF !important;
+}
+
+.button-off {
+  background-color: #454545 !important;
+}
+
+.calc-history-eq {
+  color: #B0B0B0;
+  cursor: pointer;
+}
+
+#container {
+  width: 600px;
+  background-color: #2E2E2E;
+  height: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+
+/*
+#standard-buttons {
+  display: inline-block;
+}
+
+#advanced-buttons {
+  display: inline-block;
+  display: none;
+  margin-left: -20px;
+}
+
+#toggle-advanced:hover {
+  background-color: #858585 !important;
+}
+
+#toggle-advanced span {
+  pointer-events: none;
+}
+
+#calc-history {
+  float: right;
+  width: 200px;
+  height: 270px;
+  background-color: #636363;
+  border-radius: 5px;
+  margin-top: 6px;
+  padding: 10px;
+  box-shadow: 0px 5px 10px #444444 inset;
+}
+
+#calc-history-box {
+  width: 180px !important;
+  height: 220px !important;
+  resize: none;
+  overflow: hidden;
+}
+
+#calc-history hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+*/
+</style>    
+
+<div style="padding: 4px" class="calculator" tabindex="0">
+    
+    <div class="calculator-expression-holder">
+      <div class="calculator-expression">
+        
+      </div>
+
+      <div class="calculator-value">
+      </div>
+    </div>
+
+
+    <div class="calculator-sizes">
+      <div class="calculator-size">
+        <label class="rb-container">BYTE
+          <input type="radio" class="calculator-size-byte" name="calculator-size" value="byte">
+          <span class="checkmark"></span>
+        </label>        
+      </div>
+      <div class="calculator-size">
+        <label class="rb-container">UNSIGNED BYTE
+          <input type="radio" checked="checked" class="calculator-size-ubyte" name="calculator-size" value="ubyte">
+          <span class="checkmark"></span>
+        </label>        
+      </div>
+      <div class="calculator-size">
+        <label class="rb-container">WORD
+          <input type="radio" class="calculator-size-word" name="calculator-size" value="word">
+          <span class="checkmark"></span>
+        </label>        
+
+      </div>
+      <div class="calculator-size">
+        <label class="rb-container">DWORD
+          <input type="radio" class="calculator-size-dword" name="calculator-size" value="dword">
+          <span class="checkmark"></span>
+        </label>        
+      </div>
+    </div>
+
+    <div class="calculator-modes">
+      <div class="calculator-mode calculator-mode-selected calculator-mode-dec" data-mode="dec">
+        <label>DEC</label>
+        <span class="calculator-value-dec">0</span>
+      </div>
+
+      <div class="calculator-mode calculator-mode-hex" data-mode="hex">
+        <label>HEX</label>
+        <span class="calculator-value-hex">0</span>
+      </div>
+
+
+      <div class="calculator-mode calculator-mode-bin" data-mode="bin">
+        <label>BIN</label>
+        <span class="calculator-value-bin">0</span>
+      </div>
+    </div>
+
+    <div class="calculator-buttons">
+      <div class="calculator-row">
+        <div class="calculator-button op" data-op="rol">ROL</div>
+        <div class="calculator-button op" data-op="ror">ROR</div>
+        <div class="calculator-button op" data-op="or">Or</div>
+        <div class="calculator-button op" data-op="xor">Xor</div>
+        <div class="calculator-button op" data-op="not">Not</div>
+        <div class="calculator-button op" data-op="and">And</div>
+      </div>
+
+      <div class="calculator-row">
+        <div class="calculator-button op" data-op="lsh">Lsh</div>
+        <div class="calculator-button op" data-op="rsh">Rsh</div>
+        <div class="calculator-button op clear" data-op="clear">CE</div>
+        <div class="calculator-button op" data-op="clear">C</div>
+        <div class="calculator-button op delete" data-op="delete">DEL</div>
+        <div class="calculator-button op" data-op="divide">÷</div>
+      </div>
+
+      <div class="calculator-row">
+        <div class="calculator-button num hex" data-op="num" data-value="A">A</div>
+        <div class="calculator-button num hex" data-op="num" data-value="B">B</div>
+        <div class="calculator-button num dec hex" data-op="num" data-value="7">7</div>
+        <div class="calculator-button num dec hex" data-op="num" data-value="8">8</div>
+        <div class="calculator-button num dec hex" data-op="num" data-value="9">9</div>
+        <div class="calculator-button op" data-op="multiply">x</div>
+      </div>
+
+      <div class="calculator-row">
+        <div class="calculator-button num hex" data-op="num" data-value="C">C</div>
+        <div class="calculator-button num hex" data-op="num" data-value="D">D</div>
+        <div class="calculator-button num dec hex" data-op="num" data-value="4">4</div>
+        <div class="calculator-button num dec hex" data-op="num" data-value="5">5</div>
+        <div class="calculator-button num dec hex" data-op="num" data-value="6">6</div>
+        <div class="calculator-button op" data-op="subtract">-</div>
+      </div>
+
+      <div class="calculator-row">
+        <div class="calculator-button num hex" data-op="num" data-value="E">E</div>
+        <div class="calculator-button num hex" data-op="num" data-value="F">F</div>
+        <div class="calculator-button num dec hex bin" data-op="num" data-value="1">1</div>
+        <div class="calculator-button num dec hex" data-op="num" data-value="2">2</div>
+        <div class="calculator-button num dec hex" data-op="num" data-value="3">3</div>
+        <div class="calculator-button op" data-op="plus">+</div>
+      </div>
+
+      <div class="calculator-row">
+        <div class="calculator-button op" data-op="bracket-left">(</div>
+        <div class="calculator-button op" data-op="bracket-right">)</div>
+        <div class="calculator-button">&nbsp;</div>
+        <!--
+        <div class="calculator-button op" data-op="plusminus">+-</div>
+        -->
+        <div class="calculator-button num dec hex bin" data-op="num" data-value="0">0</div>
+        <div class="calculator-button">&nbsp;</div>
+        <div class="calculator-button op" data-op="equals">=</div>
+      </div>
+
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="panelFill"> 
+  <div style="position: absolute; left: 10px; top: 10px;">
+    <div style="display: inline-block" id="exportImageSize"></div>
+    
+  </div>
+  <div style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 46px" id="exportImagePreviewHolder">
+    <canvas id="exportImagePreview" style="border: 1px solid #222222;"></canvas>
+  </div>
+  <div style="position: absolute; left: 10px; right: 10px; bottom: 10px; display: flex; align-items: center">
+    <label class="controlLabel" for="imageExportPreviewScale">Preview&nbsp;Scale</label>
+    <input id="imageExportPreviewScale"  type="range" min="1" max="2500" value="50" size="3">
+    <input id="imageExportPreviewScaleText" class="number" type="text" style="width: 30px; margin: 0px 4px" min="1" max="1500" value="100" size="2">
+    <div class="ui-button" type="button" id="imageExportPreviewScaleReset">100%</div>
+  </div>
+
+</div>

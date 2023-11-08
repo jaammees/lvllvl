@@ -1,0 +1,148 @@
+<div class="panelFill dialogContent"  id="refLayer" >
+
+  <div style="padding: 4px">
+    <!--
+    <label for="refLayerSourceFile">File To Use (.gif,.png,.jpg)</label>
+    -->
+    <div class="ui-button ui-button-nextaction" id="refLayerSourceChooseFile">Choose Image...</div>
+    &nbsp;&nbsp;
+    <div class="ui-button" id="refLayerClearImage">Clear Image</div>
+
+    <input id="refLayerSourceFile" type="file" accept="image/*" style="position: absolute; top: -50px; left: -100px" >
+  </div>
+      
+
+  <div style="padding: 4px; text-align: center">
+    <table>
+      <tr>
+        <td>
+          <canvas width="320" height="200" id="refImageCanvas" style="border:1px solid white; background-color: #393939"></canvas>
+        </td>
+        <td>
+
+
+          <div style="padding-left: 8px" id="refImageParameters">
+            <div class="formRow">
+              <label for="refImageScale" class="controlLabel">Scale (%)</label>
+
+              <div class="ui-button" id="refImageScaleDecrease">-</div>
+              <input size="3" style="width: 40px" type="text" id="refImageScale" class="number" value="100"/>
+              <div class="ui-button" id="refImageScaleIncrease">+</div>
+
+              &nbsp;
+              <div class="ui-button" id="refImageScaleToFit">Fit</div>
+
+            </div>
+
+
+            <div class="formRow">
+              <label class="controlLabel">Position</label>
+
+              <label for="refImageX">X</label>:
+              <input size="3" style="width: 35px" type="text" id="refImageX" class="number" value="0"/> 
+
+              &nbsp;&nbsp;
+
+              <label for="refImageY">Y</label>:
+              <input size="3" style="width: 35px" type="text" id="refImageY" class="number" value="0"/> 
+            </div>
+
+            <div class="formRow">
+              <label class="controlLabel">Brightness</label>
+              <input style="width: 100px" type="range"  min="-100" max="100" value="0" size="3" id="refImageBrightness"/>                       
+              <input type="text" style="width: 30px" id="refImageBrightnessValue" value="0" class="number" min="-100" max="100" size="2"/>
+            </div>
+
+            <div class="formRow">
+              <label class="controlLabel">Contrast</label>
+              <input style="width: 100px" type="range" class="" min="-100" max="100" value="0" size="3" id="refImageContrast"/>
+              <input type="text" class="number" style="width: 30px" min="-100" max="100" value="0" size="2" id="refImageContrastValue"/>                        
+            </div>
+            <div class="formRow">
+              <label class="controlLabel">Saturation</label>
+              <input style="width: 100px" type="range"  min="-100" max="100" value="0"  id="refImageSaturation"/>                      
+              <input style="width: 30px" type="text" class="number" min="-100" max="100" value="0" size="2" id="refImageSaturationValue"/>
+
+            </div>
+          </div>
+
+        </td>
+      </tr>
+    </table>
+  </div>
+
+
+
+  <div>
+    <h3>Colours</h3>
+    <div class="formRow">
+      <label class="controlLabel">Colour Reduction:</label>
+
+      <select id="refImageColorReduction" name="refImageColorReduction"  style="width: 177px">
+        <option value="none">None</option>
+        <option value="closest">Closest</option>
+        <option value="dither">Dither</option>
+      </select>
+
+
+      <!--
+      <div class="radioGroup">
+        <div>
+          <label><input type="radio" name="refImageColorReduction" value="none" checked="checked">None</label>
+          &nbsp;
+          <label><input type="radio" name="refImageColorReduction" value="closest">Closest</label>
+          &nbsp;
+          <label><input type="radio" name="refImageColorReduction" value="dither" >Dither</label>
+
+        </div>
+      </div>
+
+    -->
+    </div>  
+
+    <div id="refImageDitherGroup">
+      <div class="formRow">
+        <label class="controlLabel">Dither Method:</label>
+        <select name="refImageDither" id="refImageDither"  style="width: 177px">
+          <option value="FloydSteinberg" selected="selected">Floyd Steinberg</option>
+          <option value="Atkinson">Atkinson</option>
+          <option value="Sierra">Sierra</option>
+          <option value="TwoSierra">Two Sierra</option>
+          <option value="Stucki">Stucki</option>
+          <option value="Jarvis">Jarvis</option>
+          <option value="Burkes">Burkes</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="formRow" id="refImageUseColorsRow">
+      <label class="controlLabel">Use Colours:</label>
+      <div class="radioGroup">
+
+        <select id="refImageUseColors" name="refImageUseColors"  style="width: 177px">
+          <option value="all">All Colours</option>
+          <option value="greyscale">Greyscale</option>
+          <option value="choose">Custom Set</option>
+        </select>
+
+        <br/>
+
+        <div style="padding: 4px; display: none" id="refImageChooseColorsRow">
+          <button id="refImageChooseColors" type="button">Choose Colours...</button>
+        </div>
+        <div id="refImageChooseColorsCount">
+        </div>
+      </div>
+
+      <div style="padding: 4px 0 2px 0">
+        <label class="cb-container">Limit Colours Per Cell
+          <input type="checkbox" id="refImageLimitPerCell">
+          <span class="checkmark"></span>
+        </label>          
+      </div>
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,118 @@
+<div id="tileEditor" class="panelFill" style="color: white">
+
+  <div class="title" style="background-color: #111111; height: 28px">
+    <div style="position: absolute; top: 6px; left: 6px; right: 30px; overflow: hidden; white-space: nowrap">
+      Tile Editor
+    </div>
+    
+    <div style="position: absolute; top: 2px; right: 2px; width: 20px">
+      <div id="tileEditorCloseButton" class="ui-button ui-dialog-close-button ui-button-danger" style="padding: 1px 4px"><img src="icons/svg/glyphicons-basic-599-menu-close.svg"></div>
+    </div>        
+  </div>
+
+  <div style="position: absolute; bottom: 0px; top: 28px; left: 0; right: 0; overflow-y: auto; overflow-x: hidden">
+    <div id="tileEditorTileInfo" style="padding: 10px 0 0 10px"></div>
+
+    <div style="text-align:center; margin-top: 10px" id="tileEditorCanvasHolder">
+      <canvas id="tileEditorCanvas" width="192" height="192" style="background-color: #000000"></canvas>
+    </div>
+
+
+    <div id="tileEditorFrameControls" style="display: none; margin: 8px">
+      Frame <button id="tileEditorPrevFrame">&lt;</button>
+      <input class="number" size="2" min="1" value="1" style="width: 30px" id="tileEditorFrame">
+      <button id="tileEditorNextFrame">&gt;</button>
+      &nbsp;
+      of
+      &nbsp;
+      <!--
+      <input class="number" size="2" value="1" min="1" max="8" id="tileEditorFrames">
+      -->
+      <div style="display: inline-block; width: 20px; color: white" id="tileEditorFrames"></div>
+      <button id="tileEditorInsertFrame">+</button>
+      <button id="tileEditorDeleteFrame">-</button>
+
+    </div>
+
+    <div id="tileEditorMultiColors" style="display: none; margin: 4px">
+      <label style="font-size: 10px">Colour:</label>
+
+      <div style="display: inline-block; width: 18px; height: 18px; background-color: #000000; border: 1px solid #dddddd" class="" id="tileEditorMultiColor"></div>      
+    </div>
+
+    <div id="tileEditorC64Colors" style="display: none; margin: 4px">
+      <div>
+        Colour:
+      </div>
+      <div id="tileEditorC64Colors">
+      </div>
+    </div>
+
+
+    <div id="tileEditorSubPaletteColors" style="display: none">
+      <div data-index="0" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="tileEditorSubPaletteColor colorSubPaletteColor0Display colorSubPaletteColor0" id="tileEditorSubPaletteColor-0"></div>
+      &nbsp;&nbsp;      
+
+      <div data-index="1" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="tileEditorSubPaletteColor colorSubPalette1Display colorSubPaletteColor1" id="tileEditorSubPaletteColor-1"></div>
+      &nbsp;&nbsp;
+
+      <div data-index="2" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="tileEditorSubPaletteColor colorSubPalette2Display colorSubPaletteColor2" id="tileEditorSubPaletteColor-2"></div>
+      &nbsp;&nbsp;      
+
+      <div data-index="3" style="display: inline-block; width: 16px; height: 16px; background-color: #000000; border: 1px solid #dddddd" class="tileEditorSubPaletteColor colorSubPalette3Display colorSubPaletteColor3" id="tileEditorSubPaletteColor-3"></div>
+    </div>
+
+    <div id="tileEditorControls" style="margin: 8px 0px 0px 10px">
+      <div>
+        <span id="tileEditorControlLabel">&nbsp;</span>
+      </div>
+      <div>
+        <div>
+          <div class="ui-button" data-label="Shift Left" title="Shift Left" id="tileEditorLeft"><img src="icons/svg/glyphicons-basic-859-square-left.svg"/></div>
+          <div class="ui-button" data-label="Shift Right" title="Shift Right" id="tileEditorRight"> <img src="icons/svg/glyphicons-basic-860-square-right.svg"/></div>
+          <div class="ui-button" data-label="Shift Up" title="Shift Up" id="tileEditorUp"><img src="icons/svg/glyphicons-basic-858-square-up.svg"/></div>
+          <div class="ui-button" data-label="Shift Down" title="Shift Down" id="tileEditorDown"><img src="icons/svg/glyphicons-basic-857-square-down.svg"/></div>
+          <div class="ui-button" data-label="Flip X" title="Flip X" id="tileEditorFlipH"><img src="icons/svg/glyphicons-basic-747-reflect-y.svg"/></div>
+          <div class="ui-button" data-label="Flip Y" title="Flip Y" id="tileEditorFlipV"><img src="icons/svg/glyphicons-basic-748-reflect-x.svg"/></div>
+          <div class="ui-button" data-label="Rotate" title="Rotate" id="tileEditorRotate"><img src="icons/svg/glyphicons-basic-493-rotate.svg"/></div>
+          <div class="ui-button" data-label="Invert" title="Invert" id="tileEditorInvert"><img src="icons/svg/glyphicons-basic-543-star-half.svg"/></div>
+        </div>
+        <div>
+          <div class="ui-button" data-label="Cut" title="Cut" id="tileEditorClear"><img src="icons/svg/glyphicons-basic-612-scissors.svg"/></div>
+          <div class="ui-button" data-label="Copy" title="Copy" id="tileEditorCopy"><img src="icons/svg/glyphicons-basic-614-copy.svg"/></div>
+          <div class="ui-button" data-label="Paste" title="Paste" id="tileEditorPaste"><img src="icons/svg/glyphicons-basic-613-paste.svg"/></div>
+          Clipboard: <canvas width="16" height="16" style="background-color: black" id="tileEditorClipboard"></canvas>
+        </div>
+      </div>
+    </div>
+
+
+    <div style="margin: 8px 0 0 10px">
+      <div>
+        <label for="tileEditorAnimatedType">Animated:</label>
+      </div>
+
+      <div style="margin-top: 2px">
+        <select id="tileEditorAnimatedType" style="margin-right: 6px; margin-top: 6px;">
+          <option value="">No</option>
+          <option value="mixed">Mixed</option>
+          <option value="left">Scroll Left</option>
+          <option value="right">Scroll Right</option>
+          <option value="up">Scroll Up</option>
+          <option value="down">Scroll Down</option>
+          <option value="blink">Blink</option>
+          <option value="frames">Frames</option>
+
+        </select>
+        <div style="display: inline-block; margin-top: 6px" id="tileEditorAnimatedTicksPerFrameRow">
+          <label for="tileEditorAnimatedTicksPerFrame">Ticks/Frame:</label>
+          <input size="2" class="number" min="1" max="16" value="6" id="tileEditorAnimatedTicksPerFrame"/>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>

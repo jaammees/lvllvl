@@ -1,0 +1,43 @@
+body {
+  background-color: #111111;
+  color: #dddddd;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  letter-spacing: 0.3px;
+}
+
+.content {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 46px;
+  line-height: 44px;
+  font-weight: 400;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #222222;
+}
+.help-section {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #222222;
+  padding-bottom: 40px;
+}
+
+.help-section h2 {
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 10px;
+  font-weight: 300;
+  
+  
+}
+
+.help-section img {
+  margin: 10px 0px;
+}
+
+.keyboard-shortcut {
+  color: #18d618;
+}

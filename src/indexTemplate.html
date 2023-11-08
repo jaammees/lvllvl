@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="google" content="notranslate">    
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">    
+
+    <title>lvllvl</title>
+    <meta name="description" content="Draw pictures using text characters">
+    <meta property="og:image" content="images/logo-large.png" />
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo16.png">
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>    
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>   
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css?v={v}"/>
+
+    <script src="js/libs.js?v={v}"></script>
+    <script src="js/html/htmlcache.js?v={v}"></script>
+    <script src="js/main.js?v={v}"></script>
+
+    <script src="js/storageManager.js?v={v}"></script>
+    <script src="js/githubClient.js?v={v}"></script>
+    <script src="js/acmeAssembler.js?v={v}"></script>
+    <script src="js/ca65Assembler.js?v={v}"></script>
+    <script src="c64/c64/c64.js?v={v}"></script> 
+    <script src="js/c64/c64.js?v={v}"></script>
+    
+    <script>
+      if(UI.isMobile.any()) {
+        var link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('href', 'css/ui-mobile.css?40');
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+        $(function() {
+          $('body').addClass('mobileMode');
+        });
+      }
+    </script>
+
+    <script>
+      var g_app = new Editor();
+      g_app.init();
+    </script>
+  </head>    
+  <body style="background-color: black">
+    
+
+  </body>
+</html>

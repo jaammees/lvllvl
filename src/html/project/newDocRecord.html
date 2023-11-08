@@ -1,0 +1,129 @@
+<div id="newDocRecordDialog" class="panelFill dialogContent">
+  <div class="formGroup">
+    <label class="controlLabel" for="newDocRecordType">Type:</label>
+    <!--
+    <div style="display: inline-block; line-height: 24px" id="newDocRecordType"></div>
+    -->
+    <select id="newDocRecordType">
+      <option value="folder">Folder</option>
+      <option value="screen">Screen</option>
+      <option value="sprite">Sprite</option>
+      <option value="color palette">Colour Palette</option>
+      <option value="tile set">Tile Set</option>
+      <option value="music">Music</option>
+      <option value="script">Script</option>
+      <option value="asm">ASM</option>
+      <option value="binary">Binary</option>
+      <option value="3d scene">3d scene</option>
+    </select>
+
+  </div>
+
+  <div class="formGroup" id="newDocRecordDocName">
+    <label class="controlLabel" for="newProjectFileName">Name:</label>
+    <input type="text" class="formControl submitOnEnter" id="newProjectFileName" spellcheck="false"/>
+  </div>
+
+  <div class="formGroup" id="newDocRecordSpriteScreenModeGroup">
+    <label class="controlLabel" for="newDocRecordSpriteScreenMode">Screen Mode</label>
+    <select id="newDocRecordSpriteScreenMode">
+      <option value="monochrome">Monochrome</option>
+      <option value="c64multicolor">C64 Multicolor</option>
+      <option value="nes">NES</option>
+      <option value="indexed">Indexed</option>
+    </select>
+  </div>
+
+  <div id="newDocRecordGridDimensions">
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordGridWidth">Grid Size:</label>
+      <input type="text" class="formControl number" min="1" max="200" value="40" id="newDocRecordGridWidth" size="2"/>
+      &nbsp;x&nbsp;
+      <input type="text" class="formControl number" min="1" max="200" value="25" id="newDocRecordGridHeight" size="2" >
+
+      <span id="newDocRecordGridDimensionsDepth">
+        &nbsp;x&nbsp;
+        <input type="text" class="formControl number" min="1" max="200" value="25" id="newDocRecordGridDepth" size="2" >
+      </span>
+      &nbsp;
+      Cells
+    </div>
+
+    <!--
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordGridHeight">Grid Height:</label>
+      <input type="text" class="formControl number" min="1" max="200" value="25" id="newDocRecordGridHeight" size="4" style="cursor: ew-resize;">
+    </div>
+-->
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordGridTileSet">Tile Set:</label>
+      <select id="newDocRecordGridTileSet">
+        <option value="0">New</option>
+      </select>
+
+    </div>
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordGridColorPalette">Colour Palette:</label>
+      <select id="newDocRecordGridColorPalette">
+        <option value="0">New</option>
+      </select>
+    </div>
+
+
+  </div>
+
+  <div id="newDocRecordSpriteDimensions">
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordSpriteGridWidth">Tile Size:</label>
+      24 x 21 pixels
+    </div>
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordSpriteGridWidth">Grid Size:</label>
+      <input type="text" class="formControl number" min="1" max="8" value="1" id="newDocRecordSpriteGridWidth" size="4"/>
+      x
+      <input type="text" class="formControl number" min="1" max="8" value="1" id="newDocRecordSpriteGridHeight" size="4" style="cursor: ew-resize;">
+      &nbsp;Tile(s)
+    </div>
+
+    <div class="formGroup">
+        <label class="controlLabel" for="newDocRecordSpriteTileSet">Tile Set:</label>
+        <select id="newDocRecordSpriteTileSet">
+          <option value="0">New</option>
+        </select>
+  
+      </div>
+      <div class="formGroup">
+        <label class="controlLabel" for="newDocRecordSpriteColorPalette">Colour Palette:</label>
+        <select id="newDocRecordSpriteColorPalette">
+          <option value="0">New</option>
+        </select>
+      </div>
+  
+    <!--
+    <div class="formGroup">
+      <label class="controlLabel" for="newDocRecordSpriteGridHeight">Grid Height:</label>
+      <input type="text" class="formControl number" min="1" max="8" value="1" id="newDocRecordSpriteGridHeight" size="4" style="cursor: ew-resize;">
+      &nbsp;Tile(s)
+    </div>
+    -->
+  </div>
+
+  <div id="newDocRecordBinFileGroup">
+    <div class="formGroup">
+
+      <label class="controlLabel" for="newDocRecordBinaryFile">Binary File(s):</label>
+
+      <div style="display: inline-block">
+        <div class="ui-button ui-button-primary" id="newDocBinaryChooseFiles">Choose File(s)...</div>
+        
+      </div>
+
+      <div id="newDocBinaryFiles" style="padding: 4px; background-color: #cccccc; color: #222222; margin-top: 10px"></div>
+      <form id="newDocBinaryFileForm" style="position: absolute; left: -1000px">
+        <input type="file" accept=".bin" multiple id="newDocRecordBinaryFile"/>
+      </form>
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,62 @@
+<div>
+  <div id="charRotationTools3d">
+
+    <div>
+      <div class="ui-button" id="currentTileRotateLeft">&lt;</div>
+      <div class="ui-button" id="currentTileRotateRight">&gt;</div>
+
+      <div class="ui-button" id="currentTileRotateUp">/\</div>
+      <div class="ui-button" id="currentTileRotateDown">\/</div>
+
+      <div class="ui-button" id="currentTileRotateClockwise">C</div>
+      <div class="ui-button" id="currentTileRotateAntiClockwise">A</div>
+    </div>
+    <div>
+      <div style="display: inline-block">RX:</div>
+      <div id="currentTileRX" style="display: inline-block">0</div>
+
+      <div style="display: inline-block">RY:</div>
+      <div id="currentTileRY" style="display: inline-block">0</div>
+
+      <div style="display: inline-block">RZ:</div>
+      <div id="currentTileRZ" style="display: inline-block">0</div>
+
+      <div class="ui-button" id="currentTileRotateReset">reset</div>
+
+    </div>
+  </div>
+
+  <div id="charOrientationTools2d" style="padding: 2px 4px; font-size: 10px">
+
+    <div style="margin-bottom: 2px; height: 20px; line-height: 20px">
+
+      <div style="display: inline-block" id="currentTileFlipHolder">
+        <div style="display: inline-block;  color: #999999" >Flip H:</div>
+        <div id="currentTileFlipH" style="display: inline-block;  font-weight: bold">0</div>
+
+        <div style="display: inline-block;  color: #999999">Flip V:</div>
+        <div id="currentTileFlipV" style="display: inline-block;  font-weight: bold">0</div>
+      </div>
+
+      <div style="display: inline-block" id="currentTileRotateHolder">
+        <div style="display: inline-block; color: #999999">Rotate:</div>
+        <div id="currentTileRotate" style="display: inline-block; font-weight: bold">0</div>
+      </div>
+
+      <div class="ui-button ui-button-small" style="position: absolute; right: 2px; top: 1px" id="currentTileOrientation2dReset">Reset<div class="rippleJS"></div></div>
+    </div>
+
+    <div style="display:flex">
+      <span id="tileOrientationFlipControls" style="display: flex">
+        <div class="ui-button ui-button-small" style="margin-right: 2px" id="currentTileOrientation2dFlipH"  data-label="Tile Flip X" title="Tile Flip X (F)"><img src="icons/svg/glyphicons-basic-747-reflect-y.svg" > Flip H<div class="rippleJS"></div></div>
+        <div class="ui-button ui-button-small" style="margin-right: 2px" id="currentTileOrientation2dFlipV"  data-label="Tile Flip Y" title="Tile Flip Y (G)"><img src="icons/svg/glyphicons-basic-748-reflect-x.svg"> Flip V<div class="rippleJS"></div></div>
+      </span>
+
+      <span id="tileOrientationRotateControls">
+        <div class="ui-button ui-button-small" id="currentTileOrientation2dRotate"  data-label="Tile Rotate" title="Tile Rotate (R)"><img src="icons/svg/glyphicons-basic-493-rotate.svg"> Rotate<div class="rippleJS"></div></div>
+      </span>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,127 @@
+<div class="panelFill dialogContent" id="exportBinaryDataPanel">
+  <div class="formGroup">
+    <label class="controlLabel" for="exportBinaryAs">File name:</label> 
+    <input type="text" class="formControl" size="20" value="" id="exportBinaryAs"/>
+  </div>
+
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportBinaryFromFrame">Format</label>
+
+    <div class="radioGroup">
+      <div>
+        <label class="rb-container">Binary
+          <input type="radio" class="formControl" size="20" value="binary" checked="checked" name="exportBinaryFormat" id="exportBinaryFormat"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label class="rb-container">C64 PRG (add address at beginning)
+          <input type="radio" class="formControl" size="20" value="c64" name="exportBinaryFormat" id="exportBinaryFormatPRG"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label class="rb-container">Mega65
+          <input type="radio" class="formControl" size="20" value="mega65" name="exportBinaryFormat" id="exportBinaryFormatMega65"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>      
+
+      <div>
+        <label class="rb-container">Include MZ-80a header
+          <input type="radio" class="formControl" size="20" value="mz80a"  name="exportBinaryFormat" id="exportBinaryFormatMZ80a"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label class="rb-container">MZ 700
+          <input type="radio" class="formControl" size="20" value="mz700"  name="exportBinaryFormat" id="exportBinaryFormatMZ700"/>
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+    </div>   
+  </div>
+
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportBinaryFromFrame">Colour Mode</label>
+
+    <label class="rb-container">FG Colour per Tile
+      <input type="radio" class="formControl" size="20" value="standard" checked="checked" name="exportBinaryColorMode" id="exportBinaryColorMode_standard"/>
+      <span class="checkmark"></span>
+    </label>
+    &nbsp;
+
+    <label class="rb-container">C64 ECM
+      <input type="radio" class="formControl" size="20" value="ecm" name="exportBinaryColorMode" id="exportBinaryColorMode_ecm"/>
+      <span class="checkmark"></span>
+    </label>
+
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel">Include:</label>
+    <div class="checkboxGroup">
+      <div>
+        <label class="cb-container">Screen Character Data
+          <input type="checkbox" id="exportBinaryCharacterData" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div>
+        <label class="cb-container">Screen Colour Data
+          <input type="checkbox" id="exportBinaryColorData" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div>
+        <label class="cb-container">Character set Data
+          <input type="checkbox" id="exportBinaryCharactersetData" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div id="export-binary-character-attribute-row">
+        <label class="cb-container">Character Attribute Data
+          <input type="checkbox" id="exportBinaryCharacterAttributeData">
+          <span class="checkmark"></span>
+        </label>
+      </div>      
+    </div>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportBinaryFromFrame">Export Frames:</label>
+    <div style="display: inline-block">
+      <input type="number" size="2" class="number" min="1"  id="exportBinaryFromFrame">
+      &nbsp;
+      <label for="exportBinaryToFrame">To</label>
+      &nbsp;
+      <input type="number" size="2" class="number" min="1" id="exportBinaryToFrame">
+    </div>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel">Layers:</label>
+    <div class="radioGroup">
+
+      <label class="rb-container">Current Layer
+        <input type="radio" name="exportBinaryLayer" id="exportBinaryLayerCurrent" value="current" checked="checked"/> 
+        <span class="checkmark"></span>
+      </label>
+      &nbsp;
+<!--
+      <label class="rb-container">All Layers
+        <input type="radio" name="exportBinaryLayer" id="exportBinaryLayerAll" value="all" /> 
+        <span class="checkmark"></span>
+      </label>
+-->
+
+    </div>
+  </div>
+
+</div>

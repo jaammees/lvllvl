@@ -1,0 +1,45 @@
+<div class="panelFill">
+
+  <div id="chooseColorPaletteList" style="position: absolute; left: 10px; top: 10px; bottom: 0; width: 180px; overflow: auto; ">
+    <div class="characterSetListEntry">c64</div>
+  </div>
+
+  <div style="position: absolute; left: 200px; top: 0px; bottom: 0; right: 0; overflow: auto" id="chooseColorPaletteDetails">
+    <div style="margin: 10px">
+      <h3 id="chooseColorPaletteHeading"></h3>
+      <div id="chooseColorPaletteInfo"></div>
+      <div id="chooseColorPaletteDescription"></div>
+
+      <canvas id="chooseColorPalettePreview" width="256" height="256" style="background-color: #222222"></canvas>
+
+      <div id="chooseColorPaletteOptions" style="height: 20px; background-color: #272727; width: 381px; padding: 10px 10px 4px 10px"></div>
+
+<!--
+      <canvas id="chooseColorPaletteSampleImage" width="256" height="256" style="background-color: #222222"></canvas>
+-->
+
+      <div id="chooseColorPaletteControls">
+        <div class="formRow">
+          <label class="controlLabel">Brightness:</label>
+          <input type="number" id="choosePaletteBrightnessValue" value="0" class="number" min="-100" max="100" size="3"/>
+          <input type="range"  min="-100" max="100" value="0" size="3" id="choosePaletteBrightness"/> 
+          <div class="ui-button" id="choosePaletteBrightnessReset">Reset</div>
+        </div>
+
+        <div class="formRow">
+          <label class="controlLabel">Contrast:</label>
+          <input type="number" class="number" min="-100" max="100" value="0" size="3" id="choosePaletteContrastValue"/>
+          <input type="range" class="" min="-100" max="100" value="0" size="3" id="choosePaletteContrast"/></label> 
+          <div class="ui-button" id="choosePaletteContrastReset">Reset</div>
+        </div>
+
+        <div class="formRow">
+          <label class="controlLabel">Saturation:</label>
+          <input type="number" class="number" min="-100" max="100" value="0" size="3" id="choosePaletteSaturationValue"/>
+          <input type="range"  min="-100" max="100" value="0"  id="choosePaletteSaturation"/>
+          <div class="ui-button" id="choosePaletteSaturationReset">Reset</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

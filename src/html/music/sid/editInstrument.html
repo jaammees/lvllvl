@@ -1,0 +1,459 @@
+<div id="editInstrument" class="panelFill" style="background-color: #444444;">
+
+  <div id="editInstrumentHolder" style="position: absolute; background-color: #333333; top: 0; bottom: 100px; left: 0px; right: 8px; overflow-y: auto">
+
+
+    <div class="content" style="padding: 8px">
+      <h3>Edit Instrument</h3>
+
+      <div class="formGroup">
+        <label class="controlLabel" for="instrumentName">Name:</label>
+        <input type="text" class="formControl" id="instrumentName" name="instrumentName"/>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel" for="instrumentType">Type:</label>
+
+        <div class="radioGroup">
+          <label><input type="radio" name="editInstrumentType" id="editInstrumentType_basic" value="basic" checked="checked">Basic</label>
+          <label><input type="radio" name="editInstrumentType" id="editInstrumentType_advanced" value="advanced">Advanced</label>
+          <label><input type="radio" name="editInstrumentType" id="editInstrumentType_drum" value="drum">Drum</label>
+        </div>
+      </div>
+
+
+      <div class="formGroup">
+        <label class="controlLabel">ADSR:</label>
+        <div class="" style="display: inline-block">
+
+          <label for="editInstrumentAttack">Attack:&nbsp;</label>
+          <select class="formControl" id="editInstrumentAttack">
+            <option value="0">2ms</option>
+            <option value="1">8ms</option>
+            <option value="2">16ms</option>
+            <option value="3">24ms</option>
+            <option value="4">38ms</option>
+            <option value="5">56ms</option>
+            <option value="6">68ms</option>
+            <option value="7">80ms</option>
+            <option value="8">100 ms</option>
+            <option value="9">250 ms</option>
+            <option value="10">500 ms</option>
+            <option value="11">800 ms</option>
+            <option value="12">1 s</option>
+            <option value="13">3 s</option>
+            <option value="14">5s</option>
+            <option value="15">8s</option>
+          </select>
+
+          &nbsp;&nbsp;
+
+          <label class="" for="editInstrumentDecay">Decay:</label>
+          &nbsp;
+          <select class="formControl" id="editInstrumentDecay">
+            <option value="0">6ms</option>
+            <option value="1">24ms</option>
+            <option value="2">48ms</option>
+            <option value="3">72ms</option>
+            <option value="4">114ms</option>
+            <option value="5">168ms</option>
+            <option value="6">204ms</option>
+            <option value="7">240ms</option>
+            <option value="8">300 ms</option>
+            <option value="9">750 ms</option>
+            <option value="10">1.5s</option>
+            <option value="11">2.4s</option>
+            <option value="12">3s</option>
+            <option value="13">9s</option>
+            <option value="14">15s</option>
+            <option value="15">24s</option>
+          </select>
+
+          &nbsp;&nbsp;
+
+          <label class="" for="editInstrumentSustain">Sustain Level:</label>
+          &nbsp;
+          <select class="formControl"  id="editInstrumentSustain">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+          </select>
+
+          &nbsp;&nbsp;
+
+          <label class="" for="editInstrumentRelease">Release: </label>
+          &nbsp;
+          <select class="formControl" id="editInstrumentRelease">
+            <option value="0">6ms</option>
+            <option value="1">24ms</option>
+            <option value="2">48ms</option>
+            <option value="3">72ms</option>
+            <option value="4">114ms</option>
+            <option value="5">168ms</option>
+            <option value="6">204ms</option>
+            <option value="7">240ms</option>
+            <option value="8">300 ms</option>
+            <option value="9">750 ms</option>
+            <option value="10">1.5s</option>
+            <option value="11">2.4s</option>
+            <option value="12">3s</option>
+            <option value="13">9s</option>
+            <option value="14">15s</option>
+            <option value="15">24s</option>
+          </select>
+
+        </div>
+      </div>                        
+  
+
+      <div class="formGroup">
+        <label class="controlLabel">Vibrato:</label>
+
+        <div class="radioGroup">
+          <label><input type="radio" id="vibratoOn" name="vibrato" value="on"/> On</label>
+          <label><input type="radio" id="vibratoOff" name="vibrato" value="off" checked="checked"/> Off</label>
+        </div>
+      </div>
+
+      <div id="vibratoControls" style="display: none; "> 
+
+        <div class="formGroup">
+
+          <label class="controlLabel"></label>
+          
+          <div style="display: inline-block; margin-left: 20px">
+            <div style="margin-bottom: 8px">
+              Change pitch by depth, change direction every speed ticks
+            </div>
+
+            <div>
+              <label for="editInstrumentVibratoDepth">Amount:</label>
+              &nbsp;
+              <input name="editInstrumentVibratoDepth" id="editInstrumentVibratoDepth" value="0" class="number" min="0" max="255" size="4"> / tick (0-255)
+              &nbsp;&nbsp;
+
+              <label for="editInstrumentVibratoSpeed">Cycle Time</label>
+              &nbsp;
+              <input name="editInstrumentVibratoSpeed" id="editInstrumentVibratoSpeed" value="1" class="number" min="1" max="127" size="4"> ticks (1-127)
+              &nbsp;&nbsp;
+
+              <label for="editInstrumentVibratoDelay">Delay</label>
+              &nbsp;
+              <input name="editInstrumentVibratoDelay" id="editInstrumentVibratoDelay" value="0" class="number" min="0" max="255" size="4"> ticks (0-255)
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div id="editInstrumentBasic">
+
+        <div class="formGroup">
+          <label class="controlLabel" >Waveform:</label>
+
+          <div class="checkboxGroup">
+            <label><input name="editInstrumentWaveform" id="editInstrumentWaveform_triangle" value="triangle" type="checkbox"> Triangle</label>
+            <label><input type="checkbox"  id="editInstrumentWaveform_sawtooth" value="sawtooth"> Sawtooth</label>
+            <label><input type="checkbox"  id="editInstrumentWaveform_pulse" value="pulse"> Pulse</label>
+            <label><input type="checkbox"  id="editInstrumentWaveform_noise" value="noise"> Noise</label>
+          </div>
+        </div>
+
+        <div id="pulseControls" style="display: none">
+          <div class="formGroup">
+            <label class="controlLabel"></label>
+            <div style="display: inline-block">
+              <label for="editInstrumentPMWidth">Initial Pulse Width:</label>
+              <div style="display: inline-block">
+                <label><input name="editInstrumentPMWidth" id="editInstrumentPMWidth" value="50" maxlength="3" size="4" class="number"> %</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="formGroup">
+            <label class="controlLabel"></label>
+            <div style="display: inline-block">
+              <label style="margin-bottom: 4px">Pulse Modulation: </label><br/>
+              <div style="margin-bottom: 4px">For Time ticks, increase pulse width by Amount/tick, then decrease by Amount/tick for Time ticks</div>
+              <label>Time <input name="editInstrumentPMSpeed" id="editInstrumentPMSpeed" maxlength="3" size="4" class="number" min="1" max="999" value="3"> ticks (1-999) </label>
+              &nbsp;&nbsp;
+              <label>Amount <input name="editInstrumentPMDepth" id="editInstrumentPMDepth" maxlength="3" size="4" class="number" value="3" min="0" max="127"> per tick (0-127)</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="formGroup">
+          <label class="controlLabel" >Effect: </label>
+          <div class="radioGroup">
+            <label><input type="radio" name="editInstrumentBasicEffect"  name="editInstrumentBasicEffect_none" value="none" checked="checked"> None</label>
+            <label><input type="radio" name="editInstrumentBasicEffect"  name="editInstrumentBasicEffect_tremolo" value="tremolo"> Tremolo</label>
+            <label><input type="radio" name="editInstrumentBasicEffect"  name="editInstrumentBasicEffect_arpeggio" value="arpeggio"> Arpeggio</label>
+            <label><input type="radio" name="editInstrumentBasicEffect"  name="editInstrumentBasicEffect_pitch" value="pitch"> Pitch change</label>
+            <label><input type="radio" name="editInstrumentBasicEffect"  name="editInstrumentBasicEffect_modulatewaveform" value="pitch"> Modulate Waveform</label>
+
+          </div>
+
+          <div class="editInstrumentBasicEffect" id="editInstrumentTremolo" style="margin-left: 90px;">
+            <div style="background-color: #888888; padding: 8px; display: inline-block">
+              <label>On For 
+                <select name="editInstrumentTremoloOnSpeed" id="editInstrumentTremoloOnSpeed">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6" selected="selected">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+
+                ticks
+              </label>
+
+              &nbsp;&nbsp;
+              <label>Off For 
+                <select name="editInstrumentTremoloOffSpeed" id="editInstrumentTremoloOffSpeed">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6" selected="selected">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+
+                ticks
+              </label>
+            </div>
+          </div>
+
+          <div class="editInstrumentBasicEffect" id="editInstrumentArpeggio" style="margin-left: 90px;">
+            <div style="background-color: #888888; padding: 8px; display: inline-block">
+
+              <label>Ticks/note:
+
+                <select name="editInstrumentArpeggioSpeed" id="editInstrumentArpeggioSpeed">
+                  <option value="1" selected="selected">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                </select>
+              </label>
+              <br/>
+
+              <div>
+                <label>Mode</label>
+
+                <label><input type="radio" checked="checked" name="editInstrumentArpeggioMode"  name="editInstrumentArpeggioMode"  value="major"> Major</label>
+                <label><input type="radio"  name="editInstrumentArpeggioMode"  value="melodic"> Melodic Minor</label>
+                <label><input type="radio" name="editInstrumentArpeggioMode"  value="harmonic"> Harmonic Minor</label>
+                <label><input type="radio" name="editInstrumentArpeggioMode"  value="dorian"> Dorian</label>
+                <label><input type="radio" name="editInstrumentArpeggioMode"  value="phrygian"> Phrygian</label>
+                <label><input type="radio" name="editInstrumentArpeggioMode"  value="lydian"> Lydian</label>
+                <label><input type="radio" name="editInstrumentArpeggioMode"  value="mixolydian"> Mixolydian</label>
+                <label><input type="radio" name="editInstrumentArpeggioMode"  value="aeolian"> Aeolian</label>
+                <label><input type="radio" name="editInstrumentArpeggioMode"  value="locrian"> Locrian</label>
+              </div>
+
+              <div>
+                <label>Steps</label>
+                <label><input type="radio" name="editInstrumentArpeggioSteps"  value="2"> 2</label>
+                <label><input type="radio" checked="checked" name="editInstrumentArpeggioSteps"  value="3"> 3</label>
+                <label><input type="radio" name="editInstrumentArpeggioSteps"  value="4"> 4</label>
+                <label><input type="radio" name="editInstrumentArpeggioSteps"  value="5"> 5</label>
+                <label><input type="radio" name="editInstrumentArpeggioSteps"  value="6"> 6</label>
+                <label><input type="radio" name="editInstrumentArpeggioSteps"  value="7"> 7</label>
+                <label><input type="radio" name="editInstrumentArpeggioSteps"  value="8"> 8</label>
+              </div>
+
+              <div id="editInstrumentsArpeggioSteps">
+              </div>
+
+                
+<!--
+
+              <label>Type 
+                <label><input type="radio" name="editInstrumentArpeggioType"  name="editInstrumentArpeggioType_octave" value="octave" checked="checked"> Octave</label>
+                <label><input type="radio" name="editInstrumentArpeggioType"  name="editInstrumentArpeggioType_major"  value="major"> Major Triad</label>
+                <label><input type="radio" name="editInstrumentArpeggioType"  name="editInstrumentArpeggioType"  value="minor"> Minor Triad</label>
+                <label><input type="radio" name="editInstrumentArpeggioType"  name="editInstrumentArpeggioType"  value="diminished"> Diminished Triad</label>
+                <label><input type="radio" name="editInstrumentArpeggioType"  name="editInstrumentArpeggioType"  value="augmented"> Augmented Triad</label>
+
+                <label><input type="radio" name="editInstrumentArpeggioType"  name="editInstrumentArpeggioType_majorscale"  value="majorscale"> Major Scale</label>
+
+                <label><input type="radio" name="editInstrumentArpeggioType"  name="editInstrumentArpeggioType_minorscale"  value="minorscale"> Minor Scale</label>
+
+                <label><input type="radio" name="editInstrumentArpeggioType"  name="editInstrumentArpeggioType_custom"  value="custom"> Custom</label>
+
+
+              </label>
+
+              <br/>
+
+              <div id="editInstrumentArpeggioDirection">
+              Direction:
+                <label><input type="radio" name="editInstrumentArpeggioDir"  name="editInstrumentArpeggioDir_up" value="up" checked="checked"> Up</label>
+                <label><input type="radio" name="editInstrumentArpeggioDir"  name="editInstrumentArpeggioDir_down" value="down"> Down</label>
+                <label><input type="radio" name="editInstrumentArpeggioDir"  name="editInstrumentArpeggioDir_updown" value="updown"> Up/Down</label>
+              </div>
+
+-->
+
+<!--
+              <div id="editInstrumentArpeggioCustom" style="display: none">
+                <label>
+                  Steps
+                  <select id="editInstrumentArpeggioCustomSteps">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                  </select>
+                </label>
+
+
+                <br/>
+              </div>
+
+            -->
+
+            </div>
+
+          </div>
+
+
+          <div class="editInstrumentBasicEffect" id="editInstrumentPitch" style="margin-left: 90px;">
+            <div style="background-color: #888888; padding: 8px; display: inline-block">
+
+              <label><input type="radio" id="editInstrumentPitchEffect_bendup" name="editInstrumentPitchEffect" value="bendup" checked="checked">Bend up to note</label>
+              <label><input type="radio" id="editInstrumentPitchEffect_benddown" name="editInstrumentPitchEffect" value="benddown">Bend down to note</label>
+              <label><input type="radio" id="editInstrumentPitchEffect_drop" name="editInstrumentPitchEffect" value="drop">Continuous Pitch Drop</label>
+              <label><input type="radio" id="editInstrumentPitchEffect_rise" name="editInstrumentPitchEffect" value="rise">Continuous Pitch Rise</label>
+
+              <div>
+                <label>Speed <input size="4" id="editInstrumentPitchEffectSpeed" value="120" class="number" min="0" max="255"> (0-255)</label>
+                <label>Ticks <input size="4" id="editInstrumentPitchEffectTicks" value="6" min="0" max="16"> (0-16) </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div id="editInstrumentDrum">
+      <div class="formGroup">
+        <label class="controlLabel">Drum Type:</label>
+        <div class="radioGroup">
+          <label><input type="radio" name="editInstrumentDrumType" id="editInstrumentDrumType_bass" value="bass"> Bass drum</label>
+          <label><input type="radio" name="editInstrumentDrumType" id="editInstrumentDrumType_tom" value="tom"> Tom</label>
+          <label><input type="radio" name="editInstrumentDrumType" id="editInstrumentDrumType_snare" value="snare"> Snare</label>
+          <label><input type="radio" name="editInstrumentDrumType" id="editInstrumentDrumType_hihat" value="hihat"> Hi-hat</label>
+        </div>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel">Noise + Waveform: </label>
+        <div class="checkboxGroup">
+          <label><input name="editInstrumentWaveform" id="editInstrumentDrumWaveform_triangle" value="triangle" type="checkbox"> Triangle</label>
+          <label><input type="checkbox"  id="editInstrumentDrumWaveform_sawtooth" value="sawtooth"> Sawtooth</label>
+          <label><input type="checkbox"  id="editInstrumentDrumWaveform_pulse" value="pulse"> Pulse</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="editInstrumentAdvanced" style="padding: 0 10px 0 10px">
+
+      <div id="editInstrumentAdvancedTabs">
+        <div style="display: inline-block; width: 100px" class="instrumentTab instrumentActiveTab" id="wavetableTab">Wave Table</div>
+        <div style="display: inline-block; width: 100px" class="instrumentTab" id="pulsetableTab">Pulse Table</div>
+        <div style="display: inline-block; width: 100px" class="instrumentTab" id="filtertableTab">Filter Table</div>
+      </div>
+
+      <div id="editInstrumentWavetable" class="instrumentTable">
+      </div>
+
+      <div id="editInstrumentPulsetable" class="instrumentTable">
+      </div>
+
+      <div id="editInstrumentFiltertable" class="instrumentTable">
+      </div>
+
+    </div>
+  </div>
+
+  <canvas id="editInstrumentKeyboard" width="1126" height="60" style="background-color: white;position: absolute; bottom: 40px"></canvas>
+
+
+  <div class="buttons" style="position: absolute; bottom: 10px; right: 10px; width: 300px;  text-align: right; ">
+    <div class="ui-button ui-button-primary" id="editInstrumentOK">OK<div class="rippleJS"></div></div>
+    <div class="ui-button" id="editInstrumentApply">Apply<div class="rippleJS"></div></div>
+    <div class="ui-button" id="editInstrumentCancel">Cancel<div class="rippleJS"></div></div>
+  </div>
+
+
+
+</div>

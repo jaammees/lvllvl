@@ -1,0 +1,172 @@
+<div id="githubRepositoryDetails" class="panelFill dialogContent">
+
+  <div id="githubRepositoryLogin" class="githubRepositoryDialogSection" style="display: none">
+    <h2>Sign in to GitHub to Share Project</h2>
+    <div>
+      <p>Projects are shared using GitHub public repositories.</p>
+      <p>To share a project, you will need to login to GitHub.</p>
+    </div>
+
+    <div class="ui-button ui-button-info" id="loginRegisterGitHub" style="padding: 4px; height: auto; line-height: 20px">
+        <img style="margin-right: 6px; margin-top: -4px" src="icons/GitHub-Mark-32px.png">
+        GitHub Login/Register
+    </div>
+  </div>
+
+  <div id="githubRepositoryMessage" style="display: none; margin-bottom: 10px">
+  </div>
+
+  <div id="githubRepositoryProgress"></div>
+
+  <div id="githubRepositoryError" style="display: none; margin-top: 10px; background-color: #333333; padding: 10px"></div>
+
+  <div id="githubRepositoryCommitOnly" class="githubRepositoryDialogSection">
+    <div class="formGroup">
+      <div class="formGroup">
+        <!--
+        <label class="controlLabel" for="githubRepositoryCommitOnlyDetails" style="margin-bottom: 10px">Repository:</label> 
+        -->
+        <div style="margin: 6px 0 10px 0; display: inline-block">
+          <div>Commit To</div>
+          <div style="margin-top: 4px">
+            <span id="githubRepositoryCommitOnlyDetails" style="font-size: 30px; font-weight: 300px; color: #eeeeee">
+              Repository Details
+            </span>
+            (<a href="javascript: void(0)" style="cursor: pointer" id="githubRepositoryCommitOnlyChange">Change</a>)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="formGroup" id="githubRepositoryCommitOnlyMessageRow">
+      <div class="formGroup">
+        <label class="controlLabel" for="githubRepositoryCommitOnlyMessage" style="margin-bottom: 10px">Commit Message:</label> 
+        <input class="formControl" type="text" size="40" value="A Commit" id="githubRepositoryCommitOnlyMessage"/>
+      </div>      
+    </div>
+  </div>
+
+
+  <div id="githubShareInstructions" class="githubRepositoryDialogSection">
+    <div style="margin-bottom: 10px">
+      <p>
+        Projects are shared by creating a link to a public GitHub repository. 
+      </p>
+      <p>
+        To create a public repository, enter the name of the repository below.
+      </p>
+    </div>
+  </div>
+
+  <div id="githubSharePrivateInstructions" class="githubRepositoryDialogSection">
+    Your current repository is private, to share this project, you will need to convert the repository to public
+    or create a new repository
+  </div>
+
+    
+  <div id="githubRepositoryForm" class="githubRepositoryDialogSection">
+
+    <div class="formGroup" id="githubRepositoryFormCreateOptions">
+      
+      <div>
+        <label class="rb-container">Create A New Repository
+          <input type="radio" name="githubRepositoryAction" checked="checked" id="githubRepositoryAction_create" value="create"> 
+          <span class="checkmark"></span>
+        </label>
+        <br/>
+
+        <label class="rb-container">Save To An Existing Repository
+          <input type="radio" name="githubRepositoryAction" id="githubRepositoryAction_save" value="save"> 
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+    </div>
+
+
+    <div class="formGroup">
+      <label class="controlLabel" for="repositoryOwner" style="margin-bottom: 10px">Owner:</label> 
+      <input class="formControl" type="text" size="20" value="Untitled" id="repositoryOwner"/>
+    </div>
+    <div class="formGroup">
+      <label class="controlLabel" for="repositoryName" style="margin-bottom: 10px">Repository Name:</label> 
+      <input class="formControl" type="text" size="20" value="Untitled" id="repositoryName"/>
+    </div>
+
+
+
+    <div class="formGroup" id="githubRepositoryTypeRow">
+      <label class="controlLabel" for="repositoryType" style="margin-bottom: 10px">Repository Type:</label> 
+      <div style="display: inline-block">
+        <label class="rb-container">Public
+          <input type="radio" name="githubRepositoryType"  id="githubRepositoryType_public" value="public"> 
+          <span class="checkmark"></span>
+        </label>
+
+        &nbsp;
+  
+        <label class="rb-container">Private
+          <input type="radio" name="githubRepositoryType" id="githubRepositoryType_private" checked="checked" value="private"> 
+          <span class="checkmark"></span>
+        </label>
+      </div> 
+    </div>
+  
+    <div class="formGroup" id="githubCommitMessageRow">
+      <div class="formGroup">
+        <label class="controlLabel" for="repositoryCommitMessage" style="margin-bottom: 10px">Commit Message:</label> 
+        <input class="formControl" type="text" size="30" value="A Commit" id="repositoryCommitMessage"/>
+      </div>      
+    </div>
+
+
+    <div id="repositoryShareCreateButtonHolder">
+      <div id="repositoryShareCreateButton" class="ui-button ui-button-primary">Create Repository and Commit</div>
+    </div>
+  
+      
+  </div>
+
+
+  <div id="githubShareLinkSection" class="githubRepositoryDialogSection">
+    <div style="margin-bottom: 10px" id="githubShareLinkSectionRepositoryCreated">
+      Repository Created! Files Committed! You can commit changes to this repository to update it.
+    </div>
+
+    <div style="margin-bottom: 10px" id="githubShareLinkSectionRepositoryExists">
+      <div>
+        Your current repository is public, you can share this or create a new one.
+      </div>
+
+      <div>
+        <div>
+          Current Repository: <span id="githubShareLinkCurrentRepository"></span>
+        </div>
+        <div>
+          <div class="ui-button ui-button-primary" id="githubShareLinkCurrentRepositoryCommit" >Commit Changes</div>
+          <div class="ui-button" id="githubShareLinkCurrentRepositoryNew">Create New Repository</div>
+        </div>
+      </div>
+    </div>
+
+      
+    <div>
+      <h2>Share Link</h2>
+      <div class="formGroup">
+        <label class="controlLabel" for="repositoryCommitMessage" style="margin-bottom: 10px">Initial View:</label> 
+        <select id="githubShareInitialView">
+
+        </select>
+      </div>      
+          
+    </div>
+    <div>
+
+      <input type="text" size="40" readonly id="githubShareLink"/>
+      <div class="ui-button ui-button-primary" id="githubShareLinkCopy"><img src="icons/svg/glyphicons-basic-614-copy.svg">&nbsp;Copy To Clipboard</div>
+    </div>
+  </div>
+
+
+
+</div>

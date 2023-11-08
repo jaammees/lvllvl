@@ -1,0 +1,67 @@
+<div class="panelFill dialogContent" id="colorPaletteLoadDialog">
+  <h2 style="margin-top: 0">Load / Import Colour Palette</h2>
+
+  <div style="margin-bottom: 8px;">
+    Choose a colour palette file, drag a color palette file into the window, or load a <a href="https://lospec.com/palette-list" target="_blank">Lospec</a> palette from a URL
+  </div>
+
+  <div class="formGroup" style="display: flex">
+    <div style="display: flex; height: 24px; align-items: center" class="ui-button ui-button-nextaction" id="colorPaletteFileChoose">Choose File...</div>
+    &nbsp;
+
+    <div class="ui-button" style="background-color: #232125; display: flex; height: 24px; align-items: center;" id="colorPaletteLoadLospec">
+      <img src="icons/lospec_logomark_1x.svg" style="filter: none; width: auto; height: 16px; margin-right: 6px"> Load Lospec Palette...</div>
+
+
+    <div id="colorPaletteFileChooseName" style="display: inline-block; margin-left: 6px"></div>
+    <input class="formControl"  id="colourPaletteFile" type="file"  style="position: absolute; top: -50px; left: -100px" accept=".png,.json,.aco,.act,.ase,.gpl,.txt,.hex,.vpl,.jpg,.jpeg"/>
+  </div>
+
+  <div style="margin: 6px 0">
+    File types accepted: .png, .json, .aco, .act, .ase, .gpl, .txt, .hex, .vpl
+  </div>
+
+
+  <!--
+  <div>
+    <input type="text" id="colorPaletteLoadURL"/>
+    <div class="ui-button" id="colorPaletteLoadURLButton">Load</div>
+  </div>
+-->
+  <div style="display: none; font-weight: bold; color: #ff0000; margin: 4px 0 4px 0" id="colorPaletteLoadError"></div>
+
+  <div id="colorPaletteLoadSettings" style="display: none">
+    <div class="formGroup">
+      <label class="controlLabel" for="">Load Colours:</label>
+      
+
+      <input id="colorPaletteLoadUserColorCount" value="16" type="number" class="number" min="1" max="256" size="3"/>
+      of 
+      <span id="colorPaletteLoadColorCount"></span>
+      <!--
+      <span id="colorPaletteLoadUserColorCount">
+      </span>
+    -->
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel" for="colorPaletteLoadColorsAcross">Colours Across:</label>
+      <input class="number integer" type="number" size="4" value="8" min="1" max="16" id="colorPaletteLoadColorsAcross"/>
+    </div>
+
+<!--
+    <div class="formGroup">
+      <label class="controlLabel" for="colorPaletteLoadColorsSortMethod">Sort Order:</label>
+      <select id="colorPaletteLoadColorsSortMethod">
+        <option value="source">Source File Order</option>
+        <option value="hue">Hue</option>
+        <option value="lightness">Lightness</option>
+      </select>
+    </div>
+-->
+
+    <div>
+      <canvas id="colorPaletteLoadPreview" style="background-color: #111111"></canvas>    
+    </div>
+  </div>
+</div>

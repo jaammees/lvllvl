@@ -1,0 +1,230 @@
+<div class="panelFill">
+  <div style="position: absolute; left: 10px; top: 10px; right: 0px; height: 60px">
+    <div class="formGroup">
+      <div style="margin-bottom: 6px">
+        Choose an image file (.png, .jpg, .gif) containing a character set, or a file containing binary character data (eg ROM, PRG file)
+      </div>
+
+      <form id="tileSetImportForm">
+        <div class="ui-button ui-button-nextaction" id="loadTileSetChooseFile">Choose...</div>
+        <input type="file" id="loadTileSetFile" style="position: absolute; top: -50px; left: -100px"/>
+        <span id="loadTileSetFileName"></span>
+      </form>
+
+    </div>      
+  </div>
+
+
+  <div id="loadTileSetSettings" style="display: none">
+    <div id="loadTileSetFontSettings"  style="display: none; position: absolute; left: 10px; top: 80px; bottom: 0px; width: 220px; overflow: auto">
+      <div>Load Font!</div>
+
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadFontTileSetWidth">Tile Width:</label> 
+        <input type="number" class="float" min="1" max="128" size="3" id="loadFontTileSetWidth" value="64">
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadFontTileSetHeight">Tile Height:</label> 
+        <input type="number" class="float" min="1" max="128" size="3" id="loadFontTileSetHeight" value="64"/>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadFontTileSetXOffset">X Offset:</label> 
+        <input type="number" class="float" min="-500" max="500" size="3" id="loadFontTileSetXOffset" value="0"/>
+      </div>
+
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadFontTileSetYOffset">Y Offset:</label> 
+        <input type="number" class="float" min="-500" max="500" size="3" id="loadFontTileSetYOffset" value="0"/>
+      </div>
+
+      <div class="formGroup">
+          <label class="controlLabel"  for="loadFontFontSize">Font Size:</label> 
+          <input type="number" class="float" min="1" max="128" size="3" id="loadFontFontSize" value="28"/>
+        </div>
+  
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadFontFontSize">First Char:</label> 
+        <input type="number" class="number" min="0" max="16000" size="3" id="loadFontFirstChar" value="0"/>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadFontFontSize">Tile Count:</label> 
+        <input type="number" class="number" min="1" max="1024" size="3" id="loadFontTileCount" value="256"/>
+      </div>
+
+  
+      <div class="formGroup">
+        <div class="ui-button ui-button-nextaction" id="loadFontGenerate">Generate</div>  
+      </div>
+    </div>
+
+    <div id="loadTileSetParametersStatic" style="display: none; position: absolute; left: 10px; top: 80px; bottom: 0px; width: 220px; overflow: auto">
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetWidthStatic">Tile Width:</label> 
+        <label class="controlLabel" id="loadTileSetWidthStatic"></span>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetHeightStatic">Tile Height:</label> 
+        <span class="controlLabel" id="loadTileSetHeightStatic"></span>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetCountStatic">Tiles in File:</label> 
+        <span class="controlLabel" id="loadTileSetCountStatic"></span>
+      </div>
+    </div>
+
+
+
+    <div id="loadTileSetParameters" style="position: absolute; left: 10px; top: 80px; bottom: 0px; width: 220px; overflow: auto">
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetMode">Mode:</label> 
+        <select name="loadTileSetMode" id="loadTileSetMode">
+          <option value="textmode">Text Mode</option>
+          <option value="indexed">Indexed Colour</option>
+          <option value="rgb">RGB Colour</option>
+        </select>
+      </div>
+
+
+      <div class="formGroup" id="loadTileSetColorsControl">
+        <label class="controlLabel"  for="loadTileSetColors">Colours:</label> 
+        <select name="loadTileSetColors" id="loadTileSetColors">
+          <option value="source">Source Image</option>
+          <option value="64">Source (64 Colours)</option>
+          <option value="32">Source (32 Colours)</option>
+          <option value="16">Source (16 Colours)</option>
+          <option value="8">Source (8 Colours)</option>
+          <option value="0">Current Palette</option>
+        </select>
+      </div>
+
+
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetWidth">Resize Tiles:</label> 
+        <div class="checkboxGroup">
+          <div>
+            <label class="rb-container">100%
+              <input type="radio" name="loadTileSetResize" value="100" checked="checked">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div>
+            <label class="rb-container">50%
+              <input type="radio" name="loadTileSetResize" value="50">
+              <span class="checkmark"></span>
+          </div>
+          
+          <div>
+            <label class="rb-container">25%
+              <input type="radio" name="loadTileSetResize" value="25">
+              <span class="checkmark"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetWidth">Tile Width:</label> 
+        <input type="number" class="number" min="1" max="128" size="3" id="loadTileSetWidth" value="8">
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetHeight">Tile Height:</label> 
+        <input type="number" class="number" min="1" max="128" size="3" id="loadTileSetHeight" value="8"/>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetCount">Tiles in File:</label> 
+        <input type="number" class="number" min="1" max="4096" size="3" id="loadTileSetCount" value="256"/>
+      </div>
+
+      <div class="formGroup">
+        <label class="controlLabel"  for="loadTileSetStartChar">Start Tile:</label> 
+        <input type="number" class="number" min="1" max="256" size="3" id="loadTileSetStartChar" value="1"/>
+      </div>
+
+      <div id="loadTileSetBinarySettings">
+        <div class="formGroup">
+          <label class="controlLabel"  for="loadTileSetFileOffset">File Offset:</label>
+          <input type="number" class="number" min="0" size="5" id="loadTileSetFileOffset" value="0"> Bytes
+        </div>
+      </div>
+
+      <div id="loadTileSetImageSettings">
+        <div class="formGroup">
+          <label class="controlLabel"  for="loadTileSetAcross">Tiles Across:</label>
+          <input type="number" class="number" min="0" max="256" size="3" id="loadTileSetAcross" value="16">
+        </div>
+
+        <div class="formGroup">
+          <label class="controlLabel"  for="loadTileSetHOffset">H Offset:</label> 
+          <input type="number" class="number" min="-4000" max="4000" size="3" id="loadTileSetHOffset" value="0">
+        </div>
+        <div class="formGroup">
+          <label class="controlLabel"  for="loadTileSetVOffset">V Offset:</label>
+          <input type="number" class="number" min="-4000" max="4000" size="3" id="loadTileSetVOffset" value="0">
+        </div>
+        <div class="formGroup">
+          <label class="controlLabel"  for="loadTileSetHSpacing">Tile H Spacing:</label>
+          <input type="number" class="number" min="-1024" max="1024" size="3" id="loadTileSetHSpacing" value="0">
+        </div>
+        <div class="formGroup">
+          <label class="controlLabel"  for="loadTileSetVSpacing">Tile V Spacing:</label>
+          <input type="number" class="number" min="-1024" max="1024" size="3" id="loadTileSetVSpacing" value="0">
+        </div>
+
+
+        <div class="formGroup">
+
+          <label  class="controlLabel">Tile Direction:</label>
+          <div style="display: inline-block">
+            <label><input type="radio" name="loadTileSetDirection" value="across" checked="checked">Across First</label><br/>
+            <label><input type="radio" name="loadTileSetDirection" value="down" >Down First</label>
+          </div>
+        </div>
+      </div>
+
+      <div>
+<!--        <label><input type="checkbox" id="loadTileSetMulticolor"> Multicolour</label> -->
+        <label><input type="checkbox" id="loadTileSetInvert"> Invert</label>
+      </div>
+
+      <!--
+      <div>
+        <label><input type="radio" name="loadTileSetColorOptions" value="convert">Convert to current colour palette</label>
+        <label><input type="radio" name="loadTileSetColorOptions" value="create">Create colour palette from image</label>
+      </div>
+    -->
+    </div>
+
+    <div style="position: absolute; left: 240px; top: 50px; right: 0; bottom: 0; overflow: auto">
+      <div>
+        <label for="loadTileSetPreviewSize">Preview Size: </label>
+        <select id="loadTileSetPreviewSize">
+          <option value="1">100%</option>
+          <option value="2" selected="selected">200%</option>
+          <option value="3">300%</option>
+          <option value="4">400%</option>
+        </select>
+
+          <!--
+        <label><input type="radio" name="loadTileSetPreviewSize" value="1"> 100%</label>
+        <label><input type="radio" name="loadTileSetPreviewSize" value="2"  checked="checked"> 200%</label>
+        <label><input type="radio" name="loadTileSetPreviewSize" value="3"> 300%</label>
+        <label><input type="radio" name="loadTileSetPreviewSize" value="4"> 400%</label>
+      -->
+      </div>
+      <canvas id="loadTileSetCanvas" style="background-color: black"></canvas>
+    </div>
+  </div>
+
+</div>

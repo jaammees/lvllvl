@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <style>
+    </style>
+  </head>
+  <body>
+
+    <div>
+      Hold ctrl/cmd + R for the scripting window, or select from the menu View->Scripting
+    </div>
+    <h2>Graphic API</h2>
+    <div>
+      <h3>Example</h3>
+      <pre>        
+        let layer = GraphicAPI.getLayer({ path: '/screens/Untitled', layer: 'Layer 0'});
+
+        for(let x = 6; x < 21; x++) {
+          for(let y = 13; y < 20; y++) {
+            layer.setCell({x: x, y: y, t: 7, fc:5 });
+          }
+        }
+
+        let tileset = GraphicAPI.getTileset({ path: '/tile sets/petscii'});
+
+        for(let y = 0; y < 4; y++) {
+          for(let x = 0; x < 8; x++) {
+            tileset.setPixel({
+              t: 0,
+              x: x, y: y,
+              p: 1
+            });
+          }
+        }
+
+
+        for(let x = 0; x < 8; x++) {
+          for(let y = 0; y < 8; y++) {
+            var p = layer.getPixel({ x: x, y: y });
+            p = 1 - p;
+            
+              layer.setPixel({
+                x: x,
+                y: y,
+                p: p
+              });
+          }
+        }
+
+
+        let frameCount = GraphicAPI.getFrameCount();
+        console.log('count = ' + frameCount);   
+        
+
+        GraphicAPI.setFrameDuration({
+          frame: 1,
+          duration: 3
+        });
+        
+        let frameData = layer.getFrameData();
+        console.log(frameData);        
+      </pre>
+    </div>
+
+    <h2>Editor</h2>
+    <div>
+      <h3>Example</h3>
+      <pre>
+        Editor.on('tick', () => {
+          let layer = GraphicAPI.getLayer({ path: '/screens/Untitled', layer: 'Layer 0'});
+          let tileIndex = Math.floor(Math.random() * 256);
+          
+          for(let x = 6; x < 21; x++) {
+            for(let y = 13; y < 20; y++) {
+                layer.setCell({x: x, y: y, t: tileIndex, fc:5 });
+              }
+            }
+        });
+
+      </pre>
+    </div>    
+  </body>
+
+  <!--
+
+        Editor.on('tick', () => {
+          const screenWidth = Screen.getWidth();
+          const screenHeight = Screen.getHeight();
+
+          let tileIndex = Math.floor(Math.random() * 256);
+          let colourIndex = Math.floor(Math.random() * 16);
+          let x = Math.floor(Math.random() * screenWidth);
+          let y = Math.floor(Math.random() * screenHeight);
+          Screen.setCell({ x, y, t: tileIndex, fc: colourIndex });          
+        });
+
+-->
+</html>

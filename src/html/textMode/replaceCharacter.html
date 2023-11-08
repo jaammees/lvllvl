@@ -1,0 +1,43 @@
+<div class="panelFill dialogContent" id="replaceCharacterPanel">
+  <div class="formGroup">
+    <label class="controlLabel">Replace:</label>
+    <canvas id="replaceCharacterCanvas" width="16" height="16" style="display: inline-block; border: 1px solid white;"></canvas>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel">With:</label>
+    <canvas id="replaceWithCharacterCanvas" width="16" height="16" style="display: inline-block; border: 1px solid white;"></canvas>
+  </div>
+
+
+  <div class="formGroup">
+    <label class="controlLabel">Frame</label>
+
+    <div class="radioGroup">
+
+      <div>
+        <label class="rb-container">Current Frame
+          <input type="radio" name="replaceCharacterFrame" value="current" id="replaceCharacterCurrentFrame" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <div>
+        <label class="rb-container">All Frames
+          <input type="radio" name="replaceCharacterFrame" value="all" id="replaceCharacterAllFrames">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+<!--
+      <div>
+        <label class="rb-container">Frame Range
+          <input type="radio" name="replaceColorFrame" value="range" id="replaceColorFrameRange">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+-->      
+    </div>
+
+  </div>
+
+</div>

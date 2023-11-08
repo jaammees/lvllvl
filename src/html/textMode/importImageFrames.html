@@ -1,0 +1,56 @@
+<div class="panelFill">
+    <div id="importImageFramesHolder" style="position: absolute; padding: 10px; top: 0; left: 0; right: 0px; bottom: 0; overflow: auto">
+      <h3><i class="halflings halflings-film"/>&nbsp;Frames</h3>
+      <div class="formGroup">  
+
+<!--
+        <div>
+          <label><input type="radio" name="importImageWithFrames" id="importImageWithFramesOff" value="off" checked="checked">Single Frame</label>
+          &nbsp;
+          <label><input type="radio" name="importImageWithFrames" id="importImageWithFramesOn" value="on">Multiple Frames</label>
+        </div>
+-->
+        <div id="importImageTickControls">
+
+          <div id="importImageAnimationFrames">
+            <div class="formRow">
+              Choose more than one frame for animated effects/video
+            </div>
+
+            <div class="formRow">
+              <label class="controlLabel" for="importImageFrames">
+                Frames
+              </label>
+              <input type="text" class="formControl number" value="1" min="1" size="4" id="importImageFrames"/>
+            </div>
+
+
+            <div class="formRow">
+              <label class="controlLabel" for="importImageTicksPerFrame">
+                Ticks/frame
+              </label>
+              <input type="text" size="4" class="number" min="1" id="importImageTicksPerFrame" value="6"/>
+            </div>
+
+            <div class="formRow">
+              <label class="controlLabel" for="importImageInsertFrames" style="margin-top: 0">Insert frames</label>
+
+              <label class="cb-container">&nbsp;
+                <input type="checkbox" id="importImageInsertFrames"/>
+                <span class="checkmark"></span>
+              </label>
+
+              <!--
+              <input type="checkbox" id="importImageInsertFrames"/>
+            -->
+            </div>
+
+
+
+          </div>
+
+        </div>        
+      </div>
+    </div>      
+  </div>
+</div>

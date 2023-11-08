@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta name="google" content="notranslate">    
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">    
+
+    <title>lvllvl</title>
+    <meta name="description" content="Draw pictures using text characters">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo16.png">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app-compat.js"></script>    
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore-compat.js"></script>   
+
+    <script src="https://apis.google.com/js/api.js"></script>
+
+    <link rel="stylesheet" href="css/ui.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <link rel="stylesheet" href="css/glyphicons.css"/>
+    <link rel="stylesheet" href="css/icons-halflings.css"/>
+
+
+    <script type="text/javascript" src="lib/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="lib/jquery/jquery.mousewheel.min.13.js"></script>
+
+    <script type="text/javascript" src="lib/modernizr/modernizr.js"></script>
+    <script type="text/javascript" src="lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <link rel="stylesheet" href="lib/perfect-scrollbar/perfect-scrollbar.css"/>
+
+    <script type="text/javascript" src="lib/ripplejs/ripplejs.js"></script>
+    <link rel="stylesheet" href="css/ripplejs.css?35"/>
+
+
+    <script type="text/javascript" src="lib/threejs/three.min.js"></script>    
+    <script type="text/javascript" src="lib/threejs/stats.min.js"></script>
+
+    <script type="text/javascript" src="lib/threejs/exporters/OBJExporter.js"></script>
+    <script type="text/javascript" src="lib/threejs/exporters/GLTFExporter.js"></script>
+    <script type="text/javascript" src="lib/threejs/controls/OrbitControls.js"></script>
+    <script type="text/javascript" src="lib/threejs/utils/BufferGeometryUtils.js"></script>
+
+    <script type="text/javascript" src="lib/tween/tween.min.js"></script>
+    <script type="text/javascript" src="lib/github/GitHub.bundle.min.js"></script>
+
+    <script type="text/javascript" src="lib/colour/colour.js"></script>
+    <script type="text/javascript" src="lib/chroma/chroma.min.js"></script>
+
+    <script type="text/javascript" src="lib/rgbQuant/rgbQuant.js"></script>
+    <script type="text/javascript" src="lib/jsmanipulate/jsmanipulate.min.js"></script>
+
+    <script type="text/javascript" src="lib/download/download.js"></script>
+    <script type="text/javascript" src="lib/gif/gif.js"></script>
+
+    <script type="text/javascript" src="lib/jsfeat/jsfeat-min.js"></script>
+    <script type="text/javascript" src="lib/jshint/jshint.js"></script>
+
+    <script type="text/javascript" src="lib/jszip/jszip.min.js"></script>
+    <script type="text/javascript" src="lib/jszip/jszip-utils.js"></script>
+
+    <script type="text/javascript" src="lib/hammer/hammer.min.js"></script>
+
+    <!--
+    <scfffffript type="text/javascript" src="lifffb/ripplejs/vanilla-ripplejs@1.0.6.js"></script>
+    -->
+    <script type="text/javascript" src="lib/tuna/tuna.js"></script>
+
+    <script type="text/javascript" src="lib/localForage/localforage.nopromises.min.js"></script>
+    <!--
+    <scr ipt type="text/javascript" src="lfffib/localForage/localforage.nopromises.min.js"></script>
+    -->
+
+    <script src="lib/jsinterpreter/acorn_interpreter.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="lib/babel/babel.min.js" type="text/javascript" charset="utf-8"></script> 
+
+
+<!--
+    <scr ipt type="text/javascript" s rc= "lib/acmeo/acme.js?35"></script>
+    <sc ript type="text/javascript" s rc= "lib/ca65/ca65.js?35"></script>
+    <sc ript type="text/javascript" s rc= "lib/ca65/ld65.js?35"></script>
+    -->
+    <script type="text/javascript" src="c64/exomizer/exomizer.js?35"></script>
+
+    <script src="js/html/htmlcache.js"></script>
+
+    <script src="js/ui/ui.js?35"></script>
+    <script src="js/ui/number.js?35"></script>
+    <script src="js/ui/slider.js?35"></script>
+    <script src="js/ui/menuBar.js?35"></script>
+    <script src="js/ui/panel.js?35"></script>
+    <script src="js/ui/popup.js?35"></script>
+    <script src="js/ui/splitpanel.js?35"></script>
+    <script src="js/ui/tabPanel.js?35"></script>
+    <script src="js/ui/htmlPanel.js?35"></script>
+    <script src="js/ui/webGLPanel.js?35"></script>
+    <script src="js/ui/canvasPanel.js?35"></script>
+    <script src="js/ui/canvasScrollPanel.js?35"></script>    
+    <script src="js/ui/dialog.js?35"></script>
+    <script src="js/ui/mobilePanel.js?35"></script>
+    <script src="js/ui/button.js?35"></script>
+    <script src="js/ui/tree.js?35"></script>
+    <script src="js/ui/progressBar.js?35"></script>
+
+    <script src="js/utils/imageUtils.js?35"></script>
+    <script src="js/utils/checkerboardPattern.js?35"></script>
+    <script src="js/utils/imageLib.js?35"></script>
+    <script src="js/utils/colorUtils.js?35"></script>
+    <script src="js/utils/conversions.js?35"></script>
+    <script src="js/utils/normalizeWheel.js?35"></script>
+    <script src="js/utils/ase.js?35"></script>
+    <script src="js/utils/aco.js?35"></script>
+    <script src="js/utils/paramGraph.js?35"></script>
+    <script src="js/utils/c64MulticolorTypeControl.js?35"></script>
+    <script src="js/utils/storageManager.js?35"></script>
+    <script src="js/utils/textDialog.js?35"></script>
+    <script src="js/utils/mobileDownload.js?35"></script>
+    <script src="js/utils/textStore.js?35"></script>
+    <script src="js/utils/touchVelocity.js?35"></script>
+    <script src="js/utils/camera3dControls.js?35"></script>
+
+    <script src="js/editor.js?35"></script>
+    <script src="js/file/newProjectDialog.js?35"></script>
+    <script src="js/file/projectNavigator.js?35"></script>
+    <script src="js/file/projectShare.js?35"></script>
+    <script src="js/file/projectNavigatorMobile.js?35"></script>
+    <script src="js/file/startPage.js?35"></script>
+    <script src="js/file/githubClient.js?35"></script>
+    <script src="js/file/github.js?35"></script>
+    <script src="js/file/gist.js?35"></script>
+    <script src="js/file/createTemplateLink.js?35"></script>
+    <script src="js/file/dropImage.js?35"></script>
+
+    <script src="js/scripting/scripting.js?35"></script>
+    <script src="js/scripting/scriptEditor.js?35"></script>
+
+    <script src="js/shaderEffects/shaderEffects.js?35"></script>
+    <script src="js/shaderEffects/shaderEffectControls.js?35"></script>
+    <script src="js/shaderEffects/lotteCRTEffect.js?35"></script>
+    <script src="js/shaderEffects/mattiasCRTEffect.js?35"></script>
+    <script src="js/shaderEffects/noisyGlowEffect.js?35"></script>
+
+    <script src="js/shaderEffects/shaders/blurShader.js?35"></script>
+    <script src="js/shaderEffects/shaders/lotteCRTShader.js?35"></script>
+    <script src="js/shaderEffects/shaders/mattiasCRTShader.js?35"></script>
+    <script src="js/shaderEffects/shaders/noiseShader.js?35"></script>
+    <script src="js/shaderEffects/shaders/vignetteShader.js?35"></script>
+
+
+    <script src="js/config/config.js?35"></script>
+    <script src="js/config/jsonEditor.js?35"></script>
+
+    <script src="js/styles.js?35"></script>
+
+    <script src="js/file/fileManager.js?35"></script>
+    <script src="js/file/desktopFileManager.js?35"></script>
+
+    <script src="js/file/document.js?35"></script>
+    <script src="js/file/gdrive.js?35"></script>
+
+
+    <script src="js/sprite/spriteEditor.js?35"></script>
+    
+
+
+    <script src="js/textMode/textModeEditor.js?35"></script>
+    <script src="js/textMode/textModeEditorLayout.js?35"></script>
+
+    
+    <script src="js/textMode/textModeFile.js?35"></script>
+    <script src="js/textMode/history.js?35"></script>
+    <script src="js/textMode/info.js?35"></script>
+    <script src="js/textMode/gridInfo.js?35"></script>
+    <script src="js/textMode/mobileMenu.js?35"></script>
+  
+    <script src="js/textMode/graphic.js?35"></script>
+
+
+    <script src="js/textMode/gridView3d.js?35"></script>
+    <script src="js/textMode/gridView2d.js?35"></script>
+    <script src="js/textMode/layers/layers.js?35"></script>
+    <script src="js/textMode/layers/layerPropertiesDialog.js?35"></script>
+    <script src="js/textMode/layers/layerGrid.js?35"></script>
+    <script src="js/textMode/layers/layerBackground.js?35"></script>
+    <script src="js/textMode/layers/layerRefImage.js?35"></script>
+    <script src="js/textMode/layers/referenceImageDialog.js?35"></script>
+
+
+    <script src="js/textMode/layers/layersMerge.js?35"></script>
+    <script src="js/textMode/layers/layersFrames.js?35"></script>
+
+    <script src="js/textMode/backgroundImage.js?35"></script>
+    <script src="js/textMode/currentTile.js?35"></script>
+    <script src="js/textMode/animationPreview.js?35"></script>
+    <script src="js/textMode/tileSet/tileEditor.js?35"></script>
+    <script src="js/textMode/tileSet/tileEditorMobile.js?35"></script>
+    <script src="js/textMode/tileSet/tileEditorGrid.js?35"></script>
+
+    <script src="js/textMode/tileSet/glyphEditor.js?35"></script>
+    <script src="js/textMode/tileSet/glyphEditorCanvas.js?35"></script>
+
+    <script src="js/textMode/tools.js?35"></script>
+    <script src="js/textMode/tools/drawTools.js?35"></script>
+    <script src="js/textMode/tools/pixelDrawTools.js?35"></script>
+
+    <script src="js/textMode/tools/tilePalette.js?35"></script>
+    <script src="js/textMode/tileSet/tilePaletteEditor.js?35"></script>
+    <script src="js/textMode/tools/tilePaletteMobile.js?35"></script>
+    <script src="js/textMode/tools/tilePaletteChooserMobile.js?35"></script>
+    
+    <script src="js/textMode/tools/blockPalette.js?35"></script>
+    <script src="js/textMode/tools/drawToolsPopup.js?35"></script>
+    <script src="js/textMode/tools/shapes.js?35"></script>
+    <script src="js/textMode/tools/shapes3d.js?35"></script>
+    <script src="js/textMode/tools/typing.js?35"></script>
+    <script src="js/textMode/tools/pixelCharacterDraw.js?35"></script>
+    <script src="js/textMode/tools/lineSegmentDraw.js?35"></script>
+    <script src="js/textMode/tools/invertTool.js?35"></script>
+    <script src="js/textMode/tools/cornersTool.js?35"></script>
+    <script src="js/textMode/tools/pixelDraw.js?35"></script>
+    <script src="js/textMode/tools/fill.js?35"></script>
+    <script src="js/textMode/tools/select.js?35"></script>
+    <script src="js/textMode/tools/select3d.js?35"></script>
+    <script src="js/textMode/tools/pixelSelect.js?35"></script>
+    <script src="js/textMode/tools/replaceColor.js?35"></script>
+    <script src="js/textMode/tools/replaceCharacter.js?35"></script>
+    <script src="js/textMode/tools/clearHiddenTiles.js?35"></script>
+    <script src="js/textMode/tools/gridDimensionsDialog.js?35"></script>
+
+    <script src="js/textMode/grid.js?35"></script>
+    <script src="js/textMode/grid2d.js?35"></script>
+    <script src="js/textMode/grid3d.js?35"></script>
+    <script src="js/textMode/grid3dLayer.js?35"></script>
+    <script src="js/textMode/frames/frames.js?35"></script>
+    <script src="js/textMode/frames/frameTimeline.js?35"></script>
+    <script src="js/textMode/frames/spriteFrames.js?35"></script>
+
+    <script src="js/textMode/tileSet/tilePaletteDisplay.js?35"></script>
+    <script src="js/textMode/tileSet/characterSetPresets.js?35"></script>
+    <script src="js/textMode/tileSet/vectorPresets.js?35"></script>
+    <script src="js/textMode/tileSet/tileSetManager.js?353"></script>
+    <script src="js/textMode/tileSet/tileSet.js?35"></script>
+    <script src="js/textMode/tileSet/tile3d.js?35"></script>
+    <script src="js/textMode/tileSet/tileSetEditor.js?35"></script>
+    <script src="js/textMode/tileSet/tileSetChoosePreset.js?35"></script>
+    <script src="js/textMode/tileSet/characterSetChoosePresetMobile.js?35"></script>
+    <script src="js/textMode/tileSet/tileSetImport.js?35"></script>
+    <script src="js/textMode/tileSet/tileSetSave.js?35"></script>
+    <script src="js/textMode/tileSet/chooseCharactersDialog.js?35"></script>
+    <script src="js/textMode/tileSet/tilePickerPopup.js?35"></script>
+    <script src="js/textMode/tileSet/tileMaterials.js?35"></script>
+
+
+    <script src="js/textMode/blockSet/blockSetManager.js?35"></script>
+    <script src="js/textMode/blockSet/blockSet.js?35"></script>
+    <script src="js/textMode/blockSet/blockEditor.js?35"></script>
+
+
+    <script src="js/textMode/color/colorPalettePresets.js?35"></script>
+    <script src="js/textMode/color/customColorPalettePresets.js?35"></script>
+    <script src="js/textMode/color/colorPaletteManager.js?35"></script>
+    <script src="js/textMode/color/colorPaletteChoosePreset.js?35"></script>
+    <script src="js/textMode/color/colorPaletteChoosePresetMobile.js?35"></script>
+    <script src="js/textMode/color/colorPalette.js?35"></script>
+    <script src="js/textMode/color/colorPickerPopup.js?35"></script>
+    <script src="js/textMode/color/colorPickerMobile.js?35"></script>
+    <script src="js/textMode/color/chooseColorsDialog.js?35"></script>
+    <script src="js/textMode/color/colorPalettePanel.js?35"></script>
+    <script src="js/textMode/color/colorEditor.js?35"></script>
+    <script src="js/textMode/color/colorPaletteEditor.js?35"></script>
+    <script src="js/textMode/color/colorPaletteEdit.js?35"></script>
+    <script src="js/textMode/color/editColorPalette.js?35"></script>
+
+    <script src="js/textMode/color/colorSubPalettes.js?35"></script>
+    <script src="js/textMode/color/colorSubPalettePickerMobile.js?35"></script>
+    <script src="js/textMode/color/colorPaletteSave.js?35"></script>
+    <script src="js/textMode/color/colorPaletteLoad.js?35"></script>
+    <script src="js/textMode/color/colorPaletteLoadFromURL.js?35"></script>
+    <script src="js/textMode/color/colorPaletteDisplay.js?35"></script>
+
+
+    <script src="js/textMode/imageEffects/imageEffects.js?35"></script>
+    <script src="js/textMode/imageEffects/imageEffectsControl.js?35"></script>
+    <script src="js/textMode/imageEffects/mirrorEffect.js?35"></script>
+    <script src="js/textMode/imageEffects/rotateZoomEffect.js?35"></script>
+    <script src="js/textMode/imageEffects/slitscanEffect.js?35"></script>
+    <script src="js/textMode/imageEffects/imageParametersEffect.js?35"></script>
+    <script src="js/textMode/imageEffects/noiseEffect.js?35"></script>
+
+    <script src="js/textMode/imageEffects/imageShaderEffects.js?35"></script>
+
+    <script src="js/textMode/imageEffects/crt2Shader.js?35"></script>
+    <script src="js/textMode/imageEffects/ghostShader.js?35"></script>
+    <script src="js/textMode/imageEffects/colorHalftoneShader.js?35"></script>
+    <script src="js/textMode/imageEffects/wobbleShader.js?35"></script>
+    <script src="js/textMode/imageEffects/noiseShader.js?35"></script>
+    <script src="js/textMode/imageEffects/edgeShader.js?35"></script>
+    <script src="js/textMode/imageEffects/bumpShader.js?35"></script>
+    <script src="js/textMode/imageEffects/embossShader.js?35"></script>
+    <script src="js/textMode/imageEffects/rainbowShader.js?35"></script>
+    <script src="js/textMode/imageEffects/scanlinesShader.js?35"></script>
+    <script src="js/textMode/imageEffects/plasmaShader.js?35"></script>
+    <script src="js/textMode/imageEffects/badTVShader.js?35"></script>
+    <script src="js/textMode/imageEffects/pixelateShader.js?35"></script>
+    <script src="js/textMode/imageEffects/hexagonalPixelateShader.js?35"></script>
+    <script src="js/textMode/imageEffects/diffusionShader.js?35"></script>
+    <script src="js/textMode/imageEffects/TriangleBlurShader.js?35"></script>
+    <script src="js/textMode/imageEffects/denoiseShader.js?35"></script>
+    <script src="js/textMode/imageEffects/chromaKeyShader.js?35"></script>
+
+    <script src="js/hexEditor/hexEditor.js?35"></script>
+
+    <script src="lib/threejs/shaders/BleachBypassShader.js?35"></script>
+    <script src="lib/threejs/shaders/ColorifyShader.js?35"></script>
+    <script src="lib/threejs/shaders/ConvolutionShader.js?35"></script>
+    <script src="lib/threejs/shaders/CopyShader.js?35"></script>
+    <script src="lib/threejs/shaders/DotScreenShader.js?35"></script>
+    <script src="lib/threejs/shaders/FilmShader.js?35"></script>
+    <script src="lib/threejs/shaders/DigitalGlitch.js?35"></script>
+    <script src="lib/threejs/shaders/HorizontalBlurShader.js?35"></script>
+    <script src="lib/threejs/shaders/SepiaShader.js?35"></script>
+    <script src="lib/threejs/shaders/VerticalBlurShader.js?35"></script>
+    <script src="lib/threejs/shaders/VignetteShader.js?35"></script>
+    <script src="lib/threejs/shaders/RGBShiftShader.js?35"></script>
+
+    <script src="lib/threejs/shaders/TechnicolorShader.js?35"></script>
+    <script src="lib/threejs/shaders/LuminosityHighPassShader.js?35"></script>
+    <script src="lib/threejs/shaders/FocusShader.js?35"></script>
+
+    <script src="lib/threejs/shaders/BrightnessContrastShader.js?35"></script>
+    <script src="lib/threejs/shaders/HueSaturationShader.js?35"></script>
+    <script src="lib/threejs/shaders/KaleidoShader.js?35"></script>
+
+
+    <script src="lib/threejs/postprocessing/EffectComposer.js?35"></script>
+    <script src="lib/threejs/postprocessing/RenderPass.js?35"></script>
+    <script src="lib/threejs/postprocessing/BloomPass.js?35"></script>
+    <script src="lib/threejs/postprocessing/FilmPass.js?35"></script>
+    <script src="lib/threejs/postprocessing/GlitchPass.js?35"></script>
+    <script src="lib/threejs/postprocessing/DotScreenPass.js?35"></script>
+    <script src="lib/threejs/postprocessing/TexturePass.js?35"></script>
+    <script src="lib/threejs/postprocessing/ShaderPass.js?35"></script>
+    <script src="lib/threejs/postprocessing/MaskPass.js?35"></script>
+    <script src="lib/threejs/postprocessing/UnrealBloomPass.js?35"></script>
+
+
+    <script src="js/textMode/import/importAssembly.js?35"></script>
+    <script src="js/textMode/import/importC64Formats.js?35"></script>
+    <script src="js/textMode/import/importC64SpriteFormats.js?35"></script>
+    <script src="js/textMode/import/importSpriteImage.js?35"></script>
+    <script src="js/textMode/import/viceSnapshotReader.js?35"></script>
+    <script src="js/textMode/import/importC.js?35"></script>
+    <script src="js/textMode/import/importSeq.js?35"></script>
+    <script src="js/textMode/import/importCharPad.js?35"></script>
+    <script src="js/textMode/import/importSpritePad.js?35"></script>
+    <script src="js/textMode/import/importSpr.js?35"></script>
+    
+    <script src="js/textMode/import2d/importColorUtils.js?35"></script>
+    <script src="js/textMode/import2d/basicImport.js?35"></script>
+    <script src="js/textMode/import2d/mobileImport.js?35"></script>
+    <script src="js/textMode/import2d/shaderImport2.js?35"></script>
+    <script src="js/textMode/import2d/importImage.js?35"></script>
+    <script src="js/textMode/import2d/importImageMobile.js?35"></script>
+
+    <script src="js/textMode/import2d/shaderImportEditor.js?35"></script>
+
+    <script src="js/textMode/export/exportFrameImage.js?35"></script>
+    <script src="js/textMode/export/exportImage.js?35"></script>
+    <script src="js/textMode/export/exportGif.js?35"></script>
+    <script src="js/textMode/export/exportSvg.js?35"></script>
+
+    <script src="js/textMode/export/exportPng.js?35"></script>
+    <script src="js/textMode/export/exportPngMobile.js?35"></script>
+    <script src="js/textMode/export/exportSpritePng.js?35"></script>
+    <script src="js/textMode/export/exportGifMobile.js?35"></script>
+    <script src="js/textMode/export/exportJson.js?35"></script>
+    <script src="js/textMode/export/exportTxt.js?35"></script>
+    <script src="js/textMode/export/exportPetsciiC.js?35"></script>
+    <script src="js/textMode/export/exportPet.js?35"></script>
+    <script src="js/textMode/export/exportBinaryData.js?35"></script>
+    <script src="js/textMode/export/exportSpriteBinaryData.js?35"></script>
+    <script src="js/textMode/export/exportC64Assembly.js?35"></script>
+    <script src="js/textMode/export/exportMega65Assembly.js?35"></script>
+    <script src="js/textMode/export/exportX16Assembly.js?35"></script>
+    <script src="js/textMode/export/exportC64SpriteAssembly.js?35"></script>
+    <script src="js/textMode/export/exportCharPad.js?35"></script>
+    <script src="js/textMode/export/exportSpritePad.js?35"></script>
+    <script src="js/textMode/export/exportSeq.js?35"></script>
+    <script src="js/textMode/export/exportX16Basic.js?35"></script>
+
+    <script src="js/textMode/c64export/c64Asm.js?35"></script>
+    <script src="js/textMode/c64export/toPrg.js?35"></script>
+    <script src="js/textMode/c64export/toPrgAdvanced.js?35"></script>
+
+
+    <script src="js/textMode/c64export/exportC64Dialog.js"></script>
+    <script src="js/textMode/c64export/exportC64.js"></script>
+    <!--
+    <script src="js/textMode/c64export/exportC64ASM.js?35"></script>
+    -->
+    <script src="js/textMode/c64export/d64.js?35"></script>
+
+    <script src="js/textMode/export3d/export3dGif.js?35"></script>
+    <script src="js/textMode/export3d/exportVox.js?35"></script>
+    <script src="js/textMode/export3d/exportObj.js?35"></script>
+
+
+
+
+    <script src="js/textMode/api/textMode.js?35"></script>
+    <script src="js/textMode/api/screenApi.js?35"></script>
+    <script src="js/textMode/api/graphicApi.js?35"></script>
+    <script src="js/textMode/api/colorPalette.js?35"></script>
+
+
+
+    <script type="text/javascript" src="js/music/music.js?35"></script>
+    <script type="text/javascript" src="js/music/musicHistory.js?35"></script>
+    <script type="text/javascript" src="js/music/playbackControls.js?35"></script>
+    <script type="text/javascript" src="js/music/musicEditTools.js?35"></script>
+    <script type="text/javascript" src="js/music/musicScripting.js?35"></script>
+
+    <script type="text/javascript" src="js/music/pattern.js?35"></script>
+    <script type="text/javascript" src="js/music/patternView.js?35"></script>
+
+    <script type="text/javascript" src="js/music/patternViewPopup.js?35"></script>
+    <script type="text/javascript" src="js/music/track.js?35"></script>
+    <script type="text/javascript" src="js/music/trackView.js?35"></script>
+
+
+    <script type="text/javascript" src="js/music/keyboardCanvas.js?35"></script>
+    <script type="text/javascript" src="js/music/channelInfo.js?35"></script>
+
+    <script type="text/javascript" src="js/music/pitchDetect.js?35"></script>
+    <script type="text/javascript" src="js/music/notes.js?35"></script>
+
+
+    <script type="text/javascript" src="js/music/drummer.js?35"></script>
+    <script type="text/javascript" src="js/music/bassist.js?35"></script>
+
+
+    <script type="text/javascript" src="js/music/oscilloscope.js?35"></script>
+    <script type="text/javascript" src="js/music/historyGraph.js?35"></script>
+
+    <script type="text/javascript" src="js/music/scales.js?35"></script>
+
+
+    <script type="text/javascript" src="js/music/sid/jsSID.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/sidPlayer.js?35"></script>
+
+    <script type="text/javascript" src="js/music/sid/jsSID2.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/sidPlayer2.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/sidPatternPlayer.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/sidEffectsChooser.js?35"></script>
+
+    <script type="text/javascript" src="js/music/sid/instruments.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/editInstrument.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/filters.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/editFilter.js?35"></script>
+
+    
+    <script type="text/javascript" src="js/music/sid/sidPlayerData.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/songData.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/sidFile.js?35"></script>
+
+    <script type="text/javascript" src="js/music/sid/export/exportGoatTracker.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/export/exportSID.js?35"></script>
+    <script type="text/javascript" src="js/music/sid/export/exportPRG.js?35"></script>
+
+
+    <script src="js/codeEditor/codeEditor.js?35"></script>
+    <script src="js/codeEditor/textEditor.js?35"></script>
+    
+
+    <script src="js/assembler/assembler.js?35"></script>
+    <script src="js/assembler/assemblerEditor.js?35"></script>
+    <script src="js/assembler/buildControls.js?35"></script>
+    <script src="js/assembler/assemblerOutput.js?35"></script>
+    <script src="js/assembler/acmeAssembler.js?35"></script>
+    <script src="js/assembler/acmeParser.js?35"></script>
+    <script src="js/assembler/ca65Assembler.js?35"></script>
+    <script src="js/assembler/assemblerFiles.js?35"></script>
+    <script src="js/assembler/c64Asm.js?35"></script>
+    <script src="js/assembler/assemblerPreprocessor.js?35"></script>
+    <script src="js/assembler/asmParser.js?35"></script>
+
+    <script src="js/assemblerUtils/calculator.js?35"></script>
+    <script src="js/assemblerUtils/mos6502Opcodes.js?35"></script>
+    <script src="js/assemblerUtils/c64MemoryMap.js?35"></script>
+
+    <script src="js/debugger/dbgFont.js"></script>
+    <script src="js/debugger/dbgDisassembly.js"></script>
+    <script src="js/debugger/dbgBreakpoints.js"></script>
+    <script src="js/debugger/dbgMemory.js"></script>
+    <script src="js/debugger/dbgScripting.js"></script>
+    <script src="js/debugger/dbgC64Basic.js"></script>
+    <script src="js/debugger/basicTokeniser.js"></script>
+    <script src="js/debugger/dbgC64Drive.js"></script>
+    <script src="js/debugger/dbgRegisters.js"></script>
+    <script src="js/debugger/dbgCharset.js"></script>
+    <script src="js/debugger/dbgC64Bitmap.js"></script>
+    <script src="js/debugger/dbgC64CharEditor.js"></script>
+    <script src="js/debugger/dbgC64Colors.js"></script>
+    <script src="js/debugger/dbgSID.js"></script>
+
+    <script src="js/debugger/dbgSprites.js"></script>
+    <script src="js/debugger/exportC64SpriteData.js"></script>
+    <script src="js/debugger/dbgC64SpriteEditor.js"></script>
+    <script src="js/debugger/mos6510Opcodes.js"></script>
+
+    <script src="c64/c64/c64.js"></script>
+
+    <script src="js/c64/c64Debugger.js"></script>
+    <script src="js/c64/c64DebuggerExportHTML.js"></script>
+    <script src="js/c64/c64GistShare.js"></script>
+    <script src="js/c64/c64DebuggerCompact.js"></script>
+
+    <script src="js/c64/c64Joystick.js"></script>
+    <script src="js/c64/c64Scripting.js"></script>
+    <script src="js/c64/c64Sound.js"></script>
+    <script src="js/c64/c64Colors.js"></script>
+    <script src="js/c64/c64.js"></script>
+    <script src="js/c64/c64d64.js"></script>
+
+    <script src="js/c64/c64OnscreenJoystick.js"></script>
+    <script src="js/c64/c64OnscreenKeyboard.js"></script>
+
+    <script src="js/c64/roms/charROM.js?35"></script>
+
+<!--
+    <sc ript src= "js/nes/nesDebugger.js" >< /script>
+-->
+
+    <script src="lib/ace/src/ace.js"></script>
+    <script src="lib/ace/src/ext-language_tools.js"></script>
+    <script src="lib/ace/src/mode-text.js" type="text/javascript" charset="utf-8"></script>        
+    <script src="lib/ace/src/mode-javascript_custom.js" type="text/javascript" charset="utf-8"></script>        
+    <script src="lib/ace/src/mode-assembly_6502.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="lib/ace/src/mode-json.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="lib/ace/src/mode-c64basic.js" type="text/javascript" charset="utf-8"></script> 
+
+    <script src="lib/typr/src/Typr.js"></script>
+    <script src="lib/typr/src/Typr.U.js"></script>
+
+
+
+
+    
+
+    
+    <link rel="stylesheet" href="css/ui.css?35"/>
+    <link rel="stylesheet" href="css/main.css?35"/>
+
+    <link rel="stylesheet" href="css/glyphicons.css"/>
+    <link rel="stylesheet" href="css/icons-halflings.css"/>
+    
+    <script>
+      if(UI.isMobile.any()) {
+        var link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('href', 'css/ui-mobile.css?35');
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+        $(function() {
+          $('body').addClass('mobileMode');
+        });
+      }
+    </script>
+
+    <script>
+
+      var g_app = new Editor();
+      g_app.init();
+    </script>
+
+  </head>    
+  <body style="background-color: black">
+
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<div class="panelFill"> 
+  <div style="display: inline-block" id="exportImageMobileInfo"></div>
+
+  <div id="exportImagePreviewHolder" style="position: absolute; top: 0; left: 0; right: 0; height: 260px; background-color: #111111; border-bottom: 1px solid #555555; padding: 6px">
+    <div style="text-align: center;">
+      <canvas id="exportImagePreview" style="border: 1px solid #aaaaaa"></canvas>
+    </div>
+
+<!--
+    <div class="ui-button ui-button-other" id="ImageExportCopyToClipboard" style="margin-top: 10px">Copy To Clipboard</div>        
+-->      
+  </div>
+
+  <div id="exportImageMobileControlsHolder" style="position: absolute; top: 272px; left: 0; right: 0; bottom: 0; overflow: auto; padding: 6px">
+
+    <div class="formRow">
+      <label class="controlLabel" for="imageExportMobilePreviewScale">Preview Scale</label>
+      <input id="imageExportPreviewScaleText" class="number" type="text" style="width: 40px" min="1" max="5000" value="100" size="2">
+      <div class="rangeHolder">
+        <input id="imageExportPreviewScale" style="width: 100%" type="range" min="20" max="500" value="100" size="3">
+      </div>
+      <div class="ui-button rangeButton" id="imageExportPreviewScaleReset">100%</div>        
+    </div>
+
+
+    <div class="formRow">
+      <label class="controlLabel" for="exportImageAs">File name</label> 
+      <input type="text" class="formControl" size="20" value="" id="exportImageAs"/>
+    </div>
+
+
+    <div class="formGroup">
+      <label class="controlLabel" for="exportImageFormat">Format:</label> 
+
+      <label class="rb-container">GIF
+        <input type="radio" name="exportImageFormat" value="gif" checked="checked">
+        <span class="checkmark"></span>
+      </label>
+
+      <label class="rb-container">PNG
+        <input type="radio" name="exportImageFormat" value="png">
+        <span class="checkmark"></span>
+      </label>
+
+    </div>
+    
+
+    <div class="formRow">
+      <label class="controlLabel" for="exportImageScale">Scale</label> 
+      <select  class="formControl" id="exportImageScale">
+        <option value="1">100%</option>
+        <option value="2">200%</option>
+        <option value="3">300%</option>
+        <option value="4">400%</option>
+        <option value="5">500%</option>
+      </select>
+    </div>
+
+    <div class="formGroup">
+      <label class="controlLabel">&nbsp;</label>
+      <div style="display: inline-block" id="exportImageDimensions"></div>        
+    </div>
+
+    
+    <div class="formRow" style="display: block; padding: 10px 0">
+      <div class="formGroup">
+        <label class="controlLabel">&nbsp;</label>
+        <label class="cb-container">Include Border
+          <input type="checkbox" id="exportImageIncludeBorder" value="1"/> 
+          <span class="checkmark"/>
+        </label>
+      </div>
+    </div>
+
+    <div class="formGroup" id="borderSizeHolder" style="margin-bottom: 8px">
+      <label class="controlLabel">Border Size</label>
+      W: <input type="number" class="number" min="0" max="100" id="exportImageBorderWidth" value="32">
+      &nbsp;&nbsp;
+      H: <input type="number" class="number" min="0" max="100" id="exportImageBorderHeight" value="36">
+      &nbsp;
+      <div class="ui-button" id="exportImageBorderReset">Reset</div>
+    </div>
+
+
+    <div class="exportImageGIFParameters">
+      <h3><i class="halflings halflings-film"></i>&nbsp;Frames</h3>
+      <div id="exportImageFrames">
+        <div class="formGroup">
+          <label class="controlLabel" for="exportImageFromFrame" style="width: 50px">Frames:</label>
+          <div style="display: inline-block">
+            <input type="number" size="2" class="number" min="1"  id="exportImageFromFrame" style="width: 30px">
+            &nbsp;
+            <label for="exportImageToFrame">To</label>
+            &nbsp;
+            <input type="number"  size="2" class="number" min="1" id="exportImageToFrame" style="width: 30px">
+          </div>
+          <select name="exportImageLoopType" id="exportImageLoopType">
+            <option value="loop">Loop</option>
+            <option value="pingpong">Ping Pong</option>
+          </select>
+        </div>
+        <div class="formGroup">
+          <label class="controlLabel" style="width: 50px">Speed:</label>
+          <select name="exportImageSpeed" id="exportImageSpeed">
+            <option value="1">100%</option>
+            <option value="2">200%</option>
+            <option value="3">300%</option>
+            <option value="4">400%</option>
+            <option value="custom">Custom</option>
+          </select>
+
+        </div>
+        <div class="formGroup" id="exportImageCustomSpeed" style="display: none">
+          <label class="controlLabel">Custom speed:</label>
+          <div style="display: inline-block">
+
+            <input type="number" size="3" class="number" min="5" value="10" id="exportImageMSPerTick"/>
+            ms per tick
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="exportImagePNGParameters">
+      <h3><i class="halflings halflings-film"></i>&nbsp;Frame</h3>
+      <div class="exportImageFrameHolder">
+        <div class="formGroup">
+          <label class="controlLabel" for="exportImageFromFrame" style="width: 50px">Frame:</label>
+          <div style="display: inline-block">
+            <input type="number" size="2" class="number" min="1"  id="exportImageFrame" style="width: 30px" value="1"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Effects</h3>
+    </div>
+
+    <div>
+      <div class="ui-button" id="exportImageEffectPrev">&lt;</div>
+      <select id="exportImageEffectOptions">
+  
+      </select>
+      <div class="ui-button" id="exportImageEffectNext">&gt;</div>
+      
+    </div>
+    <div id="exportImageEffectControls">
+  
+    </div>
+      
+
+
+  </div>
+
+</div>
+</div>

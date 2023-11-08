@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>Synth</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="icon" type="image/png" sizes="174x174" href="./style/favicon.png">
+	
+	<script src="../build/Tone.js"></script>
+	<script src="./scripts/jquery.min.js"></script>
+	<script src="./scripts/draggabilly.js"></script>
+	<script src="./scripts/StartAudioContext.js"></script>
+	<script src="./scripts/Interface.js"></script>
+	<script src="https://tonejs.github.io/Logo/build/Logo.js"></script>
+	<script src="./scripts/Keyboard.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./style/examples.css">
+
+	<script>
+		// jshint ignore: start
+	</script>
+
+</head>
+<body>	
+	<style type="text/css">
+
+		img {
+			width: 80%;
+			max-width: 700px;
+			margin-left: auto;
+    		margin-right: auto;
+    		display: block;
+		}
+
+		#Keyboard {
+			margin: 3px!important;
+		}
+	</style>
+	<div id="Content">
+		<div id="Title">Synth</div>
+		<div id="Explanation">
+			<a href="https://tonejs.github.io/docs/#Synth" target="_blank">Tone.Synth</a> is composed simply of a 
+			<a href="https://tonejs.github.io/docs/#OmniOscillator" target="_blank">Tone.OmniOscillator</a>
+			routed through a 
+			<a href="https://tonejs.github.io/docs/#AmplitudeEnvelope" target="_blank">Tone.AmplitudeEnvelope</a>.
+		</div>
+		<div id="Keyboard"></div>
+	</div>
+
+	<script>
+
+		var synth = new Tone.Synth({
+			"oscillator" : {
+				"type" : "amtriangle",
+				"harmonicity" : 0.5,
+				"modulationType" : "sine"
+			},
+			"envelope" : {
+				"attackCurve" : 'exponential',
+				"attack" : 0.05,
+				"decay" : 0.2,
+				"sustain" : 0.2,
+				"release" : 1.5,
+			},
+			"portamento" : 0.05
+		}).toMaster();
+
+		// GUI //
+
+		var keyboard = Interface.Keyboard();
+
+		keyboard.keyDown = function (note) {
+		    synth.triggerAttack(note);
+		};
+
+		keyboard.keyUp = function () {
+		    synth.triggerRelease();
+		};
+	</script>
+
+</body>
+</html>

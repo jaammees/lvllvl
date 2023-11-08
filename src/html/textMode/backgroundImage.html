@@ -1,0 +1,40 @@
+<div class="panelFill"  id="backgroundImage">
+  <form>
+    <div style="padding: 4px">
+      <label for="bgImageSourceFile">File To Use (.gif,.png,.jpg)</label>
+      <input id="bgImageSourceFile" type="file" accept=".gif,.png,.jpg,.jpeg">
+    </div>
+    
+
+    <div style="padding: 4px; text-align: center">
+      <table>
+        <tr>
+          <td>
+            <canvas width="320" height="200" id="bgImageCanvas" style="border:1px solid white; background-color: #393939"></canvas>
+          </td>
+          <td>
+            <div style="padding: 4px">
+              <label for="bgImageScale">Scale</label>
+              <button type="button" id="bgImageScaleDecrease">-</button>
+              <input size="3" id="bgImageScale" value="100"/>
+              <button type="button" id="bgImageScaleIncrease">+</button> %
+            </div>
+
+            <div style="padding: 4px">
+              <label for="bgImageX">X</label>
+              <input size="3" id="bgImageX" value="0"/> 
+            </div>
+
+            <div style="padding: 4px">
+              <label for="bgImageY">Y</label>
+              <input size="3" id="bgImageY" value="0"/> 
+            </div>
+
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </form>
+</div>
+

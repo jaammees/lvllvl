@@ -1,0 +1,123 @@
+<div class="activeBackground panelFill" id="toolsPanel">
+  <div class="title" style="background-color: #111111; height: 18px;">
+    <div style="position: absolute; font-size: 10px; top: 2px; left: 6px; right: 10px; overflow: hidden; white-space: nowrap">
+      <span class="ui-text" data-textid="Tile Tools">Tile Tools</span>
+
+    </div>
+    <div style="position: absolute; top: 2px; right: 2px; width: 14px">        
+      <div id="tileToolsCloseButton" class="ui-button ui-panel-close-button ui-button-danger" style="padding: 1px 4px"><img src="icons/svg/glyphicons-halflings-130-chevron-left.svg"></div>
+
+      <!-- glyphicons-halflings-131-chevron-right.svg-->
+    </div>        
+
+  </div>
+
+
+  <div id="toolIconHolder" style="padding: 8px">
+    <div>
+      <div class="drawTool drawToolSelected" id="drawTool_pen"><img width="20" src="icons/pen@2x.png" title="Pencil (n)"/></div>
+      <div class="drawTool" id="drawTool_erase"><img width="20" src="icons/erase@2x.png" title="Blank (l)"/></div>
+      <div class="drawTool" id="drawTool_fill"><img width="20" src="icons/fill@2x.png" title="Fill Bucket (k)"/></div>
+      <div class="drawTool" id="drawTool_eyedropper"><img width="20" src="icons/eyedropper@2x.png" title="Eyedropper (i)"/></div>
+      <div class="drawTool" id="drawTool_line"><img width="20" src="icons/line@2x.png" title="Line (u)"/></div>
+      <div class="drawTool" id="drawTool_rect"><img width="20" src="icons/rect@2x.png" title="Rect (u)"/></div>
+      <div class="drawTool" id="drawTool_oval"><img width="20" src="icons/oval@2x.png" title="Oval (u)"/></div>
+      <div class="drawTool" id="drawTool_select"><img width="20" src="icons/select@2x.png"  title="Marquee (m)"/></div>      
+      <div class="drawTool" id="drawTool_charpixel"><img width="20" src="icons/charpixel@2x.png" title="Char Pixel (o)"/></div>            
+      <div class="drawTool" id="drawTool_linesegment"><img width="20" src="icons/linesegment@2x.png" title="Line Segments"/></div>
+
+      <!--
+      <div class="drawTool" id="drawTool_invert"><img width="20" src="icons/charpixel@2x.png" title="Invert"/></div>            
+      <div class="drawTool" id="drawTool_corners"><img width="20" src="icons/linesegment@2x.png" title="Corners"/></div>
+-->
+
+      <div class="drawTool" id="drawTool_type"><img width="20" src="icons/type@2x.png" title="Type (t)"/></div>            
+      <div class="drawTool" id="drawTool_pixel"><img width="20" src="icons/pixel@2x.png" title="Pixel (p)"/></div>      
+      <div class="drawTool" id="drawTool_block"><img width="20" src="icons/block@2x.png" title="Meta Tile (b)"/></div>            
+      <div class="drawTool" id="drawTool_zoom"><img width="20" src="icons/zoom@2x.png" title="Zoom (z)"/></div>      
+      <div class="drawTool" id="drawTool_hand"><img width="20" src="icons/hand@2x.png" title="Hand (h)"/></div>      
+      <div class="drawTool" id="drawTool_move"><img width="20" src="icons/move@2x.png" title="Move (v)"/></div>      
+    </div>
+
+    <div id="currentTool" style="font-size: 10px; white-space: nowrap; margin-top: 2px"></div>
+  </div>
+
+
+  <div id="drawTools-cellColor" style="position: relative; padding: 0px 8px 0px 8px; height: 68px">
+    <h3 id="drawTools-cellColorHeading" style="font-size: 10px; padding-bottom: 2px"><span class="ui-text" data-textid="Cell">Cell</span></h3>
+    <div  id="cellForegroundColor" class="foregroundColor colorSetting"></div>
+    <div style="display: block; position: absolute; top: 34px; left: 22px; width: 28px; height: 28px; background-color: #000000; z-index: 5;" id="cellBackgroundColor" class="cellBackgroundColor colorSetting"></div>
+
+    <img src="icons/switch.png" id="switchColors" title="Switch Colours (x)"/>
+  </div>
+
+  <div id="drawTools-c64multicolor" style="padding: 0px 8px 0px 8px; display: none">
+    <h3 style="font-size: 10px; padding-bottom: 2px">Multi</h3>
+
+    <div>
+      <div style="display: inline-block; width: 24px; height: 24px; background-color: #000000;" id="c64Multi1Color" class="c64Multi1Color colorSetting"></div>
+
+      <div style="display: inline-block; width: 24px; height: 24px; background-color: #000000;" id="c64Multi2Color" class="c64Multi2Color colorSetting"></div>
+
+    </div>
+
+
+  </div>
+
+  <div style="position: relative;  display: none; padding: 0px 8px 0px 8px; height: 260px;" id="drawTools-colorSubPalettes">
+    <h3 style="font-size: 10px; padding-bottom: 2px">Palette</h3>
+
+    <div style="position: relative;  width: 54px; height: 16px; background-color: #000000; border: 1px solid #aaaaaa; z-index: 5" id="Palette" class="colorSubPalette">
+      <div style="position: absolute; left: 1px; top: 1px; width: 14px; height: 14px">
+        <div class="colorSubPaletteColor0" style="position: absolute; top: 0px; left: 0px; width: 50%; height: 50%;"></div>
+        <div  class="colorSubPaletteColor1"style="position: absolute; top: 0px; right: 0px; width: 50%; height: 50%;"></div>
+
+        <div  class="colorSubPaletteColor2"style="position: absolute; bottom: 0px; left: 0px; width: 50%; height: 50%;"></div>
+        <div  class="colorSubPaletteColor3"style="position: absolute; bottom: 0px; right: 0px; width: 50%; height: 50%;"></div>
+      </div>
+      <div class="colorSubPaletteSelectedPaletteName" style="font-size: 8px; position: absolute; top: 3px; left: 17px">Selected Sub Palette</div>  
+    </div>    
+
+
+    <div style="margin-top: 4px">
+      <div style="font-size: 8px">Colour 0</div>
+      <div style="display: block; margin-top: 2px; width: 24px; height: 24px; background-color: #000000; border: 1px solid #aaaaaa" id="colorSubPaletteColor0" class="colorSubPaletteColor colorSubPaletteColor0" data-paletteIndex="0"></div>
+    </div>
+
+    <div style="margin-top: 4px">
+      <div style="font-size: 8px">Colour 1</div>
+      <div style="display: block; margin-top: 2px; width: 24px; height: 24px; background-color: #000000; border: 1px solid #aaaaaa" id="colorSubPaletteColor1" class="colorSubPaletteColor colorSubPaletteColor1" data-paletteIndex="1"></div>
+    </div>
+
+    <div style="margin-top: 4px">
+      <div style="font-size: 8px">Colour 2</div>
+      <div style="display: block; margin-top: 2px; width: 24px; height: 24px; background-color: #000000; border: 1px solid #aaaaaa" id="colorSubPaletteColor2" class="colorSubPaletteColor colorSubPaletteColor2" data-paletteIndex="2"></div>
+    </div>
+
+    <div style="margin-top: 4px">
+      <div style="font-size: 8px">Colour 3</div>
+      <div style="display: block; margin-top: 2px; width: 24px; height: 24px; background-color: #000000; border: 1px solid #aaaaaa" id="colorSubPaletteColor3" class="colorSubPaletteColor colorSubPaletteColor3" data-paletteIndex="3"></div>
+    </div>
+
+  </div>
+
+  <div id="drawTools-frameColors" style="padding: 0px 8px 0px 8px; position: relative; height: 66px">
+    <h3 style="font-size: 10px; padding-bottom: 2px"><span class="ui-text" data-textid="Frame">Frame</span></h3>
+
+
+    <div style="display: block; position: absolute; top: 20px; left: 8px; width: 56px; height: 46px; background-color: #000000; z-index: 5" id="borderColor" class="borderColor  colorSetting"></div>
+
+    <div style="display: block; position: absolute; top: 30px; left: 18px; width: 36px; height: 26px; background-color: #000000; z-index: 10" id="backgroundColor" class="backgroundColor  colorSetting"></div>
+
+  </div>
+
+
+  <div id="drawTools-3dBackgroundColor" style="padding: 0px 8px 0px 8px; position: relative; height: 66px; display: none">
+      <h3 style="font-size: 10px; padding-bottom: 2px"><span class="ui-text" data-textid="Frame">Background</span></h3>
+  
+      <div style="display: block; position: absolute; top: 30px; left: 18px; width: 36px; height: 26px; background-color: #000000; z-index: 10" id="background3dColor" class="background3dColor  colorSetting"></div>
+  
+    </div>
+
+    
+</div>

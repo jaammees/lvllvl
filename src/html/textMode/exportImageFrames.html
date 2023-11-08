@@ -1,0 +1,56 @@
+<div class="panelFill" id="exportImageFramesPanel">
+  <div style="position: absolute; top: 0; bottom: 0; right: 0; left: 0px; padding: 10px; overflow: auto">
+
+    <div class="exportImageGIFParameters">
+      <h3><i class="halflings halflings-film"></i>&nbsp;Frames</h3>
+      <div id="exportImageFrames">
+        <div class="formGroup">
+          <label class="controlLabel" for="exportImageFromFrame" style="width: 50px">Frames:</label>
+          <div style="display: inline-block">
+            <input type="number" size="2" class="number" min="1"  id="exportImageFromFrame" style="width: 30px">
+            &nbsp;
+            <label for="exportImageToFrame">To</label>
+            &nbsp;
+            <input type="number"  size="2" class="number" min="1" id="exportImageToFrame" style="width: 30px">
+          </div>
+          <select name="exportImageLoopType" id="exportImageLoopType">
+            <option value="loop">Loop</option>
+            <option value="pingpong">Ping Pong</option>
+          </select>
+        </div>
+        <div class="formGroup">
+          <label class="controlLabel" style="width: 50px">Speed:</label>
+          <select name="exportImageSpeed" id="exportImageSpeed">
+            <option value="1">100%</option>
+            <option value="2">200%</option>
+            <option value="3">300%</option>
+            <option value="4">400%</option>
+            <option value="custom">Custom</option>
+          </select>
+
+        </div>
+        <div class="formGroup" id="exportImageCustomSpeed" style="display: none">
+          <label class="controlLabel">Custom speed:</label>
+          <div style="display: inline-block">
+
+            <input type="number" size="3" class="number" min="5" value="10" id="exportImageMSPerTick"/>
+            ms per tick
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="exportImagePNGParameters">
+      <h3><i class="halflings halflings-film"></i>&nbsp;Frame</h3>
+      <div class="exportImageFrameHolder">
+        <div class="formGroup">
+          <label class="controlLabel" for="exportImageFromFrame" style="width: 50px">Frame:</label>
+          <div style="display: inline-block">
+            <input type="number" size="2" class="number" min="1"  id="exportImageFrame" style="width: 30px" value="1"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

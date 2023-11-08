@@ -1,0 +1,47 @@
+<div class="panelFill dialogContent" id="exportSEQPanel">
+  <div class="formGroup">
+    <label class="controlLabel" for="exportSEQAs">File name:</label> 
+    <input type="text" class="formControl" size="20" value="" id="exportSEQAs"/>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel">Include:</label>
+    <div class="checkboxGroup">
+      <div>
+        <label class="cb-container">CLR byte ($93)
+          <input type="checkbox" id="exportSEQClearByte" checked="checked">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div>
+        <label class="cb-container">Uppercase/GFX Byte ($8E)
+          <input type="checkbox" id="exportSEQNewGFXByte">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      <div>
+        <label class="cb-container">Shift-Return at end of lines ($8D)
+          <input type="checkbox" id="exportSEQNewLineBytes">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportSEQAs">Header Bytes:</label> 
+    <input type="text" class="formControl" size="20" value="" id="exportSEQHeaderBytes"/>
+  </div>
+
+  <div class="formGroup">
+    <label class="controlLabel" for="exportSEQAs">Footer Bytes:</label> 
+    <input type="text" class="formControl" size="20" value="" id="exportSEQFooterBytes"/>
+  </div>
+
+  <div>
+    <label></label>
+    <span>Bytes as dec: x,x,x or hex $x,$x,$x</span>
+  </div>
+
+</div>
