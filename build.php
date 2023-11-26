@@ -2,7 +2,7 @@
 
 define('SRCDIR','src');
 define('BUILDDIR','dist');
-define('VERSION',"0.494");
+define('VERSION',"0.495");
 
 
 if(!file_exists(BUILDDIR . '/js')) {
